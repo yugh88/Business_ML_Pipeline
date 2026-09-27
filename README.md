@@ -1,8 +1,8 @@
 # Business Entity Resolution — ML Challenge 2026 (team pipeline)
 
-**Status (2026-09-27): best public LB = 0.980 (V14).**
+**Status (2026-09-27): best public LB = 0.980 (V14); final V15 (two stacked cross-encoders) predicted ~0.981.**
 History: v2 0.936 → V3 0.966 → V5 0.967 → V5s3r 0.973 → V9 0.977 → **V14 0.980**.
-Clean labelled holdout (folds 0/8/9, US/India): US 0.9939, India 0.9922.
+Clean labelled holdout (folds 0/8/9): V15 US 0.9947, India 0.9937 (V14: 0.9939 / 0.9922).
 `docs/analysis/STATE.md` is the single source of truth (every experiment, number and decision, including the ones
 that failed) — read it before changing anything.
 
@@ -45,7 +45,7 @@ Local scripts expect the original working layout (`scripts/` = local scripts, `a
 ```bash
 mkdir -p ../er/aws ../er/analysis/out ../er/work && cd ../er
 ln -s ../Business_ML_Pipeline/local_scripts scripts && ln -s ../../Business_ML_Pipeline/scripts aws/scripts
-ln -s /path/to/student_resource/dataset dataset && cp ../Business_ML_Pipeline/utils -r . 2>/dev/null || true
+ln -s /path/to/student_resource/dataset dataset && cp -r ../Business_ML_Pipeline/utils .
 ```
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
@@ -77,7 +77,7 @@ augmentation retrain (V10 ablation −0.0027); adaptive stop words; pretrained s
 teammate TSVs T1/T2/T4 (addition types 1–9% precision).
 
 ## In progress / next
-* **CE v2** (`243a`/`243b`, `244`/`245`): all 314k hard pairs, 96 tokens, 2 epochs; holdout gate vs V14 → V15.
+* **CE v2 → V15 (done)** (`243a`/`243b`, `244`/`245` with `CE_SET=ce,ce2`): holdout US +0.0009, India +0.0014 over V14.
 * **French cross-encoder input canonicalization** (`247` t2: accents, N°/BIS numbers, R./AV. abbreviations, legal forms) —
   accept only if US/India holdout holds and French decisions look like US/India ones.
 * **Bigger multilingual cross-encoder** (mDeBERTa-v3-base / XLM-R) on a GPU; CE ensembles.

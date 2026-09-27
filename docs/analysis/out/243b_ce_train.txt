@@ -53,3 +53,30 @@ epoch 0 done, step 32155, 4009s
   epoch 1 step 40000/64310 loss(ema) 0.2213 114 pairs/s mps 1.19 GB, sys avail 6.2 GB
   epoch 1 step 41000/64310 loss(ema) 0.2054 46 pairs/s mps 1.19 GB, sys avail 6.6 GB
   epoch 1 step 42000/64310 loss(ema) 0.2183 46 pairs/s mps 1.19 GB, sys avail 6.6 GB
+  epoch 1 step 43000/64310 loss(ema) 0.2227 47 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 1 step 44000/64310 loss(ema) 0.2114 48 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 1 step 45000/64310 loss(ema) 0.2541 49 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 1 step 46000/64310 loss(ema) 0.2118 49 pairs/s mps 1.19 GB, sys avail 6.8 GB
+  epoch 1 step 47000/64310 loss(ema) 0.2477 50 pairs/s mps 1.19 GB, sys avail 6.5 GB
+  epoch 1 step 48000/64310 loss(ema) 0.2069 51 pairs/s mps 1.19 GB, sys avail 6.4 GB
+  epoch 1 step 49000/64310 loss(ema) 0.2513 51 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 1 step 50000/64310 loss(ema) 0.2158 52 pairs/s mps 1.19 GB, sys avail 5.9 GB
+  epoch 1 step 51000/64310 loss(ema) 0.2474 52 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 1 step 52000/64310 loss(ema) 0.2202 53 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 1 step 53000/64310 loss(ema) 0.2178 54 pairs/s mps 1.19 GB, sys avail 5.6 GB
+  epoch 1 step 54000/64310 loss(ema) 0.2107 54 pairs/s mps 1.19 GB, sys avail 5.9 GB
+  epoch 1 step 55000/64310 loss(ema) 0.2362 55 pairs/s mps 1.19 GB, sys avail 5.9 GB
+  epoch 1 step 56000/64310 loss(ema) 0.2400 55 pairs/s mps 1.19 GB, sys avail 6.0 GB
+  epoch 1 step 57000/64310 loss(ema) 0.1782 56 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 1 step 58000/64310 loss(ema) 0.2183 56 pairs/s mps 1.19 GB, sys avail 5.8 GB
+  epoch 1 step 59000/64310 loss(ema) 0.2122 57 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 1 step 60000/64310 loss(ema) 0.2176 58 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 1 step 61000/64310 loss(ema) 0.2085 58 pairs/s mps 1.19 GB, sys avail 6.3 GB
+  epoch 1 step 62000/64310 loss(ema) 0.1912 59 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 1 step 63000/64310 loss(ema) 0.2072 59 pairs/s mps 1.19 GB, sys avail 6.3 GB
+  epoch 1 step 64000/64310 loss(ema) 0.2479 60 pairs/s mps 1.19 GB, sys avail 5.9 GB
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.76it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  4.75it/s]
+epoch 1 done, step 64310, 17222s
+scored ['train']: 187910 pairs in 241s -> work/ce2_band_train.parquet
+scored ['US', 'India', 'France']: 648765 pairs in 844s -> work/ce2_band_test.parquet
+DONE

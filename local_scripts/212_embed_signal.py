@@ -1,4 +1,4 @@
-"""External-model test: does a pretrained multilingual sentence embedding (name vs name, address vs address) add information
+"""Pretrained-model test (no data beyond the challenge files): does a pretrained multilingual sentence embedding (name vs name, address vs address) add information
 beyond V9's p3 where decisions are made? Holdout uncertain band (0.02 <= p3 <= 0.98) + a sample of confident pairs.
 Logistic calibration fit on fold 0, evaluated on folds 8/9: log-loss, errors at 0.5 and flips (fixed vs broken truth)."""
 import sys

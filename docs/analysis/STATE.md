@@ -327,3 +327,18 @@ User decision: will submit V4 only. V4 = i-042c7c291860319be (xgb2 up to 8000 ro
   all 314k hard + 200k easy pairs, 96 tokens (64 truncated 18% of pairs), 2 epochs, ~2 h, then band scoring -> ce2_band_*.parquet.
 - **LB: V14 = 0.980** (submitted 2026-09-27 evening; V9 0.977). Prediction was +0.0015..+0.0027 over V13 (V11-V13 never submitted;
   chain V9 -> V14 predicted ~+0.003) -> CE path confirmed on the leaderboard.
+- **Deadline 2026-09-27 23:15 IST (final submit by 23:30).** Critical path: CE v2 (243b, 514k pairs, 96 tok, 2 ep; Mac slept
+  18:35-21:08 so ETA ~22:00) -> CE_SET=ce,ce2 holdout gate (244) -> V15 build US/India only (245, output_v15_frnone) ->
+  validator. French t2 canonicalization (247) dropped from the critical path. Fallback = V14 (LB 0.980).
+- Final package staged in final_package/ (Documentation filled, code/business_entity_resolution/{src/pipeline,src/local,
+  docs,README.md,requirements.txt}); `final_package/make_zip.sh <output_dir>` -> ~/Desktop/TEAM_submission.zip (V14 zip built,
+  validator PASS, 84 MB). V12/V13 one-off assembly code saved as scripts/v12_assemble.py, v13_assemble.py.
+- GitHub: private yugh88/Business_ML_Pipeline, branch v14-cross-encoder pushed (409 files, no data/weights, bucket redacted).
+- Blocked by permission policy (needs user): AWS GPU quota request; local big-model (XLM-R/mDeBERTa) CE trainer script.
+- **V15 = FINAL (2026-09-27 22:18)**: CE v2 (243b: 514k pairs, 96 tokens, 2 epochs, MiniLM-L12, frozen embeddings, MPS) stacked
+  with the pilot CE (244, CE_SET=ce,ce2, LightGBM stacker on fold 7): band errors 14,104 -> 6,145 (pilot alone 9,141), log-loss
+  0.270 -> 0.119; ce2 alone AUC 0.955 (pilot 0.902). **Clean holdout US 0.99472, India 0.99365** (V14 0.99385 / 0.99224).
+  Test: adds/removes per 1k US 15.9/11.0, India 26.6/18.5; holdout-referenced value vs base US +0.0019..+0.0033, India
+  +0.0032..+0.0051 (V14: +0.0013..+0.0022 / +0.0021..+0.0039). France unchanged. output_v15/ (5,814,038 pairs; V14 +11,737
+  / -9,316), ~/Desktop/V15_submission (official validator PASS --check-ids), ~/Desktop/TEAM_submission.zip rebuilt with V15.
+  **Predicted LB ~0.981** (+0.0008..+0.0010 over V14's 0.980).
