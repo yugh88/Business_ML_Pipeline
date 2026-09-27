@@ -1,0 +1,64 @@
+HOLDOUT ADDS (labelled), bias factor 0.7: estimated vs actual true share by class
+┌──────────────────────────┬──────────┬─────┬─────────────┐
+│ cls                      ┆ est_true ┆ n   ┆ actual_true │
+│ ---                      ┆ ---      ┆ --- ┆ ---         │
+│ str                      ┆ f64      ┆ u32 ┆ f64         │
+╞══════════════════════════╪══════════╪═════╪═════════════╡
+│ identical@same           ┆ 0.904431 ┆ 751 ┆ 0.95739     │
+│ swap_extra@same          ┆ 1.0      ┆ 181 ┆ 0.983425    │
+│ no_overlap@same          ┆ 1.0      ┆ 153 ┆ 0.895425    │
+│ light_edit@same          ┆ 1.0      ┆ 78  ┆ 0.974359    │
+│ first_word_replaced@same ┆ 1.0      ┆ 14  ┆ 0.928571    │
+└──────────────────────────┴──────────┴─────┴─────────────┘
+HOLDOUT ADDS (labelled), bias factor 1.0: estimated vs actual true share by class
+┌──────────────────────────┬──────────┬─────┬─────────────┐
+│ cls                      ┆ est_true ┆ n   ┆ actual_true │
+│ ---                      ┆ ---      ┆ --- ┆ ---         │
+│ str                      ┆ f64      ┆ u32 ┆ f64         │
+╞══════════════════════════╪══════════╪═════╪═════════════╡
+│ identical@same           ┆ 0.69369  ┆ 751 ┆ 0.95739     │
+│ swap_extra@same          ┆ 1.0      ┆ 669 ┆ 0.962631    │
+│ light_edit@same          ┆ 1.0      ┆ 382 ┆ 0.942408    │
+│ no_overlap@same          ┆ 0.932955 ┆ 295 ┆ 0.891525    │
+│ first_word_replaced@same ┆ 1.0      ┆ 31  ┆ 0.935484    │
+└──────────────────────────┴──────────┴─────┴─────────────┘
+HOLDOUT REMOVES (labelled), bias factor 0.7: estimated vs actual true share by class
+┌──────────────────────────┬──────────┬─────┬─────────────┐
+│ cls                      ┆ est_true ┆ n   ┆ actual_true │
+│ ---                      ┆ ---      ┆ --- ┆ ---         │
+│ str                      ┆ f64      ┆ u32 ┆ f64         │
+╞══════════════════════════╪══════════╪═════╪═════════════╡
+│ identical@same           ┆ 0.037561 ┆ 205 ┆ 0.234146    │
+│ no_overlap@same          ┆ 0.440921 ┆ 107 ┆ 0.682243    │
+│ light_edit@same          ┆ 1.0      ┆ 65  ┆ 0.369231    │
+│ swap_extra@same          ┆ 1.0      ┆ 30  ┆ 0.5         │
+│ first_word_replaced@same ┆ 1.0      ┆ 22  ┆ 0.136364    │
+└──────────────────────────┴──────────┴─────┴─────────────┘
+HOLDOUT REMOVES (labelled), bias factor 1.0: estimated vs actual true share by class
+┌──────────────────────────┬──────────┬─────┬─────────────┐
+│ cls                      ┆ est_true ┆ n   ┆ actual_true │
+│ ---                      ┆ ---      ┆ --- ┆ ---         │
+│ str                      ┆ f64      ┆ u32 ┆ f64         │
+╞══════════════════════════╪══════════╪═════╪═════════════╡
+│ identical@same           ┆ 0.024311 ┆ 205 ┆ 0.234146    │
+│ light_edit@same          ┆ 0.530989 ┆ 181 ┆ 0.353591    │
+│ no_overlap@same          ┆ 0.136035 ┆ 175 ┆ 0.674286    │
+│ swap_extra@same          ┆ 0.6918   ┆ 103 ┆ 0.524272    │
+│ first_word_replaced@same ┆ 0.928034 ┆ 47  ┆ 0.255319    │
+└──────────────────────────┴──────────┴─────┴─────────────┘
+
+FRANCE [country] ADDS: 15567 (61.8/1k S1); composition [('swap_extra@same', 17.22), ('identical@same', 13.6), ('no_overlap@same', 6.98), ('other', 6.58), ('desc@same', 5.35), ('identical@num_changed', 4.16), ('identical@other', 3.68), ('light_edit@same', 2.6), ('identical@empty', 1.27), ('first_word_replaced@same', 0.36)]
+  bias 0.7: identical@same est_true 0.12 (n 2039) | desc@same est_true 1.00 (n 908) | swap_extra@same est_true 1.00 (n 451) | no_overlap@same est_true 1.00 (n 359) | light_edit@same est_true 1.00 (n 70) | first_word_replaced@same est_true 0.84 (n 46)
+  bias 1.0: identical@same est_true 0.07 (n 2039) | swap_extra@same est_true 1.00 (n 1044) | desc@same est_true 0.99 (n 908) | no_overlap@same est_true 0.99 (n 681) | light_edit@same est_true 0.65 (n 160) | first_word_replaced@same est_true 0.59 (n 46)
+
+FRANCE [country] REMOVES: 6756 (26.8/1k S1); composition [('swap_extra@same', 9.62), ('desc@same', 6.56), ('other', 3.24), ('no_overlap@same', 3.09), ('first_word_replaced@same', 2.83), ('light_edit@same', 0.69), ('identical@same', 0.41), ('identical@num_changed', 0.21), ('identical@other', 0.12), ('identical@empty', 0.07)]
+  bias 0.7: desc@same est_true 1.00 (n 1411) | swap_extra@same est_true 1.00 (n 546) | first_word_replaced@same est_true 1.00 (n 471) | no_overlap@same est_true 1.00 (n 315) | identical@same est_true 0.73 (n 88) | light_edit@same est_true 1.00 (n 32)
+  bias 1.0: desc@same est_true 0.98 (n 1411) | swap_extra@same est_true 1.00 (n 1028) | no_overlap@same est_true 0.77 (n 511) | first_word_replaced@same est_true 0.99 (n 471) | identical@same est_true 0.47 (n 88) | light_edit@same est_true 0.51 (n 68)
+
+FRANCE [pooled] ADDS: 15457 (61.4/1k S1); composition [('swap_extra@same', 16.91), ('identical@same', 13.67), ('no_overlap@same', 7.05), ('other', 6.12), ('desc@same', 5.46), ('identical@num_changed', 4.09), ('identical@other', 3.77), ('light_edit@same', 2.65), ('identical@empty', 1.25), ('first_word_replaced@same', 0.4)]
+  bias 0.7: identical@same est_true 0.11 (n 2059) | desc@same est_true 1.00 (n 922) | swap_extra@same est_true 1.00 (n 440) | no_overlap@same est_true 1.00 (n 363) | light_edit@same est_true 1.00 (n 72) | first_word_replaced@same est_true 0.78 (n 50)
+  bias 1.0: identical@same est_true 0.07 (n 2059) | swap_extra@same est_true 1.00 (n 1022) | desc@same est_true 0.98 (n 922) | no_overlap@same est_true 0.99 (n 697) | light_edit@same est_true 0.59 (n 162) | first_word_replaced@same est_true 0.68 (n 50)
+
+FRANCE [pooled] REMOVES: 7344 (29.2/1k S1); composition [('swap_extra@same', 10.44), ('desc@same', 7.0), ('no_overlap@same', 3.66), ('other', 3.41), ('first_word_replaced@same', 2.98), ('light_edit@same', 0.71), ('identical@same', 0.47), ('identical@num_changed', 0.23), ('identical@other', 0.17), ('identical@empty', 0.08)]
+  bias 0.7: desc@same est_true 1.00 (n 1502) | swap_extra@same est_true 1.00 (n 591) | first_word_replaced@same est_true 1.00 (n 493) | no_overlap@same est_true 1.00 (n 358) | identical@same est_true 0.59 (n 101) | light_edit@same est_true 1.00 (n 33)
+  bias 1.0: desc@same est_true 0.99 (n 1502) | swap_extra@same est_true 1.00 (n 1108) | no_overlap@same est_true 0.70 (n 592) | first_word_replaced@same est_true 0.95 (n 493) | identical@same est_true 0.38 (n 101) | light_edit@same est_true 0.56 (n 71)

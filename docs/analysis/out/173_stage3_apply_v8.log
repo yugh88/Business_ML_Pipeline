@@ -1,0 +1,10 @@
+stage-3 train rows 3990037 folds [1, 2, 3, 4, 5, 6]
+importance: [('p2', 101929657), ('s_p2', 83851776), ('grp_w', 79803514), ('own_same_src', 69523373), ('fp_tok_src', 9891436), ('grp_nsrc', 2328586), ('p1', 1853337), ('s_p2x', 1633688), ('m_max', 669666), ('promo', 485337), ('n_strong', 409325), ('own_other_src', 235250)]
+fold7 best 0.9901 {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}  base-policy on p2: 0.98959
+holdout fold 0: base 0.98970 stage3 0.99027
+holdout fold 8: base 0.98964 stage3 0.99032
+holdout fold 9: base 0.98951 stage3 0.99015
+TEST US {'pred_per_s1': 3.377, 'plus_k': 19.86, 'minus_k': 20.75, 'promoted': 47.21}
+TEST India {'pred_per_s1': 3.3493, 'plus_k': 42.6, 'minus_k': 39.86, 'promoted': 72.69}
+TEST France {'pred_per_s1': 3.3742, 'plus_k': 6.43, 'minus_k': 6.92, 'promoted': 73.1}
+written output_v9 5827607

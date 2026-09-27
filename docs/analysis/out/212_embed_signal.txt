@@ -1,0 +1,18 @@
+holdout band pairs 142330 (true rate 0.697); by fold {8: 47230, 0: 47510, 9: 47590}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 12548.73it/s]
+names embedded 234649
+addresses embedded 225626
+  first_word_replaced@same   n=  2248 true 0.322  AUC p3 0.938  AUC sim_name 0.515  AUC sim_addr 0.545
+  identical@empty            n=  6897 true 0.893  AUC p3 0.913  AUC sim_name 0.507  AUC sim_addr 0.500
+  identical@num_changed      n= 16728 true 0.631  AUC p3 0.953  AUC sim_name 0.524  AUC sim_addr 0.539
+  identical@other            n=  4819 true 0.734  AUC p3 0.938  AUC sim_name 0.547  AUC sim_addr 0.606
+  identical@same             n= 10418 true 0.786  AUC p3 0.953  AUC sim_name 0.563  AUC sim_addr 0.414
+  light_edit@same            n=  7445 true 0.703  AUC p3 0.920  AUC sim_name 0.414  AUC sim_addr 0.470
+  no_overlap@same            n= 10784 true 0.714  AUC p3 0.921  AUC sim_name 0.508  AUC sim_addr 0.565
+  other                      n= 26477 true 0.636  AUC p3 0.942  AUC sim_name 0.539  AUC sim_addr 0.537
+  swap_extra@same            n=  8995 true 0.810  AUC p3 0.959  AUC sim_name 0.590  AUC sim_addr 0.496
+with_embedding=False: test log-loss 0.25784  AUC 0.9467  errors@0.5 9390
+with_embedding=True: test log-loss 0.25703  AUC 0.9471  errors@0.5 9347
+decision flips with embedding: 669; fixed 356, broken 313 (folds 8/9 band)
+python scripts/212_embed_signal.py  1583.27s user 370.27s system 217% cpu 14:56.15 total

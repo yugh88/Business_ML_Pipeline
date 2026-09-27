@@ -1,0 +1,128 @@
+12:55:21 === stage prepare
+12:55:21 input train_s1.parquet 2206821
+12:55:21 input train_s2.parquet 5166921
+12:55:21 input train_s3.parquet 5480455
+12:55:21 input test_s1.parquet 1732544
+12:55:21 input test_s2.parquet 4887273
+12:55:21 input test_s3.parquet 5082316
+12:55:21 input train_gt.parquet 2206821
+12:55:22 === stage prepare finished 1s peak_rss_tree=0.3GB min_avail=130.8GB
+12:55:23 === stage normalize
+12:55:23 normalize jobs 287
+12:55:27   normalized 0 / 287
+12:55:46   normalized 50 / 287
+12:56:05   normalized 100 / 287
+12:56:25   normalized 150 / 287
+12:56:44   normalized 200 / 287
+12:57:04   normalized 250 / 287
+12:57:20 === stage normalize finished 117s peak_rss_tree=5.6GB min_avail=126.2GB
+12:57:21 === stage indexes
+12:57:23 indexes train
+12:57:25 indexes test
+12:57:27 === stage indexes finished 6s peak_rss_tree=5.6GB min_avail=126.2GB
+12:57:28 === stage blocking
+12:57:29 retrieval train India: S1=883188 pool=4252724
+12:57:37   na index=883188 PT.nnz=10M queries=4252724 shards=86 build=7s
+13:35:24   na done rows=84995250 total=2274s
+13:35:29   c3 index=883188 PT.nnz=4M queries=4252724 shards=86 build=5s
+13:37:33   c3 done rows=40598195 total=129s
+13:38:04   na index=4252724 PT.nnz=22M queries=883188 shards=18 build=31s
+13:42:01   na done rows=8827926 total=268s
+13:42:01 retrieval train US: S1=1323633 pool=6394652
+13:42:10   na index=1323633 PT.nnz=10M queries=6394652 shards=128 build=8s
+14:17:19   na done rows=127846657 total=2116s
+14:17:28   c3 index=1323633 PT.nnz=6M queries=6394652 shards=128 build=9s
+14:21:56   c3 done rows=60135963 total=277s
+14:22:33   na index=6394652 PT.nnz=29M queries=1323633 shards=27 build=37s
+14:26:27   na done rows=13235813 total=271s
+14:30:32 union train: {'pairs': 338636182, 's1_with_cands': 2206821, 'positives': 7568289, 'gt_pairs': 7638365, 'blocking_recall': 0.9908257853611342, 's1_total': 2206821, 'cands_per_s1': 153.44977322583028}
+14:39:42 === stage blocking finished 6133s peak_rss_tree=73.0GB min_avail=69.2GB
+14:39:42 === stage features
+14:39:42 features train: 320 buckets, 6 workers
+14:40:23   features train 0/320 41s
+14:41:08   features train 10/320 86s
+14:42:22   features train 20/320 160s
+14:43:38   features train 30/320 236s
+14:44:27   features train 40/320 284s
+14:45:41   features train 50/320 359s
+14:46:53   features train 60/320 431s
+14:47:43   features train 70/320 481s
+14:48:57   features train 80/320 555s
+14:50:07   features train 90/320 624s
+14:51:01   features train 100/320 679s
+14:52:11   features train 110/320 749s
+14:53:20   features train 120/320 818s
+14:54:16   features train 130/320 874s
+14:55:23   features train 140/320 940s
+14:56:35   features train 150/320 1013s
+14:57:29   features train 160/320 1066s
+14:58:38   features train 170/320 1136s
+14:59:47   features train 180/320 1205s
+15:00:41   features train 190/320 1259s
+15:01:50   features train 200/320 1328s
+15:03:00   features train 210/320 1397s
+15:03:58   features train 220/320 1456s
+15:05:04   features train 230/320 1522s
+15:06:13   features train 240/320 1590s
+15:07:11   features train 250/320 1649s
+15:08:21   features train 260/320 1718s
+15:09:24   features train 270/320 1781s
+15:10:23   features train 280/320 1841s
+15:11:37   features train 290/320 1915s
+15:12:40   features train 300/320 1978s
+15:13:39   features train 310/320 2036s
+15:15:24 === stage features finished 2142s peak_rss_tree=73.0GB min_avail=69.2GB
+15:15:25 === stage augment
+15:15:26   augment train 0/320 1s
+15:15:28   augment train 100/320 4s
+15:15:31   augment train 200/320 7s
+15:15:34   augment train 300/320 9s
+15:15:34 augment train done 9s
+15:15:46   augment test 0/256 12s
+15:18:51   augment test 100/256 197s
+15:21:59   augment test 200/256 384s
+15:23:40 augment test done 486s
+15:24:27 === stage augment finished 542s peak_rss_tree=73.0GB min_avail=69.2GB
+15:24:28 === stage orphanize
+15:24:34 orphanize: mode=list
+15:26:18 orphanize: reverse stats recomputed 110s; S1 with candidates before=2206821
+15:30:34 orphanize done: S1 kept=1853587 pairs=282728027 negative share=0.9779 366s
+15:31:21 === stage orphanize finished 413s peak_rss_tree=73.0GB min_avail=69.2GB
+15:31:22 === stage stage1
+15:31:51 stage1 model 0: train folds [3, 4, 5, 6] rows=27155949 es=2994331
+15:36:08 stage1 model 1: train folds [1, 2, 5, 6] rows=27173757 es=2997043
+15:40:15 stage1 model 2: train folds [1, 2, 3, 4] rows=27229946 es=3003272
+15:44:08 stage1 trained iters=[358, 334, 368] 766s
+16:04:32 stage1 predicted train
+16:26:43 stage1 predicted test
+16:27:05 === stage stage1 finished 3343s peak_rss_tree=73.0GB min_avail=69.2GB
+16:27:06 === stage collective
+16:28:40 collective train done
+16:30:10 collective test done
+16:30:14 === stage collective finished 189s peak_rss_tree=73.0GB min_avail=69.2GB
+16:30:15 === stage stage2
+16:30:47 stage2_p2 model 0: train folds [3, 4, 5, 6] rows=5587016 es=619655
+16:32:15 stage2_p2 model 1: train folds [1, 2, 5, 6] rows=5545794 es=612249
+16:33:42 stage2_p2 model 2: train folds [1, 2, 3, 4] rows=5591508 es=618112
+16:35:10 stage2_p2x model 0: train folds [3, 4, 5, 6] rows=5587016 es=619655
+16:45:57 stage2_p2x model 1: train folds [1, 2, 5, 6] rows=5545794 es=612249
+16:56:39 stage2_p2x model 2: train folds [1, 2, 3, 4] rows=5591508 es=618112
+17:06:55 stage2 trained [('p2', [291, 288, 253]), ('p2x', [1499, 1497, 1499])] 2200s
+17:11:54 stage2 predicted train
+17:17:06 stage2 predicted test
+17:17:11 === stage stage2 finished 2816s peak_rss_tree=73.0GB min_avail=69.2GB
+17:17:12 === stage stage2_xgb2
+17:17:44 stage2_p2x2 model 0: train folds [3, 4, 5, 6] rows=5587016 es=619655
+17:38:52 stage2_p2x2 model 1: train folds [1, 2, 5, 6] rows=5545794 es=612249
+18:00:58 stage2_p2x2 model 2: train folds [1, 2, 3, 4] rows=5591508 es=618112
+18:20:37 stage2_xgb2 trained iters=[3008, 3173, 2861] (cap 8000) 3805s
+18:27:47 stage2_xgb2 predicted train 4235s
+18:35:19 stage2_xgb2 predicted test 4687s
+18:35:24 === stage stage2_xgb2 finished 4691s peak_rss_tree=73.0GB min_avail=69.2GB
+18:35:24 === stage stage2_nn
+18:35:24 === stage stage2_nn finished 0s peak_rss_tree=73.0GB min_avail=69.2GB
+18:35:25 === stage evaluate
+18:36:26   evaluated variant p2: best valid 0.98747
+18:37:27   evaluated variant p2x: best valid 0.98932
+18:38:27   evaluated variant p2blend: best valid 0.98863
+18:39:28   evaluated variant p2x2: best valid 0.98965

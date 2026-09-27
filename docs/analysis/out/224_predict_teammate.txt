@@ -1,0 +1,15 @@
+teammate vs V9: added 35782 pairs, removed 18683, changed S1 50142 (2.89%)
+  US    : +19.7/1k (of which on S1 that V9 left EMPTY: 15.8 S1/1k), mean V9 p3 of added 0.113 (unscored 10786); -11.0/1k, mean p3 of removed 0.993
+      added by class: [('identical@num_changed', 18.86), ('identical@same', 0.62), ('identical@other', 0.25)]
+  India : +21.4/1k (of which on S1 that V9 left EMPTY: 5.1 S1/1k), mean V9 p3 of added 0.195 (unscored 12780); -10.4/1k, mean p3 of removed 0.992
+      added by class: [('identical@num_changed', 15.24), ('identical@same', 3.36), ('identical@other', 2.84), ('other', 0.0)]
+  France: +20.6/1k (of which on S1 that V9 left EMPTY: 10.7 S1/1k), mean V9 p3 of added 0.183 (unscored 4285); -11.4/1k, mean p3 of removed 0.987
+      added by class: [('identical@num_changed', 7.65), ('identical@other', 4.93), ('other', 4.18), ('identical@same', 3.25), ('swap_extra@same', 0.45)]
+
+Expected LB change vs V9 (only changed S1; per truth model; the LB history supports alpha <= 0.5):
+  alpha=1.0   total -0.01280  | US -0.01664  India -0.00956  France -0.01308  -> predicted LB 0.9642
+  alpha=0.75  total -0.01236  | US -0.01631  India -0.00910  France -0.01242  -> predicted LB 0.9646
+  alpha=0.5   total -0.01194  | US -0.01599  India -0.00865  France -0.01185  -> predicted LB 0.9651
+  alpha=0.25  total -0.01154  | US -0.01567  India -0.00821  France -0.01135  -> predicted LB 0.9655
+  alpha=0.0   total -0.01114  | US -0.01536  India -0.00776  France -0.01091  -> predicted LB 0.9659
+python scripts/224_predict_teammate.py matching_results.tsv teammate  21.21s user 3.54s system 274% cpu 9.009 total

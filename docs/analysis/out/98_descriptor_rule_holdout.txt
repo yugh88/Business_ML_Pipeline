@@ -1,0 +1,4 @@
+descriptor words (train folds 1-7, n>=300, match rate<5%): 55
+fold 0: V5 F0.5=0.99057 -> with rule 0.99092 (removed 213 pairs, of which true matches 2); P 0.9966->0.9970
+fold 8: V5 F0.5=0.99053 -> with rule 0.99096 (removed 246 pairs, of which true matches 4); P 0.9966->0.9970
+fold 9: V5 F0.5=0.99057 -> with rule 0.99092 (removed 220 pairs, of which true matches 2); P 0.9965->0.9968

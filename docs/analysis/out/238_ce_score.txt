@@ -1,0 +1,20 @@
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 8040.05it/s]
+train band pairs 187910
+  train: 0/187910 0 pairs/s
+  train: 64000/187910 847 pairs/s
+  train: 128000/187910 858 pairs/s
+test US band pairs 187399
+  US: 0/187399 0 pairs/s
+  US: 64000/187399 900 pairs/s
+  US: 128000/187399 903 pairs/s
+test India band pairs 301961
+  India: 0/301961 0 pairs/s
+  India: 64000/301961 871 pairs/s
+  India: 128000/301961 874 pairs/s
+  India: 192000/301961 874 pairs/s
+  India: 256000/301961 874 pairs/s
+test France band pairs 159405
+  France: 0/159405 0 pairs/s
+  France: 64000/159405 874 pairs/s
+  France: 128000/159405 864 pairs/s
+DONE

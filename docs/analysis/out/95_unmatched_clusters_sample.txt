@@ -1,0 +1,74 @@
+
+=== unmatched cluster key=France|oxygene|51|
+   pool S2-135780336 | Oxygene & Frères International SAS | (51) R. DE DOUAI, LILLE
+   pool S3-415359281 | Oxygene & Frèrês SCI | 51 Rue De Douai, Lille
+   pool S3-859297708 | Oxygene & Frèrés France SAS | 51 Rue De Douai, Lille
+   TEST S1: no S1 with same first name word + (same number or street)
+
+=== unmatched cluster key=India|sw|72|
+   pool S3-124349108 | SW Foods Ltd | New Delhi, C-72, Panchsheel Enclave, दिल्ली
+   pool S3-539244610 | SW Nutriments Enterprises Ltd | C-72, New Delhi, दिल्ली
+   pool S3-65912188 | SW  Nutriments Holdings Ltd | C-72, New Delhi, DL
+   TEST S1: no S1 with same first name word + (same number or street)
+
+=== unmatched cluster key=India|panchwati|64|
+   pool S2-910689083 | Panchwati School Public Industries | 64/3133, SECOND FLOOR, JOSEPH'S COTTAGE OPP. ST FRANCIS CHURCH, K K RO
+   pool S2-724530227 | Panchwati & Co Pvt Ltd | 64 C/O- SHYAM SUNDER DEHURY, JILINDA JAYAMANGALPUR, NARASINGHPUR, Odis
+   pool S3-14970361 | Panchwati  Retail | Second Floor, Joseph's Cottage Opp. St Francis Church, K K Road, Kathr
+   pool S3-363205724 | Panchwati & Co Co Industries Corporation | 64- C/o- Shyam Sunder Dehury, Jilinda Jayamangalpur, Narasinghpur, Cut
+   S1   S1-309894162 | Panchwati Public School | 64/3122, Second Floor, Joseph'S Cottage Opp. St Francis Church, K K Ro
+
+=== unmatched cluster key=India|standard|917|
+   pool S3-638292495 | Standard Tradeos LLP | Dlor No 917 F3 4, P No 129, Bhumi Enclave, Road No.15/a, Gopal Nagar, 
+   pool S3-587787276 | Standard Traders Exports Pvt Ltd | No 917 F3 4, Tirumalagiri, Hyderabad, తెలంగాణ
+   pool S3-537532644 | Standard Traders Overseas Pvt | No 917 F3 4, P No 129, Bhumi Enclave, Road No.15/a, Gopal Nagar, Tirum
+   TEST S1: no S1 with same first name word + (same number or street)
+
+=== unmatched cluster key=India|shiva|75|makayiram
+   pool S2-405010150 | Limited Shiva Infrastructure Service | H.NO 75  MAKAYIRAM CODE, KOLLAM, കേരളം
+   pool S2-765873328 | ശിവാ ഇൻഡസ്ട്രീസ് പ്രൈവറ്റ് ലിമിറ്റഡ് | NO 75  MAKAYIRAM CODE, KOLLAM, കേരളം
+   pool S2-295571489 | Limited Shiva Finance | NO 75  MAKAYIRAM CODE, THEKKETHIL CHITHARA P.O., KOLLAM, Kerala
+   S1   S1-615412778 | Shiva Agro Private Limited | H.N.-75 Ist Floor Roshanpura, Malviya Nagar Bhopal, Huzur, Bhopal, Mad
+   S1   S1-527799126 | Shiva Savings Private Limited | 75 East Arokiyasamy Road, Coimbatore South, Coimbatore, Tamil Nadu
+   S1   S1-858260705 | Shiva Star Care Private Limited | No.75, 1St Floor, Jala Hobli, Near Bethlehem Church, Marenahalli Villa
+   S1   S1-845067416 | Shiva Finance Private Limited | Makayiram Code, Thekkethil Chithara P.O., Kollam, Kerala
+
+=== unmatched cluster key=India|digital|280|
+   pool S2-367543332 | Digital Trading Public Limited | BUILDING NO. IX/280-D, SITHARA COMPLEX KOLLAKADAVU P.O, CHENGANNUR, Ke
+   pool S2-814874537 | Digital Trading Ventures | BUILDING NO. IX/280-D, SITHARA COMPLEX KOLLAKADAVU P.O, CHENGANNUR, Ke
+   pool S2-671756566 | डिजिटल मैनेजमेंट प्राइवेट लिमिटेड | SURVEY NO. 280, RAISONI INDUSTRIAL PARK, HINJEWADI, PHASE II, VILLAGE 
+   pool S3-694967364 | Digital Construction Public Limited | Survey No. 280., Pune, MH
+   TEST S1: no S1 with same first name word + (same number or street)
+
+=== unmatched cluster key=France|amicale|21|sent
+   pool S2-262938605 | Amicale des Wing Développement | 21 SENT1 DES RADOUBS, APPT 215 RESIDENCE ASTROLABE, BORDEAUX
+   pool S2-566132668 | AMICALE DES WING FRANCE | 21 SENT1 DES RADOUBS, APPT 215 RESIDENCE ASTROLABE, BORDEAUX
+   pool S3-918867733 | Amicale des Wing International SAS | 21 Sent1 Des Radoubs, Bordeaux, Gironde
+   S1   S1-837274553 | Amicale de Espace | 21 RUE des Alouettes, 44100, Nantes, Pays de la Loire
+   S1   S1-383179929 | Amicale de Cindy | 21 RUE DEBACQ, Calais, Hauts-de-France
+   S1   S1-75967330 | Amicale des Associations | 21 RTE du Radeau, La Baule-Escoublac, Pays de la Loire
+   S1   S1-687658178 | Amicale du Bureau | 21 Rue du Bois d'Annappes, Lille, Hauts-de-France
+
+=== unmatched cluster key=US|capital|1406|stone
+   pool S2-183271327 | CAPITAL CASCADE ALUSSA UPTOWN CENTER | OH, 001406 STONE ASH COURT, DAYTON
+   pool S2-289805488 | Capital Cascade-Alussa Partners (Corp) | DAYTON, OH, 001406 STONE ASH CT
+   pool S3-525322980 | Capital Cáscade Alussa Partners Ltd | 1406 Stone Ash Court, Ohio, Dayton
+   S1   S1-91473513 | Capital Automobile | 7070 Stone Hill Road, Livonia, NY
+   S1   S1-717562888 | Capital Frontier Biosciences LLC | 828 Keystone Avenue, Indianapolis, IN
+   S1   S1-919716806 | Capital Foundation | 13653 Greystone Drive, Farmers Branch, TX
+   S1   S1-816112314 | Capital Modern Properties | 17W 776 Stone Avenue, Addison, IL
+
+=== unmatched cluster key=US|meagan|101|susa
+   pool S2-786559370 | Meagan Stroud Commodities  Central Inc. | VA, 101 SUSA DR, STAFFORD
+   pool S3-295926376 | Meagan Stroud Commodities Holdings | 101 Susa Dr, # UNIT 103, Stafford, Virginia
+   pool S3-593908549 | Meagan  Stroud Commodities Partners | 101 Susa Drive, # UNIT 103, Stafford County, Virginia
+   S1   S1-152498084 | Meagan Stroud Commodities Inc | 100 Susa Drive, Unit UNIT 103, Stafford County, VA
+
+=== unmatched cluster key=US|blue|113|
+   pool S2-351997797 | Blue Clear Devices Corp | 113 J D PAKR RD, LEWIISBURG, WV
+   pool S2-872203782 | BLUE ICE CREAM HOLDINGS | 113 3TH SAINT, CROWELL, TX
+   pool S3-589908428 | Blue  Ice Cream Inc | 113-C 3rd St, Crowell, Texas
+   S1   S1-652008003 | Blue Eaton LLC | Stanley, NC, 113 Stevens Drive
+   S1   S1-156940313 | Blue Association | 113 Holly Glade Circle, Holly Springs, NC
+   S1   S1-212062035 | Blue Debt Inc | Benson, NC, 113 Hardison Lane
+   S1   S1-867440698 | Blue Surgical LLC | 113 Houston Street, Forney, TX

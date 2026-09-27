@@ -1,0 +1,6 @@
+train S2: indic names=474345 token occurrences=1825620 distinct=1518 dict token-coverage=0.9773 names fully covered=0.9128
+train S3: indic names=278524 token occurrences=1024136 distinct=1518 dict token-coverage=0.9779 names fully covered=0.9187
+test S2: indic names=546606 token occurrences=2146626 distinct=1518 dict token-coverage=0.9636 names fully covered=0.8570
+   top uncovered: [('स्टोर्स', 'stors', 2412), ('स्वीट्स', 'svits', 2406), ('जनरल', 'jnrl', 2402), ('मोटर्स', 'motrs', 2396), ('प्रोविजन', 'provijn', 2375), ('बेकरी', 'bekri', 2369), ('एजेंसीज', 'ejemsij', 2363), ('हार्डवेयर', 'hardveyr', 2352), ('फार्मेसी', 'pharmesi', 2342), ('इलेक्ट्रॉनिक्स', 'ilektroniks', 2324), ('ट्रेडर्स', 'tredrs', 2320), ('फर्नीचर', 'phrnicr', 2313)]
+test S3: indic names=320639 token occurrences=1201695 distinct=1518 dict token-coverage=0.9643 names fully covered=0.8664
+   top uncovered: [('ज्वेलर्स', 'jvelrs', 1371), ('ऑटोमोबाइल्स', 'otomobails', 1329), ('मेडिकल्स', 'medikls', 1322), ('मोटर्स', 'motrs', 1320), ('एजेंसीज', 'ejemsij', 1310), ('गारमेंट्स', 'garmemts', 1288), ('ट्रेडर्स', 'tredrs', 1284), ('फार्मेसी', 'pharmesi', 1275), ('स्टील', 'stil', 1273), ('स्टोर्स', 'stors', 1265), ('टेक्सटाइल्स', 'tekstails', 1263), ('बेकरी', 'bekri', 1262)]

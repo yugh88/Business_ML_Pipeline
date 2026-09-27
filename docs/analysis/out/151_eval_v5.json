@@ -1,0 +1,49 @@
+{
+ "label": "v5",
+ "decision": {
+  "tau": 0.05,
+  "variant": "p2x2",
+  "policy": "G_expected_f",
+  "a": 1.0,
+  "lam": 0.15,
+  "t": null,
+  "cap": 1
+ },
+ "holdout": {
+  "0": {
+   "augmented": 0.99057,
+   "synthetic_accepted": 0,
+   "clean_no_synthetic": 0.99057
+  },
+  "8": {
+   "augmented": 0.99053,
+   "synthetic_accepted": 0,
+   "clean_no_synthetic": 0.99053
+  },
+  "9": {
+   "augmented": 0.99057,
+   "synthetic_accepted": 0,
+   "clean_no_synthetic": 0.99057
+  }
+ },
+ "test": {
+  "US": {
+   "pred_per_s1": 3.4233,
+   "plus_k_per_1k": 43.84,
+   "minus_k_per_1k": 18.64,
+   "promoted_per_1k": 79.95
+  },
+  "India": {
+   "pred_per_s1": 3.417,
+   "plus_k_per_1k": 57.57,
+   "minus_k_per_1k": 38.88,
+   "promoted_per_1k": 135.32
+  },
+  "France": {
+   "pred_per_s1": 3.3858,
+   "plus_k_per_1k": 21.68,
+   "minus_k_per_1k": 5.93,
+   "promoted_per_1k": 111.34
+  }
+ }
+}

@@ -1,0 +1,8 @@
+train holdout candidates: true positive rate=0.7661  mean p2=0.7661  EM on train itself=0.7662
+  train US: pos rate=0.7719 mean p2=0.7715
+  train India: pos rate=0.7574 mean p2=0.7582
+TEST US: n=3241694 mean p2=0.7843  EM-estimated positive rate=0.7887  (train 0.7661) -> odds shift +0.131
+TEST India: n=4046651 mean p2=0.7525  EM-estimated positive rate=0.7491  (train 0.7661) -> odds shift -0.092
+TEST France: n=1403361 mean p2=0.6935  EM-estimated positive rate=0.6793  (train 0.7661) -> odds shift -0.436
+TEST all: EM positive rate=0.7522 ; implied expected true matches/S1 = 3.820 vs train 2261918
+train expected TP per S1 with candidates: 3.469050408878146

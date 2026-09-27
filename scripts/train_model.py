@@ -160,7 +160,8 @@ def coll_columns():
 
 
 def cons_columns():
-    return ["k1_vote_num", "k1_vote_street", "k1_vote_name", "k1_vote_addr", "k1_s1num_share"]
+    return ["k1_vote_num", "k1_vote_street", "k1_vote_name", "k1_vote_addr", "k1_s1num_share",
+            "k1_s1num_same_src", "k1_s1num_other_src", "k1_num_same_src", "k1_num_other_src"]   # v8: per-source version / twin cluster
 
 
 def stage2():

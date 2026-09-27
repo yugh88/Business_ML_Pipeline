@@ -1,0 +1,74 @@
+HOLDOUT kept S1 556554, true pairs 1890673; stage of true pairs:
+┌──────────────────────────┬─────────┬─────────┐
+│ stage                    ┆ len     ┆ share   │
+│ ---                      ┆ ---     ┆ ---     │
+│ str                      ┆ u32     ┆ f64     │
+╞══════════════════════════╪═════════╪═════════╡
+│ 1_not_retrieved(p1<1e-4) ┆ 11814   ┆ 0.00625 │
+│ 2_cascade_drop           ┆ 6756    ┆ 0.00357 │
+│ 3_decision_FN            ┆ 14448   ┆ 0.00764 │
+│ 4_found                  ┆ 1857655 ┆ 0.98254 │
+└──────────────────────────┴─────────┴─────────┘
+
+ORACLE LADDER (macro F0.5 over holdout S1):
+  V9                                         0.99152   (+0.00000)
+  V9 - all FP                                0.99454   (+0.00302)
+  V9 + all decision FN                       0.99404   (+0.00252)
+  perfect decode on tau-set                  0.99705   (+0.00554)
+  perfect decode on p1>=1e-4 set (~union)    0.99812   (+0.00661)
+  V9 + recover cascade drops                 0.99262   (+0.00111)
+  V9 + recover cascade+retrieval misses      0.99454   (+0.00302)
+
+LOSS BY SEGMENT (share of total V9 loss; loss = sum(1-F)/N):
+┌─────────────────────────────────┬────────┬────────┬─────────┬─────────────────────┬────────┬──────┬──────────────┐
+│ seg                             ┆ S1     ┆ per1k  ┆ loss    ┆ fixable_by_decoding ┆ mean_n ┆ FP   ┆ missed_pairs │
+│ ---                             ┆ ---    ┆ ---    ┆ ---     ┆ ---                 ┆ ---    ┆ ---  ┆ ---          │
+│ str                             ┆ u32    ┆ f64    ┆ f64     ┆ f64                 ┆ f64    ┆ u32  ┆ i64          │
+╞═════════════════════════════════╪════════╪════════╪═════════╪═════════════════════╪════════╪══════╪══════════════╡
+│ partial recall only             ┆ 29471  ┆ 52.95  ┆ 0.00404 ┆ 0.00173             ┆ 4.35   ┆ 0    ┆ 31799        │
+│ full recall + FP                ┆ 4210   ┆ 7.56   ┆ 0.00181 ┆ 0.00181             ┆ 3.18   ┆ 4382 ┆ 0            │
+│ singleton + FP                  ┆ 601    ┆ 1.08   ┆ 0.00108 ┆ 0.00108             ┆ 0.0    ┆ 705  ┆ 0            │
+│ retrieved but none accepted     ┆ 423    ┆ 0.76   ┆ 0.00076 ┆ 0.00075             ┆ 1.12   ┆ 7    ┆ 475          │
+│ FULL retrieval miss (no copy r… ┆ 216    ┆ 0.39   ┆ 0.00039 ┆ 0.0                 ┆ 1.22   ┆ 4    ┆ 263          │
+│ FULL miss after cascade         ┆ 121    ┆ 0.22   ┆ 0.00022 ┆ 0.0                 ┆ 1.12   ┆ 1    ┆ 135          │
+│ partial recall + FP             ┆ 327    ┆ 0.59   ┆ 0.00019 ┆ 0.00017             ┆ 3.73   ┆ 348  ┆ 346          │
+│ perfect                         ┆ 488282 ┆ 877.33 ┆ 0.0     ┆ 0.0                 ┆ 3.58   ┆ 0    ┆ 0            │
+│ singleton ok                    ┆ 32903  ┆ 59.12  ┆ 0.0     ┆ 0.0                 ┆ 0.0    ┆ 0    ┆ 0            │
+└─────────────────────────────────┴────────┴────────┴─────────┴─────────────────────┴────────┴──────┴──────────────┘
+  total loss 0.00848
+
+RETRIEVAL+CASCADE MISSED true pairs: 18570 (0.9822% of true pairs)
+  of which on S1 where V9 found NO copy: 427 (2.3%);  S1 with n=1: 286
+  marginal F value if each were recovered alone: retrieval/cascade misses 0.00318; decision FNs 0.00259
+  full-miss S1 (no copy retrieved at all): 216 = 0.39/1k S1; with a V9 FP (look-alike accepted instead): 2
+
+DECISION ERRORS by class (value = F gain if that single error were fixed; per holdout S1):
+┌─────┬──────────────────────────┬──────┬─────────┬───────────┬─────────┐
+│ err ┆ cls                      ┆ n    ┆ value   ┆ lost_comp ┆ mean_p3 │
+│ --- ┆ ---                      ┆ ---  ┆ ---     ┆ ---       ┆ ---     │
+│ str ┆ str                      ┆ u32  ┆ f64     ┆ f64       ┆ f32     │
+╞═════╪══════════════════════════╪══════╪═════════╪═══════════╪═════════╡
+│ FN  ┆ other                    ┆ 4690 ┆ 0.00083 ┆ 0.0       ┆ 0.437   │
+│ FP  ┆ other                    ┆ 1399 ┆ 0.00072 ┆ 0.0       ┆ 0.853   │
+│ FN  ┆ identical@num_changed    ┆ 2509 ┆ 0.00057 ┆ 0.001     ┆ 0.398   │
+│ FP  ┆ identical@num_changed    ┆ 818  ┆ 0.00048 ┆ 0.0       ┆ 0.828   │
+│ FP  ┆ no_overlap@same          ┆ 903  ┆ 0.00041 ┆ 0.0       ┆ 0.876   │
+│ FP  ┆ light_edit@same          ┆ 584  ┆ 0.00032 ┆ 0.0       ┆ 0.87    │
+│ FP  ┆ identical@same           ┆ 472  ┆ 0.00028 ┆ 0.0       ┆ 0.871   │
+│ FN  ┆ no_overlap@same          ┆ 1815 ┆ 0.00028 ┆ 0.0       ┆ 0.482   │
+│ FN  ┆ identical@same           ┆ 1404 ┆ 0.00025 ┆ 0.001     ┆ 0.451   │
+│ FN  ┆ swap_extra@same          ┆ 1439 ┆ 0.00022 ┆ 0.0       ┆ 0.483   │
+│ FN  ┆ light_edit@same          ┆ 1340 ┆ 0.00022 ┆ 0.0       ┆ 0.455   │
+│ FP  ┆ identical@empty          ┆ 403  ┆ 0.00019 ┆ 0.0       ┆ 0.906   │
+│ FP  ┆ swap_extra@same          ┆ 306  ┆ 0.00016 ┆ 0.0       ┆ 0.877   │
+│ FP  ┆ identical@other          ┆ 351  ┆ 0.00016 ┆ 0.0       ┆ 0.864   │
+│ FP  ┆ first_word_replaced@same ┆ 210  ┆ 0.00012 ┆ 0.0       ┆ 0.852   │
+│ FN  ┆ identical@other          ┆ 585  ┆ 0.00011 ┆ 0.0       ┆ 0.46    │
+│ FN  ┆ identical@empty          ┆ 418  ┆ 0.00007 ┆ 0.0       ┆ 0.49    │
+│ FN  ┆ first_word_replaced@same ┆ 244  ┆ 0.00004 ┆ 0.004     ┆ 0.43    │
+│ FP  ┆ desc@same                ┆ 1    ┆ 0.0     ┆ 0.0       ┆ 0.718   │
+│ FN  ┆ desc@same                ┆ 4    ┆ 0.0     ┆ 0.0       ┆ 0.385   │
+└─────┴──────────────────────────┴──────┴─────────┴───────────┴─────────┘
+
+DECISION FN by reason: [('record went to another S1 (exclusivity)', 6, 0.0), ('p3<0.5 (scored low)', 7259, 0.00168), ('p3>=0.5 but G cut (set-size)', 7183, 0.00091)]
+python scripts/200_error_budget.py  7.97s user 1.84s system 388% cpu 2.526 total

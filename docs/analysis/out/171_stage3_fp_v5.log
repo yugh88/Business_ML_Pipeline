@@ -1,0 +1,8 @@
+with_fp [('p2', 8348), ('m_max', 1076), ('sdiff', 46), ('p1', 43), ('fp_tok_src', 25), ('n_strong', 15), ('rank_s1', 11), ('tok_eq_s1', 10), ('fp_addr_src', 9), ('fp_tok_osrc', 6), ('ra_empty', 0)]
+no_fp [('p2', 8202), ('m_max', 1215), ('p1', 40), ('sdiff', 35), ('n_strong', 10), ('rank_s1', 9)]
+fold7 base 0.99044 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.15, 'cap': 1}
+fold7 with_fp 0.99081 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+fold7 no_fp 0.99068 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+holdout fold 0: base 0.99057 with_fp 0.99084 no_fp 0.99067
+holdout fold 8: base 0.99053 with_fp 0.99089 no_fp 0.99066
+holdout fold 9: base 0.99057 with_fp 0.99090 no_fp 0.99068

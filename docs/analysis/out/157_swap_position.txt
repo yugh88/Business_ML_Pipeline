@@ -1,0 +1,47 @@
+TRAIN SWAP, same number, non-empty address: truth rate and fingerprint by swapped-word position
+shape: (6, 4)
+┌───────┬───────┬────────┬─────────────┐
+│ where ┆ y     ┆ len    ┆ addr_shared │
+│ ---   ┆ ---   ┆ ---    ┆ ---         │
+│ str   ┆ bool  ┆ u32    ┆ f64         │
+╞═══════╪═══════╪════════╪═════════════╡
+│ first ┆ false ┆ 21297  ┆ 0.169       │
+│ first ┆ true  ┆ 113165 ┆ 0.226       │
+│ last  ┆ false ┆ 7788   ┆ 0.018       │
+│ last  ┆ true  ┆ 138232 ┆ 0.248       │
+│ mid   ┆ false ┆ 624    ┆ 0.054       │
+│ mid   ┆ true  ┆ 61884  ┆ 0.257       │
+└───────┴───────┴────────┴─────────────┘
+shape: (3, 3)
+┌───────┬────────┬───────────┐
+│ where ┆ len    ┆ true_rate │
+│ ---   ┆ ---    ┆ ---       │
+│ str   ┆ u32    ┆ f64       │
+╞═══════╪════════╪═══════════╡
+│ first ┆ 134462 ┆ 0.842     │
+│ last  ┆ 146020 ┆ 0.947     │
+│ mid   ┆ 62508  ┆ 0.99      │
+└───────┴────────┴───────────┘
+FRANCE SWAP, same number: fingerprint by class x position
+shape: (15, 5)
+┌─────────────┬───────┬────────┬─────────────┬──────┐
+│ cls         ┆ where ┆ len    ┆ addr_shared ┆ acc  │
+│ ---         ┆ ---   ┆ ---    ┆ ---         ┆ ---  │
+│ str         ┆ str   ┆ u32    ┆ f64         ┆ f64  │
+╞═════════════╪═══════╪════════╪═════════════╪══════╡
+│ ASSOC_SWAP  ┆ first ┆ 3955   ┆ 0.231       ┆ 0.71 │
+│ ASSOC_SWAP  ┆ last  ┆ 30701  ┆ 0.196       ┆ 0.78 │
+│ ASSOC_SWAP  ┆ mid   ┆ 3106   ┆ 0.197       ┆ 0.9  │
+│ ASSOC_other ┆ first ┆ 520    ┆ 0.217       ┆ 0.65 │
+│ ASSOC_other ┆ last  ┆ 3332   ┆ 0.198       ┆ 0.74 │
+│ ASSOC_other ┆ mid   ┆ 275    ┆ 0.182       ┆ 0.87 │
+│ FR_NOISE?   ┆ first ┆ 394    ┆ 0.17        ┆ 0.67 │
+│ FR_NOISE?   ┆ last  ┆ 33931  ┆ 0.204       ┆ 0.87 │
+│ FR_NOISE?   ┆ mid   ┆ 6581   ┆ 0.212       ┆ 0.94 │
+│ FR_SIB?     ┆ first ┆ 6      ┆ 0.167       ┆ 0.67 │
+│ FR_SIB?     ┆ last  ┆ 59     ┆ 0.085       ┆ 0.37 │
+│ FR_SIB?     ┆ mid   ┆ 18     ┆ 0.056       ┆ 0.11 │
+│ other       ┆ first ┆ 102240 ┆ 0.149       ┆ 0.77 │
+│ other       ┆ last  ┆ 29654  ┆ 0.202       ┆ 0.94 │
+│ other       ┆ mid   ┆ 5284   ┆ 0.208       ┆ 0.97 │
+└─────────────┴───────┴────────┴─────────────┴──────┘

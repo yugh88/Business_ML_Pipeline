@@ -1,0 +1,10 @@
+HOLDOUT validation (V11 final logic as baseline):
+  R1       : adds  1.77/1k S1, precision 0.228 -> holdout F US -0.00003  India -0.00077
+  R2       : adds  0.22/1k S1, precision 1.000 -> holdout F US +0.00005  India +0.00000
+  R3       : adds  3.41/1k S1, precision 0.271 -> holdout F US -0.00056  India -0.00053
+  R1|R2|R3 : adds  5.40/1k S1, precision 0.287 -> holdout F US -0.00054  India -0.00129
+TEST (would add, per 1k S1):
+  US    : R1 0.35  R2 0.33  R3 2.90
+  India : R1 6.45  R2 0.02  R3 3.60
+  France: R1 6.89  R2 4.35  R3 0.57
+python scripts/232_noise_fixes.py  77.55s user 7.56s system 301% cpu 28.220 total

@@ -1,0 +1,9 @@
+HOLDOUT clean F (folds 0/8/9): V10 {'US': 0.9925824602243687, 'India': 0.9898210069195339, 'all': 0.9914796680910162}  (V9: all 0.99152, US 0.99266, India 0.98980)
+   alpha 0.75 tempering: {'US': 0.9924799365359049, 'India': 0.9893819722627202, 'all': 0.9912427580459069}
+LADDER: {'V10': 0.99148, '- all FP': 0.99427, '+ all decision FN': 0.99427, 'perfect on tau-set': 0.99705, 'perfect on p1>=1e-4': 0.99812}
+TEST US: accepted 3371.4/1k, twin excess (+k - -k) -1.22/1k, promoted 44.6/1k
+   alpha 0.75 would remove 9.2/1k and add 4.6/1k on test
+TEST India: accepted 3341.7/1k, twin excess (+k - -k) +3.08/1k, promoted 69.1/1k
+   alpha 0.75 would remove 12.6/1k and add 5.7/1k on test
+TEST France: accepted 3359.9/1k, twin excess (+k - -k) -0.40/1k, promoted 67.8/1k
+python scripts/223_v10_eval.py output_v11s3 work/v8_p2  172.70s user 13.95s system 269% cpu 1:09.32 total

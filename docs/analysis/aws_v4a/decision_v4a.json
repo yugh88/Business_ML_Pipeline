@@ -1,0 +1,2 @@
+{"tau": 0.05, "variant": "p2x2", "policy": "G_expected_f", "a": 1.25, "lam": 0.05, "cap": 1,
+ "why": "fold-7 selection (orphan-simulated train, random 16%): best config at the largest tau within 0.0001 of the best valid F0.5; holdout f0/f8/f9 = 0.98471/0.98472/0.98489, ordinary view 0.98556/0.98552/0.98577"}

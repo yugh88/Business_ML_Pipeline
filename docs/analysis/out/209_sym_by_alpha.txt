@@ -1,0 +1,16 @@
+US     alpha_d=0.75 removed   7.5/1k [+k 2.39 -k 0.09 | +10..99 0.49 -10..99 0.18 | other 4.32]  added  4.1/1k [+k 0.05 -k 0.04]  => twin FPs removed ~2.61, true number-noise copies lost ~0.53
+US     alpha_d=0.6  removed  17.6/1k [+k 6.59 -k 0.26 | +10..99 1.31 -10..99 0.43 | other 9.01]  added  6.8/1k [+k 0.10 -k 0.08]  => twin FPs removed ~7.22, true number-noise copies lost ~1.37
+US     alpha_d=0.5  removed  22.7/1k [+k 8.38 -k 0.34 | +10..99 1.65 -10..99 0.55 | other 11.76]  added  8.9/1k [+k 0.13 -k 0.10]  => twin FPs removed ~9.14, true number-noise copies lost ~1.78
+US     alpha_d=0.4  removed  27.5/1k [+k 9.80 -k 0.44 | +10..99 1.93 -10..99 0.69 | other 14.63]  added 11.2/1k [+k 0.16 -k 0.12]  => twin FPs removed ~10.61, true number-noise copies lost ~2.26
+US     alpha_d=0.3  removed  31.3/1k [+k 11.08 -k 0.51 | +10..99 2.14 -10..99 0.81 | other 16.73]  added 14.1/1k [+k 0.21 -k 0.14]  => twin FPs removed ~11.90, true number-noise copies lost ~2.65
+India  alpha_d=0.75 removed   9.4/1k [+k 1.23 -k 0.22 | +10..99 0.57 -10..99 0.37 | other 7.06]  added  5.6/1k [+k 0.18 -k 0.15]  => twin FPs removed ~1.20, true number-noise copies lost ~1.19
+India  alpha_d=0.6  removed  25.2/1k [+k 4.92 -k 0.65 | +10..99 1.59 -10..99 1.09 | other 16.92]  added 10.0/1k [+k 0.30 -k 0.25]  => twin FPs removed ~4.76, true number-noise copies lost ~3.48
+India  alpha_d=0.5  removed  33.7/1k [+k 7.21 -k 0.88 | +10..99 2.08 -10..99 1.46 | other 22.07]  added 13.7/1k [+k 0.38 -k 0.35]  => twin FPs removed ~6.96, true number-noise copies lost ~4.67
+India  alpha_d=0.4  removed  41.7/1k [+k 9.18 -k 1.07 | +10..99 2.59 -10..99 1.81 | other 27.04]  added 18.2/1k [+k 0.49 -k 0.45]  => twin FPs removed ~8.88, true number-noise copies lost ~5.77
+India  alpha_d=0.3  removed  48.0/1k [+k 10.87 -k 1.23 | +10..99 3.00 -10..99 2.07 | other 30.87]  added 24.1/1k [+k 0.61 -k 0.59]  => twin FPs removed ~10.57, true number-noise copies lost ~6.60
+France alpha_d=0.75 removed  15.8/1k [+k 2.07 -k 0.28 | +10..99 0.37 -10..99 0.23 | other 12.81]  added 14.3/1k [+k 0.02 -k 0.12]  => twin FPs removed ~1.93, true number-noise copies lost ~1.02
+France alpha_d=0.6  removed  32.4/1k [+k 3.96 -k 0.37 | +10..99 0.72 -10..99 0.46 | other 26.94]  added 24.5/1k [+k 0.03 -k 0.25]  => twin FPs removed ~3.85, true number-noise copies lost ~1.66
+France alpha_d=0.5  removed  39.9/1k [+k 4.48 -k 0.42 | +10..99 0.85 -10..99 0.56 | other 33.59]  added 32.4/1k [+k 0.07 -k 0.39]  => twin FPs removed ~4.35, true number-noise copies lost ~1.96
+France alpha_d=0.4  removed  46.6/1k [+k 4.80 -k 0.47 | +10..99 0.98 -10..99 0.65 | other 39.67]  added 40.7/1k [+k 0.11 -k 0.44]  => twin FPs removed ~4.66, true number-noise copies lost ~2.24
+France alpha_d=0.3  removed  51.1/1k [+k 4.93 -k 0.50 | +10..99 1.08 -10..99 0.72 | other 43.81]  added 51.0/1k [+k 0.18 -k 0.57]  => twin FPs removed ~4.78, true number-noise copies lost ~2.46
+python scripts/209_sym_by_alpha.py US,India,France  32.42s user 5.54s system 589% cpu 6.435 total

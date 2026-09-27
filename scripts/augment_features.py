@@ -9,9 +9,10 @@ def _bucket(args):
     from lib import WORK, P, write_parquet_atomic
     from featx import add_extra, EXTRA
     f = P(f"features/{split}/bucket_{b:04d}.parquet")
-    if not os.path.exists(f) or "num_kind" in pl.read_parquet_schema(f):
+    if not os.path.exists(f) or EXTRA[-1] in pl.read_parquet_schema(f):
         return
     d = pl.read_parquet(f)
+    d = d.drop([c for c in EXTRA if c in d.columns])            # v8: recompute every EXTRA column (old buckets have only v3's)
     ng = lambda s: os.path.join(WORK, "normalized", f"{split}_s{s}", "*.parquet")
     s1 = pl.scan_parquet(ng(1)).select(pl.col("entity_id").alias("s1"), pl.col("n").alias("n_1"), pl.col("pnum1").alias("pnum1_1")) \
            .join(d.lazy().select("s1").unique(), on="s1", how="semi").collect()

@@ -1,0 +1,2 @@
+{"tau": 0.02, "variant": "p2", "policy": "G_expected_f", "a": 1.0, "lam": 0.0, "cap": 1,
+ "why": "fold-7 selection: largest tau within 0.0001 of best valid F0.5 (0.97881 at tau 0.02, 4.46 cands/S1); G a=1.0 lam=0 best; per-source cap kept as data-derived safety (valid effect +0.00001)"}

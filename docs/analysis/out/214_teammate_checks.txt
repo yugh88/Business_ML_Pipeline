@@ -1,0 +1,12 @@
+(A) holdout true pairs NOT retrieved: 11814 (0.625% of true pairs)
+   by pool address: [('empty', 0.63), ('diff', 0.333), ('same', 0.037)]
+   by name relation: [('N0_identical', 0.254), ('N6_word_swap', 0.245), ('N7_no_overlap', 0.208), ('N5_typo_subst', 0.107), ('N3_extra_other', 0.059), ('N2_extra_DESCRIPTOR', 0.047), ('N1_extra_noise', 0.037), ('N4_dropped_words', 0.022), ('N6_word_swap_DESC', 0.021)]
+   identical core name but missed: 3001  of which the core name is shared by >=5 S1: 2970
+   no shared word AND char similarity < 0.5 (only a semantic/dense retriever could link): 868
+
+(B) holdout S1 with accepted copies in ONE source only: 85523 (15.4% of S1)
+   of these, S1 that truly have a copy in the OTHER source: 6243 (7.3%); such copies: 6698
+   closure rule [exact name+addr equal to an accepted copy]: adds 5165 (true 1682, precision 0.326) -> holdout F -0.00151
+   closure rule [name token-set >= 0.9 to an accepted copy]: adds 6078 (true 1970, precision 0.324) -> holdout F -0.00181
+   closure rule [best other-source candidate with p3 >= 0.3]: adds 3145 (true 2083, precision 0.662) -> holdout F -0.00022
+python scripts/214_teammate_checks.py  11.02s user 1.64s system 252% cpu 5.019 total

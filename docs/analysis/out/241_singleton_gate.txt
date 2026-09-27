@@ -1,0 +1,5 @@
+[p3] holdout 0/8/9: S1 556554, singletons 33504, singleton+FP (upper bound pool) 730 = max gain +0.00131
+  t=0.48 (fold-7 choice): gated 510 S1 (244 truly singleton) -> holdout F change US -0.00006 India +0.00003
+  t=0.50: gated 478 S1 (231 truly singleton) -> holdout F change US -0.00004 India +0.00003
+  t=0.70: gated 207 S1 (103 truly singleton) -> holdout F change US -0.00002 India +0.00005
+  t=0.90: gated 27 S1 (16 truly singleton) -> holdout F change US +0.00001 India +0.00001

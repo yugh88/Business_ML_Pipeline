@@ -1,0 +1,24 @@
+shape: (9, 8)
+┌────────────┬────────────┬────────┬──────┬────────┬───────────┬──────────────┬────────────────┐
+│ script     ┆ true_pairs ┆ tp     ┆ fp   ┆ recall ┆ precision ┆ test_records ┆ test_pred_rate │
+│ ---        ┆ ---        ┆ ---    ┆ ---  ┆ ---    ┆ ---       ┆ ---          ┆ ---            │
+│ str        ┆ u32        ┆ u32    ┆ u32  ┆ f64    ┆ f64       ┆ u32          ┆ f64            │
+╞════════════╪════════════╪════════╪══════╪════════╪═══════════╪══════════════╪════════════════╡
+│ latin_name ┆ 617653     ┆ 601618 ┆ 3268 ┆ 0.974  ┆ 0.9946    ┆ 3864052      ┆ 0.5776         │
+│ devanagari ┆ 79206      ┆ 78514  ┆ 169  ┆ 0.9913 ┆ 0.9979    ┆ 490171       ┆ 0.5734         │
+│ telugu     ┆ 11715      ┆ 11588  ┆ 16   ┆ 0.9892 ┆ 0.9986    ┆ 71869        ┆ 0.5744         │
+│ kannada    ┆ 10865      ┆ 10692  ┆ 20   ┆ 0.9841 ┆ 0.9981    ┆ 69738        ┆ 0.5619         │
+│ tamil      ┆ 10141      ┆ 10032  ┆ 35   ┆ 0.9893 ┆ 0.9965    ┆ 61761        ┆ 0.5719         │
+│ bengali    ┆ 8961       ┆ 8839   ┆ 19   ┆ 0.9864 ┆ 0.9979    ┆ 56418        ┆ 0.5734         │
+│ gujarati   ┆ 9264       ┆ 9190   ┆ 20   ┆ 0.992  ┆ 0.9978    ┆ 55891        ┆ 0.5694         │
+│ malayalam  ┆ 5513       ┆ 5491   ┆ 6    ┆ 0.996  ┆ 0.9989    ┆ 35128        ┆ 0.5772         │
+│ gurmukhi   ┆ 2084       ┆ 2081   ┆ 3    ┆ 0.9986 ┆ 0.9986    ┆ 12537        ┆ 0.5682         │
+└────────────┴────────────┴────────┴──────┴────────┴───────────┴──────────────┴────────────────┘
+
+Telugu examples (train, correctly matched): S1 name | raw copy name -> normalized
+  Balaji Investment Private Limited | బాలాజీ ఇన్వెస్ట్‌మెంట్ ప్రైవేట్ లిమిటెడ్ -> balaji investment private limited
+  White Industries Private Limited | వైట్ ఇండస్ట్రీస్ ప్రైవేట్ లిమిటెడ్ -> white industries private limited
+  Best Good Products Private Limited | బెస్ట్ గుడ్ ప్రొడక్ట్స్ ప్రైవేట్ లిమిటెడ్ -> best good products private limited
+  Ss Star Investment Private Limited | ఎస్‌ఎస్ స్టార్ ఇన్వెస్ట్‌మెంట్ ప్రైవేట్ లిమిటెడ్ -> ss star investment private limited
+  Ss Star Investment Private Limited | ఎస్‌ఎస్ స్టార్ ఇన్వెస్ట్‌మెంట్ ప్రైవేట్ లిమిటెడ్ -> ss star investment private limited
+  Ss Star Investment Private Limited | ఎస్‌ఎస్ స్టార్ ఇన్వెస్ట్‌మెంట్ ప్రైవేట్ లిమిటెడ్ -> ss star investment private limited

@@ -1,0 +1,55 @@
+HOLDOUT US             S1  317918 | weak accept (<0.9) 0.0434 | tight margin (<0.2) 0.0079 | S1 with a 0.2-0.8 candidate 0.0520 | mean p3 accepted 0.9954 | k=1 share 0.0638 | k=0 share 0.0121
+HOLDOUT India          S1  212390 | weak accept (<0.9) 0.0496 | tight margin (<0.2) 0.0056 | S1 with a 0.2-0.8 candidate 0.0624 | mean p3 accepted 0.9946 | k=1 share 0.0655 | k=0 share 0.0168
+TEST US                S1  632556 | weak accept (<0.9) 0.0472 | tight margin (<0.2) 0.0100 | S1 with a 0.2-0.8 candidate 0.0695 | mean p3 accepted 0.9950 | k=1 share 0.0631 | k=0 share 0.0118
+TEST India             S1  776595 | weak accept (<0.9) 0.0602 | tight margin (<0.2) 0.0077 | S1 with a 0.2-0.8 candidate 0.0905 | mean p3 accepted 0.9937 | k=1 share 0.0661 | k=0 share 0.0171
+TEST France            S1  251848 | weak accept (<0.9) 0.1198 | tight margin (<0.2) 0.0162 | S1 with a 0.2-0.8 candidate 0.1584 | mean p3 accepted 0.9878 | k=1 share 0.0720 | k=0 share 0.0241
+flip v5->v5s3r per 1k S1: {'US': 53.3, 'India': 100.4, 'France': 90.9}
+flip v5s3r->v9 per 1k S1: {'US': 48.2, 'India': 65.3, 'France': 106.3}
+==== US: mid-probability (0.2-0.8) candidates: 49362 in 43959 S1
+  name relation: [('N0_identical', 0.43), ('N6_word_swap', 0.207), ('N7_no_overlap', 0.119), ('N5_typo_subst', 0.119), ('N4_dropped_words', 0.053), ('N3_extra_other', 0.049), ('N1_extra_noise', 0.023), ('N2_extra_DESCRIPTOR', 0.0), ('N6_word_swap_DESC', 0.0)]
+  address relation: [('A1_same_num', 0.333), ('A2_num_other_sameStreet', 0.182), ('A3_empty', 0.123), ('A2_num_1digit_sameStreet', 0.094), ('A2_num_trunc_sameStreet', 0.069), ('A2_num_other_diffStreet', 0.058), ('A4_different', 0.056), ('A0_identical', 0.04)]
+==== France: mid-probability (0.2-0.8) candidates: 48153 in 39898 S1
+  name relation: [('N0_identical', 0.247), ('N7_no_overlap', 0.246), ('N6_word_swap', 0.229), ('N6_word_swap_DESC', 0.087), ('N3_extra_other', 0.074), ('N2_extra_DESCRIPTOR', 0.051), ('N5_typo_subst', 0.043), ('N4_dropped_words', 0.022), ('N1_extra_noise', 0.002)]
+  address relation: [('A1_same_num', 0.66), ('A0_identical', 0.079), ('A4_different', 0.076), ('A3_empty', 0.058), ('A2_num_1digit_sameStreet', 0.056), ('A2_num_other_sameStreet', 0.04), ('A2_num_1digit_diffStreet', 0.012), ('A2_num_other_diffStreet', 0.009)]
+  p3=0.44 N7_no_overlap/A0_identical
+     S1 Studio Sante SAS | 88 Rue Decrême, Roubaix, Hauts-de-France
+     ?  Gildveraaria | 88 Rue Decrême, Roubaix, Hauts-de-France
+  p3=0.41 N3_extra_other/A1_same_num
+     S1 YU Comite | 8 A Rue du Minon, Mérignac, Nouvelle-Aquitaine
+     ?  YU Çomite SCI | 19a Rue Du Minon, Mérignac
+  p3=0.75 N7_no_overlap/A1_same_num
+     S1 Arts Culturelle SA | 18 Rue de Lodi, Tourcoing, Hauts-de-France
+     ?  AC | Tourcoing, 18 R De Lodi, Nord
+  p3=0.58 N4_dropped_words/A2_num_1digit_sameStreet
+     S1 Socio Compagnie SCI | 7 Rue Pierre et Jean Dervaux, Tourcoing, Hauts-de-France
+     ?  Socio & Compagnie SASU | # 6 Rue Pierre Et Jean Dervaux, Tourcoing, Nord
+  p3=0.61 N3_extra_other/A3_empty
+     S1 RWB Club SAS | 1 PL Bardineau, Bordeaux, Nouvelle-Aquitaine
+     ?  RWB Club S.A.S | 
+  p3=0.38 N2_extra_DESCRIPTOR/A4_different
+     S1 Calais Gestion | 258 Rue Dolain, Calais, Hauts-de-France
+     ?  Calais Gestion France | N°279 R DOLAIN, CALAIS
+  p3=0.77 N0_identical/A1_same_num
+     S1 Transit Lycee SARL | 9 Rue des Chataigniers, Pornic, Pays de la Loire
+     ?  Transit Lycee | R. DES CHATAIGNIERS, PORNIC
+  p3=0.38 N6_word_swap_DESC/A1_same_num
+     S1 La Baule-Escoublac Club | 27 Boulevard de la Forêt, La Baule-Escoublac, Pays de la Loire
+     ?  La Club Et Fils | 27 BOULEVARD DE LA FORET, LA BAULE-ESCOUBLAC, Loire-Atlantique
+  p3=0.47 N6_word_swap/A1_same_num
+     S1 Communaute Loisirs SARL | 4 Rue Surcouf, Nantes, Pays de la Loire
+     ?  Communaute Sport S.A.R.L. | Loire-Atlantique, N°15 RUE SURCOUF, NANTES
+  p3=0.39 N6_word_swap/A1_same_num
+     S1 Duo Amis SAS | 9 RUE du plat, Lille, Hauts-de-France
+     ?  Duo Compagnie | N°9 Rue Du Plat, Lille
+  p3=0.29 N7_no_overlap/A1_same_num
+     S1 Souriant & Frères | 37 Rue Jean-Pierre Marie Bouron, Bordeaux, Nouvelle-Aquitaine
+     ?  Fluxpyra | Bordeaux, 37 Rue Jean-pierre Marie Bouron
+  p3=0.69 N4_dropped_words/A0_identical
+     S1 PO Club SA | 4 Square Verly, Mérignac, Nouvelle-Aquitaine
+     ?  Club | 4 Square Verly, Mérignac, Nouvelle-Aquitaine
+  p3=0.74 N7_no_overlap/A1_same_num
+     S1 Fédération des Bois | 105 Rue Rachel Lempereur, Lille, Hauts-de-France
+     ?  FB | 105 R RACHEL LEMPEREUR, Lille
+  p3=0.33 N6_word_swap/A4_different
+     S1 Monts Prix Federation | 9 B Cours Édouard Vaillant, Bordeaux, Nouvelle-Aquitaine
+     ?  Monts  Prix Societe | 16b Crs Édouard Vaillant, Bordeaux, Gironde

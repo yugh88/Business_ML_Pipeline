@@ -1,0 +1,7 @@
+HOLDOUT clean  V9 [0.9915, 0.9916, 0.99144] {'US': 0.99266, 'India': 0.9898}
+               V11 [0.99148, 0.99153, 0.99143] {'US': 0.99258, 'India': 0.98982}
+       V11 a0.75 [0.99123, 0.99133, 0.99117] {'US': 0.99248, 'India': 0.98938}
+US: alpha 0.75 test changes -9.2/+4.6 per 1k; holdout-referenced value +0.00051, holdout cost -0.00010 -> use alpha 0.75
+India: alpha 0.75 test changes -12.6/+5.7 per 1k; holdout-referenced value +0.00035, holdout cost -0.00044 -> use alpha 0.75
+written output_v11pre 5805459 pairs {'US': 0.75, 'India': 0.75, 'France': 1.0}
+python scripts/229_v11_finalize.py output_v11s3 output_v11pre  116.66s user 11.07s system 523% cpu 24.407 total

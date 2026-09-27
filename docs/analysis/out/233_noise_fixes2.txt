@@ -1,0 +1,8 @@
+HOLDOUT validation:
+  R3b  (add):  0.22/1k S1, correct-share 1.000 -> holdout F US +0.00003 India +0.00001
+  R4   (add):  1.16/1k S1, correct-share 0.485 -> holdout F US -0.00013 India -0.00003
+  R5   (remove):  1.39/1k S1, correct-share 0.080 -> holdout F US +0.00004 India -0.00033
+TEST US    : R3b add 0.06/1k, R4 add 1.60/1k, R5 remove 0.74/1k
+TEST India : R3b add 0.11/1k, R4 add 1.22/1k, R5 remove 2.84/1k
+TEST France: R3b add 0.29/1k, R4 add 2.39/1k, R5 remove 0.90/1k
+python scripts/233_noise_fixes2.py  189.47s user 12.48s system 153% cpu 2:11.45 total

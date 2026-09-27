@@ -1,0 +1,11 @@
+TRAIN India pool records by script: n, share, true-copy (matched to some S1) rate
+[('latin', 2610633, 0.7474, 0.6316), ('addr_only_indic', 769844, 0.7242, 0.1863), ('name_devanagari', 427427, 0.7316, 0.1034), ('name_other_indic', 325442, 0.7329, 0.0787)]
+
+V5 holdout (India): recall on true pairs / precision of predictions, by script of the pool record
+[('latin', 476666, 462911, 2460, 0.9711, 0.9947), ('addr_only_indic', 138853, 136589, 808, 0.9837, 0.9941), ('name_devanagari', 79206, 78514, 169, 0.9913, 0.9979), ('name_other_indic', 60677, 60031, 119, 0.9894, 0.998)]
+
+missed true pairs by script and reason:
+[('addr_only_indic', 'scored_rejected', 1559), ('addr_only_indic', 'not_cand', 407), ('addr_only_indic', 'p1<tau', 298), ('latin', 'scored_rejected', 6157), ('latin', 'not_cand', 4712), ('latin', 'p1<tau', 2886), ('name_devanagari', 'not_cand', 386), ('name_devanagari', 'scored_rejected', 204), ('name_devanagari', 'p1<tau', 102), ('name_other_indic', 'not_cand', 272), ('name_other_indic', 'scored_rejected', 237), ('name_other_indic', 'p1<tau', 137)]
+
+TEST India pool records by script: n, share, predicted-as-match rate (V7)  [compare train copy_rate]
+[('latin', 2960382, 0.5791, 0.6275), ('addr_only_indic', 889938, 0.5726, 0.1886), ('name_devanagari', 490171, 0.5734, 0.1039), ('name_other_indic', 377074, 0.5709, 0.0799)]

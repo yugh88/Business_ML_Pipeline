@@ -1,0 +1,38 @@
+train pairs 200000 (hard 120000, easy 80000), positive rate 0.767
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 12216.84it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Key               | Status  | 
+------------------+---------+-
+classifier.bias   | MISSING | 
+classifier.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  step 0/6250 loss 0.7293 27 pairs/s
+  step 300/6250 loss 0.5176 184 pairs/s
+  step 600/6250 loss 0.4815 186 pairs/s
+  step 900/6250 loss 0.4216 187 pairs/s
+  step 1200/6250 loss 0.5276 188 pairs/s
+  step 1500/6250 loss 0.2975 188 pairs/s
+  step 1800/6250 loss 0.2504 187 pairs/s
+  step 2100/6250 loss 0.3422 187 pairs/s
+  step 2400/6250 loss 0.4640 187 pairs/s
+  step 2700/6250 loss 0.4686 187 pairs/s
+  step 3000/6250 loss 0.2994 187 pairs/s
+  step 3300/6250 loss 0.3303 186 pairs/s
+  step 3600/6250 loss 0.4897 186 pairs/s
+  step 3900/6250 loss 0.2574 186 pairs/s
+  step 4200/6250 loss 0.2911 186 pairs/s
+  step 4500/6250 loss 0.3125 187 pairs/s
+  step 4800/6250 loss 0.2121 186 pairs/s
+  step 5100/6250 loss 0.4805 186 pairs/s
+  step 5400/6250 loss 0.2398 186 pairs/s
+  step 5700/6250 loss 0.3214 186 pairs/s
+  step 6000/6250 loss 0.2931 186 pairs/s
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.51it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  2.51it/s]
+train 1228s total; eval done
+band AUC: p3 0.9449  cross-encoder alone 0.9012
+  stack with_ce=False: log-loss 0.25784  AUC 0.9467  errors@0.5 9390
+  stack with_ce=True: log-loss 0.17716  AUC 0.9744  errors@0.5 6394
+decision flips: 6138; fixed 4567, broken 1571 (folds 8/9 band, n=94820)

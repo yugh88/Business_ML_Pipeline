@@ -1,0 +1,4 @@
+TRAIN pool: identical (ncore,a) groups size>=2 [truth]: [('India', 208926, 452395, 74, 0.04), ('US', 313174, 675738, 958, 0.31)]
+TEST pool: identical (ncore,a) groups size>=2 [v2 predictions]: [('France', 92287, 211579, 291, 0.32), ('India', 194536, 421023, 1250, 0.64), ('US', 171642, 367852, 4403, 2.57)]
+pool matched rate: train truth / test predicted: [(0.7319399567092276, 0.628532031310944)]
+group-size>=2 share of pool: train / test: [(0.11309223067774359, 0.10309619157214546)]

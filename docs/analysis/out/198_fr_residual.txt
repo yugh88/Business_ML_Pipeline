@@ -1,0 +1,85 @@
+BASELINES fingerprint-shared: French identical-name same-address accepted = 0.222;  sibling words (+holding/+participations/…) = 0.000 (n=3, V9 acc 0.000)
+┌──────────────────────────┬───────┬───────┬───────┬────────────┬────────────┬───────┬──────────────────────┐
+│ diff                     ┆ n     ┆ acc   ┆ p3    ┆ shared_acc ┆ shared_rej ┆ n_rej ┆ rej_S1_has_other_acc │
+│ ---                      ┆ ---   ┆ ---   ┆ ---   ┆ ---        ┆ ---        ┆ ---   ┆ ---                  │
+│ str                      ┆ u32   ┆ f64   ┆ f32   ┆ f64        ┆ f64        ┆ u32   ┆ f64                  │
+╞══════════════════════════╪═══════╪═══════╪═══════╪════════════╪════════════╪═══════╪══════════════════════╡
+│ +developpement           ┆ 2483  ┆ 0.589 ┆ 0.63  ┆ 0.189      ┆ 0.055      ┆ 1020  ┆ 0.924                │
+│ +groupe                  ┆ 2526  ┆ 0.602 ┆ 0.645 ┆ 0.202      ┆ 0.057      ┆ 1006  ┆ 0.942                │
+│ +s                       ┆ 20391 ┆ 0.954 ┆ 0.952 ┆ 0.225      ┆ 0.211      ┆ 935   ┆ 0.959                │
+│ +france                  ┆ 2417  ┆ 0.62  ┆ 0.659 ┆ 0.187      ┆ 0.052      ┆ 919   ┆ 0.955                │
+│ +sci                     ┆ 8271  ┆ 0.894 ┆ 0.892 ┆ 0.214      ┆ 0.181      ┆ 880   ┆ 0.952                │
+│ -sci                     ┆ 4525  ┆ 0.919 ┆ 0.925 ┆ 0.236      ┆ 0.011      ┆ 366   ┆ 0.94                 │
+│ +e r u                   ┆ 5322  ┆ 0.944 ┆ 0.936 ┆ 0.213      ┆ 0.31       ┆ 300   ┆ 0.96                 │
+│ +r s                     ┆ 7801  ┆ 0.979 ┆ 0.978 ┆ 0.228      ┆ 0.006      ┆ 163   ┆ 0.933                │
+│ +s u                     ┆ 3359  ┆ 0.956 ┆ 0.952 ┆ 0.233      ┆ 0.121      ┆ 149   ┆ 0.96                 │
+│ -ei                      ┆ 2208  ┆ 0.933 ┆ 0.937 ┆ 0.234      ┆ 0.048      ┆ 147   ┆ 0.973                │
+│ club -> ecole            ┆ 374   ┆ 0.706 ┆ 0.713 ┆ 0.216      ┆ 0.027      ┆ 110   ┆ 0.936                │
+│ ecole -> club            ┆ 338   ┆ 0.675 ┆ 0.689 ┆ 0.206      ┆ 0.064      ┆ 110   ┆ 0.918                │
+│ club -> services         ┆ 617   ┆ 0.843 ┆ 0.844 ┆ 0.204      ┆ 0.052      ┆ 97    ┆ 0.928                │
+│ club -> developpement    ┆ 494   ┆ 0.814 ┆ 0.837 ┆ 0.241      ┆ 0.087      ┆ 92    ┆ 1.0                  │
+│ -club                    ┆ 747   ┆ 0.884 ┆ 0.885 ┆ 0.165      ┆ 0.011      ┆ 87    ┆ 0.966                │
+│ sci -> c i s             ┆ 2618  ┆ 0.967 ┆ 0.967 ┆ 0.222      ┆ 0.276      ┆ 87    ┆ 0.989                │
+│ +c i s                   ┆ 88    ┆ 0.159 ┆ 0.272 ┆ 0.0        ┆ 0.014      ┆ 74    ┆ 0.986                │
+│ comite -> club           ┆ 263   ┆ 0.719 ┆ 0.755 ┆ 0.28       ┆ 0.054      ┆ 74    ┆ 0.959                │
+│ club -> amicale          ┆ 322   ┆ 0.804 ┆ 0.818 ┆ 0.266      ┆ 0.063      ┆ 63    ┆ 0.968                │
+│ ecole -> comite          ┆ 175   ┆ 0.646 ┆ 0.675 ┆ 0.265      ┆ 0.016      ┆ 62    ┆ 0.935                │
+│ ecole -> services        ┆ 361   ┆ 0.828 ┆ 0.834 ┆ 0.237      ┆ 0.048      ┆ 62    ┆ 0.952                │
+│ comite -> ecole          ┆ 167   ┆ 0.629 ┆ 0.637 ┆ 0.219      ┆ 0.016      ┆ 62    ┆ 0.903                │
+│ club -> groupe           ┆ 590   ┆ 0.897 ┆ 0.907 ┆ 0.267      ┆ 0.098      ┆ 61    ┆ 0.967                │
+│ club -> service          ┆ 100   ┆ 0.4   ┆ 0.411 ┆ 0.25       ┆ 0.0        ┆ 60    ┆ 0.833                │
+│ club -> associes         ┆ 432   ┆ 0.863 ┆ 0.881 ┆ 0.247      ┆ 0.288      ┆ 59    ┆ 0.966                │
+│ club -> comite           ┆ 281   ┆ 0.794 ┆ 0.801 ┆ 0.309      ┆ 0.017      ┆ 58    ┆ 0.914                │
+│ club -> cie              ┆ 562   ┆ 0.897 ┆ 0.906 ┆ 0.248      ┆ 0.069      ┆ 58    ┆ 0.931                │
+│ +c n s                   ┆ 72    ┆ 0.194 ┆ 0.371 ┆ 0.0        ┆ 0.0        ┆ 58    ┆ 0.897                │
+│ amicale -> club          ┆ 260   ┆ 0.781 ┆ 0.807 ┆ 0.276      ┆ 0.07       ┆ 57    ┆ 0.93                 │
+│ +5arl                    ┆ 414   ┆ 0.867 ┆ 0.892 ┆ 0.162      ┆ 0.727      ┆ 55    ┆ 1.0                  │
+│ ei -> e i                ┆ 1258  ┆ 0.956 ┆ 0.956 ┆ 0.215      ┆ 0.218      ┆ 55    ┆ 0.982                │
+│ -du                      ┆ 1120  ┆ 0.951 ┆ 0.953 ┆ 0.197      ┆ 0.036      ┆ 55    ┆ 0.945                │
+│ -de                      ┆ 1418  ┆ 0.962 ┆ 0.964 ┆ 0.195      ┆ 0.019      ┆ 54    ┆ 0.981                │
+│ amicale -> services      ┆ 338   ┆ 0.84  ┆ 0.853 ┆ 0.225      ┆ 0.056      ┆ 54    ┆ 0.944                │
+│ -ecole                   ┆ 419   ┆ 0.871 ┆ 0.872 ┆ 0.175      ┆ 0.0        ┆ 54    ┆ 0.889                │
+│ club -> france           ┆ 483   ┆ 0.888 ┆ 0.902 ┆ 0.238      ┆ 0.093      ┆ 54    ┆ 1.0                  │
+│ amicale -> developpement ┆ 282   ┆ 0.816 ┆ 0.837 ┆ 0.278      ┆ 0.058      ┆ 52    ┆ 0.962                │
+│ college -> ecole         ┆ 139   ┆ 0.633 ┆ 0.652 ┆ 0.273      ┆ 0.059      ┆ 51    ┆ 0.941                │
+│ amicale -> amis          ┆ 132   ┆ 0.621 ┆ 0.633 ┆ 0.171      ┆ 0.02       ┆ 50    ┆ 0.94                 │
+│ +ei                      ┆ 53    ┆ 0.057 ┆ 0.102 ┆ 0.0        ┆ 0.04       ┆ 50    ┆ 0.96                 │
+│ ecole -> amicale         ┆ 170   ┆ 0.712 ┆ 0.744 ┆ 0.223      ┆ 0.082      ┆ 49    ┆ 0.959                │
+│ amicale -> ecole         ┆ 172   ┆ 0.715 ┆ 0.732 ┆ 0.244      ┆ 0.061      ┆ 49    ┆ 0.918                │
+│ centre -> club           ┆ 159   ┆ 0.698 ┆ 0.73  ┆ 0.297      ┆ 0.125      ┆ 48    ┆ 0.979                │
+│ club -> sportive         ┆ 188   ┆ 0.75  ┆ 0.779 ┆ 0.262      ┆ 0.085      ┆ 47    ┆ 0.915                │
+│ +associes                ┆ 1387  ┆ 0.966 ┆ 0.966 ┆ 0.222      ┆ 0.255      ┆ 47    ┆ 0.979                │
+└──────────────────────────┴───────┴───────┴───────┴────────────┴────────────┴───────┴──────────────────────┘
+  [+s] rejected p3=0.70 other_acc=5:  'Villemomble College SAS'  vs  'Villemomble College S.A.S.'
+  [+s] rejected p3=0.00 other_acc=2:  'Bordeaux Compagnie EURL'  vs  'Bordeaux Compagnie S.A.S'
+  [+s] rejected p3=0.03 other_acc=2:  'Lille Theatre SA'  vs  'Lille Theatre S.A.'
+  [+s] rejected p3=0.04 other_acc=2:  'Lille Theatre SA'  vs  'Lille Theatre S.A.'
+  [+sci] rejected p3=0.41 other_acc=4:  'Clinique de la Jacques'  vs  'Clinique De La Jacques SCI'
+  [+sci] rejected p3=0.20 other_acc=0:  'Relais Fetes SARL'  vs  'SCI Relais Fetes'
+  [+sci] rejected p3=0.04 other_acc=4:  'Nantes Sport SARL'  vs  'Nantes Sport SCI'
+  [+sci] rejected p3=0.65 other_acc=4:  'Serge Sante'  vs  'Serge-Sante SCI'
+  [-sci] rejected p3=0.31 other_acc=2:  'Dunkerque Amis SCI'  vs  'DUNKERQUE AMIS'
+  [-sci] rejected p3=0.00 other_acc=1:  'Lille Amicale SCI'  vs  'Lille Amicale SARL'
+  [-sci] rejected p3=0.00 other_acc=1:  'Lille Amicale SCI'  vs  'Lille Amicale  EURL'
+  [-sci] rejected p3=0.00 other_acc=1:  'Lille Amicale SCI'  vs  'Lille Amicale Sarl'
+  [+e r u] rejected p3=0.00 other_acc=6:  'Bordeaux Ecole SARL'  vs  'Bordeaux-Ecole E.U.R.L.'
+  [+e r u] rejected p3=0.13 other_acc=3:  '4x4 Club EURL'  vs  '4x4 Club E.U.R.L.'
+  [+e r u] rejected p3=0.56 other_acc=2:  'Nantes Anciens EURL'  vs  'Nantes Anciens E.U.R.L.'
+  [+e r u] rejected p3=0.01 other_acc=4:  'Mérignac Gestion EURL'  vs  'Mérignac Gestion E.U.R.L.'
+  [+ei] rejected p3=0.00 other_acc=4:  'Nantes Foyer SAS'  vs  'Nantes Foyer EI'
+  [+ei] rejected p3=0.00 other_acc=2:  'Lille Compagnie SARL'  vs  'LILLE COMPAGNIE EI'
+  [+ei] rejected p3=0.00 other_acc=2:  'Familiale Groupement SAS'  vs  'Familiale Groupement  EI'
+  [+ei] rejected p3=0.35 other_acc=3:  'Lille Club SARL'  vs  'Lille Club EI'
+  [+developpement] rejected p3=0.03 other_acc=3:  'Fédération du Lecole'  vs  'Fédération du Lecole Développement'
+  [+developpement] rejected p3=0.13 other_acc=3:  'Cani & Frères SARL'  vs  'Cani & Frères Développement SARL'
+  [+developpement] rejected p3=0.02 other_acc=3:  'Independanse Ecole SAS'  vs  'Independanse Ecole Développement SAS'
+  [+developpement] rejected p3=0.37 other_acc=1:  'Boule Federation SARL'  vs  'Boule Federation Développement SARL'
+  [+groupe] rejected p3=0.01 other_acc=1:  'Lille Club SARL'  vs  'Lille Club Groupe SARL'
+  [+groupe] rejected p3=0.00 other_acc=0:  'Nantes Ateliers SARL'  vs  'Nantes Ateliers Groupe SAS'
+  [+groupe] rejected p3=0.11 other_acc=0:  'Relais Fetes SARL'  vs  'Relais Fetes Groupe SARL'
+  [+groupe] rejected p3=0.04 other_acc=2:  'Bordeaux Lycée'  vs  'Bordeaux Lycée Groupe'
+  [+france] rejected p3=0.00 other_acc=4:  'Dunkerque Amicale SAS'  vs  'dunkerque amicale france sas'
+  [+france] rejected p3=0.02 other_acc=3:  'Team & Frères'  vs  'team & frères france'
+  [+france] rejected p3=0.20 other_acc=2:  'Chapelle Musique SARL'  vs  'Chapelle Musique France SARL'
+  [+france] rejected p3=0.11 other_acc=0:  'Bordeaux Club EURL'  vs  'Bordeaux Club France [EURL]'
+python scripts/198_fr_residual.py  13.24s user 1.24s system 706% cpu 2.051 total

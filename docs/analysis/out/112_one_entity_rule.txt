@@ -1,0 +1,3 @@
+TRAIN truth: S1 with >=3 numbered matches=1333468  share with >=2 SUPPORTED distinct numbers (each >=2 records) = 0.0910
+TRAIN V5 predictions (holdout folds): S1 with >=3 numbered matches=332635  share with >=2 SUPPORTED distinct numbers (each >=2 records) = 0.0896
+TEST V6 predictions: S1 with >=3 numbered matches=1041521  share with >=2 SUPPORTED distinct numbers (each >=2 records) = 0.0905

@@ -1,0 +1,19 @@
+==================== A. T2-type rule on the holdout: V9-rejected identical-name SAME-number / no-number candidates, S1 with >=1 accepted copy
+  [identical-name same number, non-empty S1] adds 21.3/1k, precision 0.059 -> holdout F US -0.00090 India -0.00809
+  [identical-name no number, non-empty S1] adds 184.4/1k, precision 0.021 -> holdout F US -0.02216 India -0.03269
+  [... same number, p3 >= 0.3] adds 1.5/1k, precision 0.521 -> holdout F US -0.00003 India -0.00020
+  T2 French additions with fingerprint info 689: fingerprint 0.000 (French copy baseline 0.222, look-alike siblings ~0.01), mean V9 p3 0.278
+==================== B. T1 removal rule = cap 7 matches per S1, replayed on the holdout
+  [drop lowest-p3 beyond 7 (favourable)] removes 10.54/1k (true 0.983) -> holdout F US -0.00027 India -0.00026
+  [drop random beyond 7] removes 10.54/1k (true 0.996) -> holdout F US -0.00029 India -0.00028
+  holdout S1 with >= 8 true copies: 0.96%
+==================== C. T1 +k additions with smarter selections (holdout)
+  [top-1 +k per S1 by p3] adds 20.1/1k, precision 0.086 -> holdout F US -0.00634 India -0.00399
+  [+k with p3 >= 0.1] adds 3.6/1k, precision 0.401 -> holdout F US -0.00059 India -0.00046
+  [+k with p3 >= 0.3] adds 1.8/1k, precision 0.599 -> holdout F US -0.00010 India -0.00013
+  [+k with p3 >= 0.5] adds 0.9/1k, precision 0.736 -> holdout F US -0.00002 India -0.00000
+==================== D. simulator with offset-calibrated truth for identical-name +/-k pairs (teammate-favourable)
+  T1: V9 p3 truth: total -0.01280 (US -0.01664, India -0.00956, France -0.01308) -> LB 0.9642 | offset-calibrated truth: total -0.01276 (US -0.01659, India -0.00953, France -0.01304) -> LB 0.9642
+  T2: V9 p3 truth: total -0.00121 (US -0.00012, India -0.00161, France -0.00277) -> LB 0.9758 | offset-calibrated truth: total -0.00121 (US -0.00012, India -0.00161, France -0.00277) -> LB 0.9758
+  T1 France-optimistic: V9 p3 truth: total -0.01280 (US -0.01664, India -0.00956, France -0.01308) -> LB 0.9642 | offset-calibrated truth: total -0.01128 (US -0.01659, India -0.00953, France -0.00317) -> LB 0.9657
+python scripts/226_adversarial_followup.py  108.99s user 10.32s system 168% cpu 1:10.61 total

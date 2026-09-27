@@ -1,0 +1,72 @@
+V13 5804564 pairs; rule-added pairs 2597; French-rule removals 3492
+US: band 187399, CE-shifted by >0.2: 33804; base decode 2232553 vs V11pre 2232553 (sym diff 0)
+India: band 301961, CE-shifted by >0.2: 70178; base decode 2701176 vs V11pre 2701176 (sym diff 0)
+France: band 159405, CE-shifted by >0.2: 37275; base decode 871730 vs V11pre 871730 (sym diff 0)
+
+CHANGE RATES per 1k S1 (test vs labelled holdout):
+  US: test adds 13.42 removes 8.24 | holdout adds 15.15 (TP 13.99 FP 1.16) removes 3.42 (TP 1.50 FP 1.92)
+  India: test adds 21.58 removes 16.76 | holdout adds 20.36 (TP 18.85 FP 1.51) removes 6.70 (TP 2.25 FP 4.45)
+  France [country]: test adds 60.00 removes 26.04
+  France [pooled]: test adds 59.58 removes 28.31
+
+HOLDOUT-REFERENCED VALUE of test changes (per country F; excess adds valued as FP, excess removes as FP removed):
+  US: holdout-rate value +0.00128; with test excess +0.00215
+┌──────────────────────────┬────────┬───────┬───────┬───┬───────┬───────┬──────┬───────┐
+│ cls                      ┆ off    ┆ rem_t ┆ add_t ┆ … ┆ addTP ┆ addFP ┆ rex  ┆ aex   │
+│ ---                      ┆ ---    ┆ ---   ┆ ---   ┆   ┆ ---   ┆ ---   ┆ ---  ┆ ---   │
+│ str                      ┆ str    ┆ f64   ┆ f64   ┆   ┆ f64   ┆ f64   ┆ f64  ┆ f64   │
+╞══════════════════════════╪════════╪═══════╪═══════╪═══╪═══════╪═══════╪══════╪═══════╡
+│ identical@num_changed    ┆ far    ┆ 1.2   ┆ 1.06  ┆ … ┆ 1.03  ┆ 0.11  ┆ 0.71 ┆ -0.08 │
+│ light_edit@same          ┆ same   ┆ 1.04  ┆ 0.58  ┆ … ┆ 0.57  ┆ 0.08  ┆ 0.72 ┆ -0.07 │
+│ first_word_replaced@same ┆ same   ┆ 0.86  ┆ 0.19  ┆ … ┆ 0.17  ┆ 0.02  ┆ 0.57 ┆ 0.01  │
+│ other                    ┆ far    ┆ 0.52  ┆ 0.74  ┆ … ┆ 0.73  ┆ 0.06  ┆ 0.26 ┆ -0.05 │
+│ identical@same           ┆ no_num ┆ 0.51  ┆ 1.08  ┆ … ┆ 1.46  ┆ 0.02  ┆ 0.37 ┆ -0.4  │
+│ identical@num_changed    ┆ trunc  ┆ 0.5   ┆ 0.49  ┆ … ┆ 0.33  ┆ 0.05  ┆ 0.23 ┆ 0.11  │
+│ identical@num_changed    ┆ +1..9  ┆ 0.5   ┆ 1.07  ┆ … ┆ 0.81  ┆ 0.07  ┆ 0.37 ┆ 0.19  │
+│ no_overlap@same          ┆ same   ┆ 0.46  ┆ 0.51  ┆ … ┆ 0.56  ┆ 0.08  ┆ 0.14 ┆ -0.13 │
+└──────────────────────────┴────────┴───────┴───────┴───┴───────┴───────┴──────┴───────┘
+  India: holdout-rate value +0.00211; with test excess +0.00390
+┌───────────────────────┬─────────┬───────┬───────┬───┬───────┬───────┬──────┬───────┐
+│ cls                   ┆ off     ┆ rem_t ┆ add_t ┆ … ┆ addTP ┆ addFP ┆ rex  ┆ aex   │
+│ ---                   ┆ ---     ┆ ---   ┆ ---   ┆   ┆ ---   ┆ ---   ┆ ---  ┆ ---   │
+│ str                   ┆ str     ┆ f64   ┆ f64   ┆   ┆ f64   ┆ f64   ┆ f64  ┆ f64   │
+╞═══════════════════════╪═════════╪═══════╪═══════╪═══╪═══════╪═══════╪══════╪═══════╡
+│ identical@same        ┆ no_num  ┆ 2.12  ┆ 1.05  ┆ … ┆ 1.0   ┆ 0.05  ┆ 1.78 ┆ -0.0  │
+│ identical@same        ┆ same    ┆ 1.92  ┆ 1.34  ┆ … ┆ 1.21  ┆ 0.11  ┆ 1.28 ┆ 0.03  │
+│ swap_extra@same       ┆ same    ┆ 1.19  ┆ 1.8   ┆ … ┆ 1.82  ┆ 0.09  ┆ 0.74 ┆ -0.11 │
+│ light_edit@same       ┆ same    ┆ 1.13  ┆ 0.9   ┆ … ┆ 0.83  ┆ 0.07  ┆ 0.4  ┆ 0.0   │
+│ swap_extra@same       ┆ no_num  ┆ 1.1   ┆ 1.1   ┆ … ┆ 0.81  ┆ 0.05  ┆ 0.9  ┆ 0.24  │
+│ identical@num_changed ┆ far     ┆ 1.08  ┆ 0.98  ┆ … ┆ 0.88  ┆ 0.06  ┆ 0.72 ┆ 0.03  │
+│ other                 ┆ far     ┆ 0.96  ┆ 1.28  ┆ … ┆ 1.21  ┆ 0.12  ┆ 0.51 ┆ -0.04 │
+│ identical@num_changed ┆ +10..99 ┆ 0.68  ┆ 0.45  ┆ … ┆ 0.45  ┆ 0.02  ┆ 0.53 ┆ -0.02 │
+└───────────────────────┴─────────┴───────┴───────┴───┴───────┴───────┴──────┴───────┘
+
+TWIN DIRECTION of test removals (+k twins are generator look-alikes; true-copy noise is symmetric), per 1k S1:
+  US     [country] removes +1..9 0.63 vs -1..9 0.10; +10..99 0.28 vs -10..99 0.14 | adds +1..9 1.71 vs -1..9 0.13 | top removed classes [('identical@num_changed', 2.6), ('other', 1.47), ('light_edit@same', 1.15), ('identical@same', 0.96)]
+  India  [country] removes +1..9 0.67 vs -1..9 0.37; +10..99 1.15 vs -10..99 0.59 | adds +1..9 2.39 vs -1..9 0.56 | top removed classes [('identical@same', 4.04), ('other', 3.43), ('identical@num_changed', 3.34), ('swap_extra@same', 2.3)]
+  France [country] removes +1..9 1.27 vs -1..9 0.09; +10..99 0.21 vs -10..99 0.12 | adds +1..9 3.66 vs -1..9 0.57 | top removed classes [('swap_extra@same', 9.34), ('desc@same', 6.36), ('other', 3.15), ('no_overlap@same', 2.99)]
+  France [pooled] removes +1..9 1.28 vs -1..9 0.09; +10..99 0.22 vs -10..99 0.12 | adds +1..9 3.57 vs -1..9 0.55 | top removed classes [('swap_extra@same', 10.14), ('desc@same', 6.8), ('no_overlap@same', 3.55), ('other', 3.31)]
+
+ADDRESS FINGERPRINT of changes (share with a strong accepted copy; labelled refs: true copies ~0.15-0.36 by k, look-alikes 0-0.04):
+  US     [country] adds: share 0.216 (k>=3: 0.265, n=7891) | removes: share 0.135 (k>=3: 0.163, n=5364)
+  India  [country] adds: share 0.113 (k>=3: 0.148, n=16826) | removes: share 0.044 (k>=3: 0.055, n=13359)
+  France [country] adds: share 0.136 (k>=3: 0.179, n=15013) | removes: share 0.201 (k>=3: 0.233, n=6648)
+  France [pooled] adds: share 0.135 (k>=3: 0.178, n=14976) | removes: share 0.200 (k>=3: 0.231, n=7222)
+
+BUILD (France mode none): V13 5804564 - removed 19036 + added 26089 (cap-dropped 0) = V14 5811617
+wrote output_v14_frnone: rows 1732544, empty 98524 (V13 97661), pairs 5811617
+  US: accepted/1k V13 3367.2 -> V14 3372.0
+  India: accepted/1k V13 3335.0 -> V14 3339.7
+  France: accepted/1k V13 3355.0 -> V14 3355.0
+
+BUILD (France mode pooled): V13 5804564 - removed 26362 + added 39760 (cap-dropped 1) = V14 5817962
+wrote output_v14_frpooled: rows 1732544, empty 98392 (V13 97661), pairs 5817962
+  US: accepted/1k V13 3367.2 -> V14 3372.0
+  India: accepted/1k V13 3335.0 -> V14 3339.7
+  France: accepted/1k V13 3355.0 -> V14 3379.5
+
+BUILD (France mode country): V13 5804564 - removed 25778 + added 39844 (cap-dropped 1) = V14 5818630
+wrote output_v14_frcountry: rows 1732544, empty 98371 (V13 97661), pairs 5818630
+  US: accepted/1k V13 3367.2 -> V14 3372.0
+  India: accepted/1k V13 3335.0 -> V14 3339.7
+  France: accepted/1k V13 3355.0 -> V14 3382.1

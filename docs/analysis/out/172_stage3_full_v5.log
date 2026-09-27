@@ -1,0 +1,10 @@
+with_fp [('p2', 8348), ('m_max', 1076), ('sdiff', 46), ('p1', 43), ('fp_tok_src', 25), ('n_strong', 15), ('rank_s1', 11), ('tok_eq_s1', 10), ('fp_addr_src', 9), ('fp_tok_osrc', 6), ('ra_empty', 0)]
+no_fp [('p2', 8202), ('m_max', 1215), ('p1', 40), ('sdiff', 35), ('n_strong', 10), ('rank_s1', 9)]
+full [('own_other_src', 21937824), ('p2', 14608459), ('p1', 14315531), ('own_same_src', 4641804), ('fp_tok_src', 4633215), ('promo', 3637156), ('grp_w', 3193164), ('grp_nsrc', 1834206), ('tok_eq_s1', 1442616), ('n_numgroups', 862738), ('fp_tok_osrc', 860715), ('rank_s1', 756970), ('sdiff', 250760), ('n_strong', 235660), ('fp_addr_src', 192628), ('x_desc', 171194), ('n_missing', 47354), ('m_max', 12657), ('x_noise', 1499), ('n_extra', 1465), ('ra_empty', 2)]
+fold7 base 0.99044 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.15, 'cap': 1}
+fold7 with_fp 0.99081 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+fold7 no_fp 0.99068 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+fold7 full 0.99194 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+holdout fold 0: base 0.99057 with_fp 0.99084 no_fp 0.99067 full 0.99207
+holdout fold 8: base 0.99053 with_fp 0.99089 no_fp 0.99066 full 0.99195
+holdout fold 9: base 0.99057 with_fp 0.99090 no_fp 0.99068 full 0.99206

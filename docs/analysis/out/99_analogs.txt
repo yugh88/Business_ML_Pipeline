@@ -1,0 +1,5 @@
+TRAIN: match rate when the pool name contains the extra word (any number of extra words):
+[('partners', 60914, 0.8416), ('group', 26138, 0.0), ('holdings', 15563, 0.0), ('trading', 10975, 0.7762), ('india', 3275, 0.0), ('solutions', 2893, 0.0), ('associates', 1087, 0.0), ('global', 926, 0.0), ('consulting', 911, 0.0), ('developers', 788, 0.0), ('management', 733, 0.0), ('international', 652, 0.0), ('investments', 643, 0.0), ('associate', 428, 0.9136), ('capital', 361, 0.0028), ('brothers', 332, 0.0), ('sons', 283, 0.0106), ('development', 191, 0.0209), ('and', 106, 0.9717), ('distribution', 99, 0.0), ('american', 94, 0.0), ('indian', 92, 0.0109), ('national', 86, 0.0), ('distributors', 58, 0.0), ('holding', 54, 0.0), ('son', 38, 0.8421), ('bros', 34, 0.7059), ('co', 11, 0.5455), ('america', 9, 0.3333), ('company', 6, 1.0), ('usa', 5, 0.0)]
+
+TRAIN: identical core name, legal-form relation -> match rate:
+[('same', 1653440, 0.9836), ('one_side_missing', 1653233, 0.9528), ('different', 529105, 0.7923)]

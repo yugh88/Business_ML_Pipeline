@@ -1,0 +1,5 @@
+fold7 s3 0.99203 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.0, 'cap': 1}
+fold7 s3_multi 0.99213 {'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.05, 'cap': 1}
+fold 0: {'s3': 0.99204, 's3_multi': 0.9921}
+fold 8: {'s3': 0.99196, 's3_multi': 0.99207}
+fold 9: {'s3': 0.9921, 's3_multi': 0.99219}

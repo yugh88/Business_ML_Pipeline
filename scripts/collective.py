@@ -67,4 +67,19 @@ def add_consensus(d, pcol="p1", pre="k1"):
     d = d.with_columns(pl.when(pl.col("s1num1") != "").then(
             pl.when(pl.col("pnum1") == pl.col("s1num1")).then(pl.col(pcol)).otherwise(0.0).sum().over("s1") / tot.clip(1e-6)).otherwise(-1.0).alias(f"{pre}_s1num_share"))
     out.append(f"{pre}_s1num_share")
+    # v8 (analysis/out/117-131): house-number VERSIONS are per source (a copy's changed number is shared by the other copies
+    # of the SAME source, rarely by the other source), while generator twins (S1 number + k) come as clusters that sit next
+    # to same-source copies carrying the S1's own number. Probability mass (other candidates) by source:
+    has = pl.col("pnum1").is_not_null() & (pl.col("pnum1") != "")
+    s1h = (pl.col("s1num1") != "")
+    d = d.with_columns(pl.col("m").str.slice(0, 2).alias("_src"),
+                       pl.when(has & s1h & (pl.col("pnum1") == pl.col("s1num1"))).then(pl.col(pcol)).otherwise(0.0).alias("_ws"),
+                       pl.when(has).then(pl.col(pcol)).otherwise(0.0).alias("_wh"))
+    d = d.with_columns(pl.col("_ws").sum().over(["s1", "_src"]).alias("_ws_src"), pl.col("_ws").sum().over("s1").alias("_ws_all"),
+                       pl.col("_wh").sum().over(["s1", "_src", "pnum1"]).alias("_wh_src"), pl.col("_wh").sum().over(["s1", "pnum1"]).alias("_wh_all"))
+    d = d.with_columns(pl.when(s1h).then(pl.col("_ws_src") - pl.col("_ws")).otherwise(-1.0).alias(f"{pre}_s1num_same_src"),
+                       pl.when(s1h).then(pl.col("_ws_all") - pl.col("_ws_src")).otherwise(-1.0).alias(f"{pre}_s1num_other_src"),
+                       pl.when(has).then(pl.col("_wh_src") - pl.col(pcol)).otherwise(-1.0).alias(f"{pre}_num_same_src"),
+                       pl.when(has).then(pl.col("_wh_all") - pl.col("_wh_src")).otherwise(-1.0).alias(f"{pre}_num_other_src"))
+    out += [f"{pre}_s1num_same_src", f"{pre}_s1num_other_src", f"{pre}_num_same_src", f"{pre}_num_other_src"]
     return d.select(["s1", "m"] + out), out

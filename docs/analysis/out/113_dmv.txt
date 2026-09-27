@@ -1,0 +1,12 @@
+decoy weight w by category (largest decoy counts):
+[('N2_extra_DESCRIPTOR|A2_num_other_sameStreet', 285586, 1.99), ('N0_identical|A2_num_other_sameStreet', 178626, 1.59), ('N2_extra_DESCRIPTOR|A2_num_1digit_sameStreet', 171223, 1.98), ('N6_word_swap_DESC|A2_num_other_sameStreet', 112063, 1.76), ('N0_identical|A2_num_1digit_sameStreet', 110115, 1.55), ('N2_extra_DESCRIPTOR|A1_same_num', 99103, 2.38), ('N6_word_swap|A2_num_other_sameStreet', 98817, 1.87), ('N2_extra_DESCRIPTOR|A2_num_other_diffStreet', 89476, 1.61), ('N0_identical|A2_num_other_diffStreet', 79932, 0.62), ('N7_no_overlap|A2_num_other_sameStreet', 70278, 0.0), ('N6_word_swap_DESC|A2_num_other_diffStreet', 63096, 0.65), ('N6_word_swap|A2_num_other_diffStreet', 59170, 0.02), ('N6_word_swap_DESC|A2_num_1digit_sameStreet', 58184, 1.89), ('N6_word_swap|A2_num_1digit_sameStreet', 53740, 2.15), ('N7_no_overlap|A1_same_num', 52091, 0.0), ('N6_word_swap_DESC|A1_same_num', 52090, 2.84), ('N3_extra_other|A2_num_other_sameStreet', 50440, 1.91), ('N6_word_swap|A1_same_num', 48879, 1.48), ('N2_extra_DESCRIPTOR|A2_num_1digit_diffStreet', 44984, 1.83), ('N0_identical|A1_same_num', 39659, 4.49)]
+fold 0:
+  V5 decision                        plain holdout F0.5=0.99057   DMV (test-density) F0.5=0.99131   FP=2089 weightedFP=2690
+  V6 (= V5 + descriptor rule)        plain holdout F0.5=0.99120   DMV (test-density) F0.5=0.99220   FP=1715 weightedFP=1667
+fold 8:
+  V5 decision                        plain holdout F0.5=0.99053   DMV (test-density) F0.5=0.99134   FP=2109 weightedFP=2600
+  V6 (= V5 + descriptor rule)        plain holdout F0.5=0.99123   DMV (test-density) F0.5=0.99232   FP=1698 weightedFP=1579
+fold 9:
+  V5 decision                        plain holdout F0.5=0.99057   DMV (test-density) F0.5=0.99130   FP=2182 weightedFP=2844
+  V6 (= V5 + descriptor rule)        plain holdout F0.5=0.99118   DMV (test-density) F0.5=0.99217   FP=1780 weightedFP=1721
+LB reference: V5 = 0.967 (public)

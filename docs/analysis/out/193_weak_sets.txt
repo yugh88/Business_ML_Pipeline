@@ -1,0 +1,6 @@
+HOLDOUT: S1 with a non-empty accepted set: 522901 of 556554
+[(False, 66805, 120.03, 0.9817, 453, 0.00219), (True, 456096, 819.5, 0.994, 148, 0.00495)]
+   weak sets by first weak record relation: [('A2_num_other_sameStreet', 17296, 0.984), ('A1_same_num', 15152, 0.983), ('A4_different', 9763, 0.98), ('A2_num_trunc_sameStreet', 8112, 0.984), ('A0_identical', 4644, 0.986), ('A2_num_1digit_sameStreet', 3747, 0.978)]
+TEST US: weak-evidence sets 61790 = 93.18 per 1k S1;  by relation: [('A1_same_num', 26.92), ('A2_num_other_sameStreet', 16.08), ('A2_num_trunc_sameStreet', 13.01), ('A4_different', 12.01), ('A0_identical', 8.5)]
+TEST India: weak-evidence sets 135663 = 167.49 per 1k S1;  by relation: [('A2_num_other_sameStreet', 54.7), ('A1_same_num', 27.65), ('A4_different', 26.99), ('A2_num_trunc_sameStreet', 17.96), ('A2_num_1digit_sameStreet', 11.13)]
+TEST France: weak-evidence sets 16131 = 62.17 per 1k S1;  by relation: [('A1_same_num', 37.17), ('A0_identical', 9.35), ('A4_different', 6.1), ('A3_empty', 3.79), ('A2_num_other_sameStreet', 3.08)]

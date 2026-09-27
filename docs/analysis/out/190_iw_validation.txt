@@ -1,0 +1,6 @@
+unweighted holdout F: {'V5': 0.99056, 'V5s3r': 0.99176, 'V9': 0.99152}
+US: domain AUC 0.645  effective sample 193069 of 320604  top shift features [('chain', 315955), ('n_desc', 27044), ('n_twin_plus', 19554), ('n_numchg', 12596), ('n_cand', 7507), ('n_ident_empty', 3292)]
+   version: (unweighted, TEST-WEIGHTED) holdout F0.5 = {'V5': (0.99266, 0.99221), 'V5s3r': (0.99325, 0.99267), 'V9': (0.99271, 0.99234)}
+India: domain AUC 0.826  effective sample 10032 of 216056  top shift features [('chain', 1163523), ('n_desc', 102425), ('n_cand', 14033), ('n_numchg', 9717), ('n_ident', 8730), ('n_twin_plus', 6500)]
+   version: (unweighted, TEST-WEIGHTED) holdout F0.5 = {'V5': (0.98756, 0.98499), 'V5s3r': (0.98979, 0.98915), 'V9': (0.98993, 0.98915)}
+LB: V5 0.967  V5s3r 0.973  V9 0.977 (incl. France)

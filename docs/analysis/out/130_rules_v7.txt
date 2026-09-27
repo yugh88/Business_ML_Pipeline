@@ -1,0 +1,17 @@
+fold 0: V5 0.99057 | R1 0.99039 (-TP 594 -FP 46) | R1+R2 0.99034 (-TP 674 -FP 48) | R4 0.99120 (-TP 40 -FP 373) | R1+R2+R4 0.99097 (-TP 714 -FP 418) | ALL 0.99097 (-TP 714 -FP 418)
+fold 8: V5 0.99053 | R1 0.99036 (-TP 615 -FP 50) | R1+R2 0.99028 (-TP 726 -FP 50) | R4 0.99123 (-TP 43 -FP 410) | R1+R2+R4 0.99097 (-TP 769 -FP 450) | ALL 0.99097 (-TP 769 -FP 450)
+fold 9: V5 0.99057 | R1 0.99037 (-TP 653 -FP 42) | R1+R2 0.99029 (-TP 762 -FP 43) | R4 0.99118 (-TP 40 -FP 402) | R1+R2+R4 0.99089 (-TP 802 -FP 441) | ALL 0.99089 (-TP 802 -FP 441)
+Traceback (most recent call last):
+  File "/Users/yughjuneja/Downloads/student_resource/scripts/130_rules_v7.py", line 56, in <module>
+    print(f"TEST {c}: " + " | ".join(f"{k} removes {mask(x, v).sum()/n:.1f}/1k" for k, v in list(RULES.items())) + " | " + " | ".join(f"{k}: {mask(x, v).sum()/n:.1f}/1k" for k, v in COMBOS.items()))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yughjuneja/Downloads/student_resource/scripts/130_rules_v7.py", line 56, in <genexpr>
+    print(f"TEST {c}: " + " | ".join(f"{k} removes {mask(x, v).sum()/n:.1f}/1k" for k, v in list(RULES.items())) + " | " + " | ".join(f"{k}: {mask(x, v).sum()/n:.1f}/1k" for k, v in COMBOS.items()))
+                                                    ^^^^^^^^^^
+  File "/Users/yughjuneja/Downloads/student_resource/scripts/130_rules_v7.py", line 35, in mask
+    for n in names: m = m | RULES[n](x)
+             ^^^^^
+TypeError: 'function' object is not iterable
+TEST US: R1_twin_same_src removes 20.7/1k | R2_twin_2src removes 6.1/1k | R3_fr_sib_extra removes 0.0/1k | R4_desc_usin removes 9.5/1k | R1: 20.7/1k | R1+R2: 22.4/1k | R4: 9.5/1k | R1+R2+R4: 30.5/1k | ALL: 30.5/1k
+TEST India: R1_twin_same_src removes 15.5/1k | R2_twin_2src removes 3.5/1k | R3_fr_sib_extra removes 0.0/1k | R4_desc_usin removes 46.3/1k | R1: 15.5/1k | R1+R2: 16.7/1k | R4: 46.3/1k | R1+R2+R4: 58.2/1k | ALL: 58.2/1k
+TEST France: R1_twin_same_src removes 15.2/1k | R2_twin_2src removes 4.0/1k | R3_fr_sib_extra removes 2.6/1k | R4_desc_usin removes 0.0/1k | R1: 15.2/1k | R1+R2: 16.2/1k | R4: 0.0/1k | R1+R2+R4: 16.2/1k | ALL: 18.3/1k

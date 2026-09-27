@@ -1,0 +1,7 @@
+fold 0: aug/none 0.99209 aug/R1R2 0.99184 aug/R4 0.99209 aug/R1R2R4 0.99184 clean/none 0.99209 clean/R1R2 0.99184 clean/R4 0.99209 clean/R1R2R4 0.99184
+fold 8: aug/none 0.99194 aug/R1R2 0.99167 aug/R4 0.99195 aug/R1R2R4 0.99167 clean/none 0.99194 clean/R1R2 0.99167 clean/R4 0.99195 clean/R1R2R4 0.99167
+fold 9: aug/none 0.99207 aug/R1R2 0.99178 aug/R4 0.99206 aug/R1R2R4 0.99177 clean/none 0.99207 clean/R1R2 0.99178 clean/R4 0.99206 clean/R1R2R4 0.99177
+TEST US: R1_twin_same_src -10.3/1k R2_twin_2src -1.8/1k R3_fr_sib_extra -0.0/1k R4_desc_usin -0.1/1k
+TEST India: R1_twin_same_src -8.3/1k R2_twin_2src -1.4/1k R3_fr_sib_extra -0.0/1k R4_desc_usin -0.4/1k
+TEST France: R1_twin_same_src -8.1/1k R2_twin_2src -1.8/1k R3_fr_sib_extra -0.0/1k R4_desc_usin -0.0/1k
+flags saved to work/rule_flags_last.parquet

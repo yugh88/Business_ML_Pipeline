@@ -1,0 +1,52 @@
+Q1 TRANSITIVE RETRIEVAL — missed true pairs (not in tau-set): 18570
+  key k_na: proposals 92 (true 82, precision 0.891); recovers 82 missed pairs (0.4%);  F if all accepted 0.99152 (+0.00001), if only true accepted 0.99152 (+0.00001)
+  key k_ra: proposals 122432 (true 606, precision 0.005); recovers 606 missed pairs (3.3%);  F if all accepted 0.96797 (-0.02355), if only true accepted 0.99158 (+0.00006)
+
+Q2 FALSE MERGES by type (value = F gain per holdout S1 if removed):
+┌────────────────────────────────┬──────┬─────────┬─────────┬──────────────┐
+│ fp_type                        ┆ len  ┆ value   ┆ mean_p3 ┆ on_singleton │
+│ ---                            ┆ ---  ┆ ---     ┆ ---     ┆ ---          │
+│ str                            ┆ u32  ┆ f64     ┆ f32     ┆ f64          │
+╞════════════════════════════════╪══════╪═════════╪═════════╪══════════════╡
+│ natural distractor             ┆ 3221 ┆ 0.00188 ┆ 0.854   ┆ 0.152        │
+│ orphan copy (owner S1 dropped) ┆ 2220 ┆ 0.00096 ┆ 0.874   ┆ 0.096        │
+│ copy of another PRESENT S1     ┆ 6    ┆ 0.0     ┆ 0.982   ┆ 0.167        │
+└────────────────────────────────┴──────┴─────────┴─────────┴──────────────┘
+┌────────────────────────────────┬──────────────────────────┬─────┬─────────┐
+│ fp_type                        ┆ cls                      ┆ len ┆ value   │
+│ ---                            ┆ ---                      ┆ --- ┆ ---     │
+│ str                            ┆ str                      ┆ u32 ┆ f64     │
+╞════════════════════════════════╪══════════════════════════╪═════╪═════════╡
+│ natural distractor             ┆ identical@num_changed    ┆ 669 ┆ 0.00044 │
+│ natural distractor             ┆ other                    ┆ 692 ┆ 0.0004  │
+│ orphan copy (owner S1 dropped) ┆ no_overlap@same          ┆ 760 ┆ 0.00034 │
+│ orphan copy (owner S1 dropped) ┆ other                    ┆ 704 ┆ 0.00032 │
+│ natural distractor             ┆ light_edit@same          ┆ 561 ┆ 0.0003  │
+│ natural distractor             ┆ identical@same           ┆ 428 ┆ 0.00026 │
+│ natural distractor             ┆ swap_extra@same          ┆ 237 ┆ 0.00014 │
+│ orphan copy (owner S1 dropped) ┆ identical@empty          ┆ 258 ┆ 0.00012 │
+│ natural distractor             ┆ first_word_replaced@same ┆ 201 ┆ 0.00012 │
+│ natural distractor             ┆ identical@other          ┆ 145 ┆ 0.00008 │
+│ orphan copy (owner S1 dropped) ┆ identical@other          ┆ 206 ┆ 0.00008 │
+│ natural distractor             ┆ identical@empty          ┆ 145 ┆ 0.00007 │
+└────────────────────────────────┴──────────────────────────┴─────┴─────────┘
+
+Q3 RELIABILITY of p3 on holdout (all tau-set candidates):
+┌──────────────┬─────────┬─────────┬───────────┐
+│ bin          ┆ len     ┆ mean_p3 ┆ true_rate │
+│ ---          ┆ ---     ┆ ---     ┆ ---       │
+│ enum         ┆ u32     ┆ f32     ┆ f64       │
+╞══════════════╪═════════╪═════════╪═══════════╡
+│ (-inf, 0.05] ┆ 75419   ┆ 0.009   ┆ 0.0096    │
+│ (0.05, 0.2]  ┆ 16671   ┆ 0.1077  ┆ 0.103     │
+│ (0.2, 0.4]   ┆ 9013    ┆ 0.2939  ┆ 0.3104    │
+│ (0.4, 0.6]   ┆ 8905    ┆ 0.5046  ┆ 0.5754    │
+│ (0.6, 0.8]   ┆ 14439   ┆ 0.7145  ┆ 0.8154    │
+│ (0.8, 0.9]   ┆ 17529   ┆ 0.8577  ┆ 0.9201    │
+│ (0.9, 0.95]  ┆ 22528   ┆ 0.929   ┆ 0.962     │
+│ (0.95, 0.99] ┆ 80298   ┆ 0.9769  ┆ 0.9865    │
+│ (0.99, inf]  ┆ 1733515 ┆ 0.9995  ┆ 0.9997    │
+└──────────────┴─────────┴─────────┴───────────┘
+  fold 8 decoder: V9 0.99160 | isotonic 0.99154
+  fold 9 decoder: V9 0.99144 | isotonic 0.99137
+python scripts/201_budget_levers.py  50.43s user 11.87s system 377% cpu 16.513 total

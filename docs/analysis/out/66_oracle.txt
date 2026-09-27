@@ -1,0 +1,10 @@
+stage2b hold F0.5=0.9707
+addr_empty fix FN -> 0.9769 (+0.0062)   fix FP -> 0.9716 (+0.0009)
+brand      fix FN -> 0.9712 (+0.0005)   fix FP -> 0.9711 (+0.0004)
+domain     fix FN -> 0.9709 (+0.0002)   fix FP -> 0.9708 (+0.0001)
+weakname   fix FN -> 0.9716 (+0.0009)   fix FP -> 0.9713 (+0.0006)
+weakaddr   fix FN -> 0.9716 (+0.0009)   fix FP -> 0.9712 (+0.0005)
+India      fix FN -> 0.9782 (+0.0075)   fix FP -> 0.9749 (+0.0042)
+S3         fix FN -> 0.9812 (+0.0105)   fix FP -> 0.9746 (+0.0039)
+ALL        fix FN -> 0.9884 (+0.0177)   fix FP -> 0.9785 (+0.0078)
+perfect on candidates: 0.9962428648311363

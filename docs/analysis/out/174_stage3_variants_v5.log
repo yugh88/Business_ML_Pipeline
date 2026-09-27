@@ -1,0 +1,5 @@
+A_f1-4 {'valid': 0.99191, 'policy': {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}, 'holdout': [0.99199, 0.99189, 0.99196]}
+B_f1-6 {'valid': 0.99203, 'policy': {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}, 'holdout': [0.99209, 0.99194, 0.99207]}
+C_f1-6_big {'valid': 0.99203, 'policy': {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}, 'holdout': [0.99201, 0.99195, 0.992]}
+D_f1-6_name {'valid': 0.99204, 'policy': {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}, 'holdout': [0.99203, 0.99198, 0.99203]}
+E_D+second_pass {'valid': 0.99184, 'policy': {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1}, 'holdout': [0.99184, 0.99181, 0.99187]}

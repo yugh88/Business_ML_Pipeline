@@ -1,0 +1,47 @@
+# Entity-resolution production pipeline configuration (see ../analysis/11, 13, 14)
+s3_prefix: "s3://CHANGE-ME-BUCKET/entity-resolution"   # set by launch.sh
+workdir: "/data/er"                                        # local EBS working dir on the instance
+input_files:            # raw parquet produced by scripts/00_to_parquet.py (uploaded to s3 input/)
+  - train_s1.parquet
+  - train_s2.parquet
+  - train_s3.parquet
+  - test_s1.parquet
+  - test_s2.parquet
+  - test_s3.parquet
+  - train_gt.parquet
+splits: [train, test]
+normalize:
+  chunk_rows: 250000
+  workers: 14                       # V8: 16 vCPU
+blocking:
+  rev_na:  {cap: 100000, k: 20}      # pool record -> top-k S1 (name+address TF-IDF)
+  rev_c3:  {cap: 5000,  k: 10}      # pool record -> top-k S1 (char-3gram space-free name)
+  fwd_na:  {cap: 20000, k: 10}      # S1 -> top-k pool
+  core2_block_max: 200              # exact sorted core2 blocks up to this pool size
+  query_shard_rows: 50000
+  max_out_nnz: 25000000             # bound on one sparse product chunk
+  workers: 14                       # V8: r6i.4xlarge (16 vCPU / 128 GB)
+  worker_mem_gb: 7                  # RLIMIT_AS per worker (fails fast instead of swapping)
+features:
+  buckets: {train: 320, test: 256}  # S1-hash buckets; each bucket processed independently
+  workers: 6
+model:
+  orphan_frac: 0.16                # V5: explicit list (hard look-alike orphans 7.2% + random 8.8%)
+  orphan_list: true                # V10: V5 drop list; train input = real + V10 test-density look-alikes (scripts/216_make_aug_v10.py)
+  xgb2_rounds: 8000                 # V3 XGB hit the 1500 cap -> retrain with early stopping (patience 100)
+  nn_epochs: 0                      # NN added later only if V4 shows it helps
+  nn_min_p1: 0.0                    # full stage-2 candidate set (p1 >= cascade)
+  nn_variants: [{name: p2nn, dim: 128, emb: 64}, {name: p2nnL, dim: 256, emb: 96}]
+  nn_curve_fracs: [0.25, 0.5]
+  cascade_p1: 0.0001               # stage-2 (final model) scores only pairs with p1 >= this; = candidate_pairs.tsv
+  folds: 10                         # S1 hash folds
+  cv_groups: [[1, 2], [3, 4], [5, 6]]   # K-way cross-fitting over training folds (each model sees the other 2 groups)
+  stage1_neg_frac: 0.25             # stage-1 training keeps 25% of negatives (weight 4)
+  valid_fold: 7                     # threshold / decision selection
+  holdout_folds: [0, 8, 9]          # reported only
+  lgb: {learning_rate: 0.05, num_leaves: 63, min_data_in_leaf: 100, feature_fraction: 0.8,
+        bagging_fraction: 0.8, bagging_freq: 1, num_threads: 16, max_rounds: 1500, early_stopping: 50}
+decision:
+  threshold_grid: [0.30, 0.95, 0.01]
+  margins: [0.05, 0.1, 0.2, 0.3]
+seed: 17

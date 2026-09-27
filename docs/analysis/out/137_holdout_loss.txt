@@ -1,0 +1,7 @@
+fold 0: V7 F 0.99097  | no-FP oracle 0.99368 (FP loss 0.00272) | perfect-recall oracle 0.99729 (FN loss 0.00632)
+  singletons: share 0.0599  singletons with predictions (F=0): 184  loss 0.00099
+  S1 with >=1 FP: 1552 (0.0083)  S1 with >=1 FN: 11271 (0.0606)
+  FN pairs: 12371 per S1: 0.0665
+[('not_in_candidates', 3916), ('p2>=0.5 but rejected', 3121), ('p2<0.5', 2737), ('p1<tau', 2597)]
+[('not_in_candidates', 'empty', 2702), ('p1<tau', 'empty', 1626), ('p2>=0.5 but rejected', 'same', 827), ('p2>=0.5 but rejected', '+1..9', 769), ('p2>=0.5 but rejected', 'empty', 754), ('p2<0.5', 'same', 737), ('p2<0.5', 'empty', 719), ('not_in_candidates', 'same', 632), ('p2<0.5', '-100', 359), ('p2>=0.5 but rejected', '-100', 322), ('p2<0.5', '|d|10..99', 292), ('p1<tau', 'same', 236), ('not_in_candidates', '-100', 229), ('p2<0.5', '+1..9', 228), ('p2<0.5', '-1..9', 204)]
+  FP pairs: 1671 [('same', 705), ('empty', 477), ('-100', 218), ('+100', 108), ('|d|10..99', 92), ('+1..9', 52), ('-1..9', 19)]

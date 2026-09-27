@@ -1,0 +1,21 @@
+train pairs 514473 (hard 314473, easy 200000), positive rate 0.763
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7545.62it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Key               | Status  | 
+------------------+---------+-
+classifier.weight | MISSING | 
+classifier.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  epoch 0 step 500/32156 loss(ema) 0.5545 157 pairs/s mps 0.64/3.36 GB
+  epoch 0 step 1000/32156 loss(ema) 0.5044 147 pairs/s mps 0.64/2.26 GB
+  epoch 0 step 1500/32156 loss(ema) 0.4562 146 pairs/s mps 0.64/3.36 GB
+  epoch 0 step 2000/32156 loss(ema) 0.4328 150 pairs/s mps 0.64/2.26 GB
+  epoch 0 step 2500/32156 loss(ema) 0.4057 153 pairs/s mps 0.64/3.36 GB
+  epoch 0 step 3000/32156 loss(ema) 0.4021 155 pairs/s mps 0.64/2.26 GB
+
+MEMGUARD ABORT: available=2.91GB swap_growth=0.00GB proc_rss=2.73GB
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

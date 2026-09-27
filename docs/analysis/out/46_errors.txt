@@ -1,0 +1,34 @@
+## positives: recall by segment (candidates only)
+shape: (7, 4)
+┌────────────┬───────┬──────────┬──────────┐
+│ seg        ┆ n     ┆ recall   ┆ med_p    │
+│ ---        ┆ ---   ┆ ---      ┆ ---      │
+│ str        ┆ u32   ┆ f64      ┆ f64      │
+╞════════════╪═══════╪══════════╪══════════╡
+│ normal     ┆ 23709 ┆ 0.949471 ┆ 0.998676 │
+│ indic      ┆ 2067  ┆ 0.9821   ┆ 0.999662 │
+│ domain     ┆ 1331  ┆ 0.98272  ┆ 0.999708 │
+│ addr_empty ┆ 1119  ┆ 0.521895 ┆ 0.793873 │
+│ brand      ┆ 1053  ┆ 0.935423 ┆ 0.998368 │
+│ weakaddr   ┆ 546   ┆ 0.860806 ┆ 0.991473 │
+│ weakname   ┆ 204   ┆ 0.852941 ┆ 0.995253 │
+└────────────┴───────┴──────────┴──────────┘
+## false positives by segment
+shape: (7, 3)
+┌────────────┬──────┬──────────┐
+│ seg        ┆ n_fp ┆ p        │
+│ ---        ┆ ---  ┆ ---      │
+│ str        ┆ u32  ┆ f64      │
+╞════════════╪══════╪══════════╡
+│ normal     ┆ 239  ┆ 0.875104 │
+│ addr_empty ┆ 25   ┆ 0.834551 │
+│ weakaddr   ┆ 20   ┆ 0.883565 │
+│ brand      ┆ 17   ┆ 0.81022  │
+│ indic      ┆ 12   ┆ 0.842427 │
+│ weakname   ┆ 3    ┆ 0.873845 │
+│ domain     ┆ 2    ┆ 0.856266 │
+└────────────┴──────┴──────────┘ total FP 318 TP 28062
+## macro-F0.5 upper bound given blocking (perfect matcher): 0.9962428648311363
+## singleton S1 with >=1 predicted match: 21 / 463  segs: [('normal', 16), ('weakaddr', 2), ('addr_empty', 1), ('brand', 1), ('indic', 1)]
+## FP pool record is an unmatched distractor: 0.7987421383647799  (else it belongs to another S1)
+memguard: peak_proc_rss=2.23GB min_sys_available=8.02GB
