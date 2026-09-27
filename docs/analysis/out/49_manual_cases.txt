@@ -1,0 +1,66 @@
+
+### A. identical normalized pool records linked to DIFFERENT S1 (label conflict)
+S3-606363942 | Guntur LLP Center | Floor, Guntur, AP | S1-386048168 | Guntur City LLP | 2Nd Floor, 4-1-1, Beside, Harihar Cinemas, Opp Lvr, Guntur, Andhra Pra
+S3-955043118 | Guntur Ltd Center | Floor, Guntur, AP | S1-581567355 | Guntur Associates Ltd | 2Nd Floor, Emgee House, Chandra Mouli Nagar, Guntur, Andhra Pradesh
+S3-511282867 | Hyderabad Services Pvt. (Ltd.) | 40, Hyderabad, Andhra Pradesh | S1-145606005 | Hyderabad Services Pvt. Ltd. | Plot No 40, H No : 110, Janapriya Towers Huda Complex, Saroor Nagar, H
+S3-13583566 | Hyderabad Private Limited Services | 40, Hyderabad, Andhra Pradesh | S1-986902592 | Hyderabad Export Private Limited | Sahrudaya Residency, Road No3 Laxmi Nagar Colony, Mansoorabad, Lb Naga
+S3-15249007 | Shaikpet Limited Center | 4Th Floor, Shaikpet, Hyderabad, TG | S1-22695915 | Shaikpet Traders Limited | 4Th Floor, Unit No. 405-411, Bizness Square, H. No. 1-98/3/5/23 To 27,
+S3-316790408 | Shaikpet Private Limited Center | Door No 4Th Floor, Shaikpet, Hyderabad, TG | S1-589303005 | Shaikpet Foundation Private Limited | Shaikpet, Telangana, Unit No 405-411, Bizness Square, Hno 1-98/3/5/23 
+S2-58157248 | Surat Private Limited (Services) | DOOR NO A-1033-1034 HARI OM MARKETRING ROAD, SURAT, ગુજરાત | S1-838592051 | Surat Energy Private Limited | 1033-1034 Hari Om Marketring Road, Surat, Gujarat
+S2-550808485 | SURAT LLP  SERVICES | H.NO A-1033-1034 HARI OM MARKETRING ROAD, SURAT, Gujarat | S1-86030519 | Surat Agrotech LLP | Surat, 1033-1034 Hari Om Marketring Road, Gujarat, Surat
+
+### B. matched record with an UNMATCHED identical twin (possible missing label)
+S2-808550830 | <UNMATCHED> | Advanced Defense Concepts Co | 19 DICKINSON STREET, SPRINGFIELD, MA
+S2-505044026 | S1-964751785 | ADVANCED DEFENSE CONCEPTS LLC | 19 DICKINSON ST, SPRINGFIELD, MA
+S3-988298393 | <UNMATCHED> | Lenet Partners-El Paso County Co | 481 Borrego Road, SAN Elizario, Texas
+S3-826536339 | S1-718363295 | Lenet Partners-El Paso County Inc. | 481 Borrego Rd, SAN Elizario, Texas
+S2-965588574 | <UNMATCHED> | Perkins & & Corp Bell | 5255 700, WINAMAC, IN
+S2-596301065 | S1-372486738 | Perkins Inc Bell & | 5255 700, WINAMAC, IN
+S2-952942584 | <UNMATCHED> | Prabhat Brothers LLP | GALA NO. ##8 , BLDG NO.1, J.P. COLACO IND. EST., NR. DHURI IND. EST., 
+S2-415148072 | S1-816302378 | Prabhat Brothers Private | GALA NO. 8 , BLDG NO.1, J.P. COLACO IND. EST., NR. DHURI IND. EST., VA
+
+### C. true pairs where BOTH name and address disagree (possible wrong label)
+S1-327549953 | Baramati Tyres Private Limited | Plot No-P-15, Bhigwan Road Vidya Corner Super Market, Baramati, Pune,  | S3-773045158 | Nexorbi | Plot C-985 Plot No-p-15, Jalochi, MH | 19.0 | 36.0
+S1-869598978 | Technology Sansar Printpack LLP | Rakashak Nagar, Gold Building/ A1, Sno. 4/1/2, Kharadi, Maharashtra, P | S3-97165407 | technologysansarprintpack.com | Flat No. 10, Poona, Talegaon Dhamdhere, MH | 38.0 | 38.0
+S1-302708426 | Smart Energy Corporation | N1923 E, Town Of Lind, WI | S3-502949181 | Onyxzeta | E, Waupaca CITY, Wisconsin | 30.0 | 39.0
+S1-501881052 | Golden Logistics Private Limited | No.1, Subeksha Apartment, No.6 Old No.85 1St Avenue, Indiranagar, Aday | S3-700331986 | Shri Xylopyra | No.1, NULL, Sriperumbudur, TN | 21.0 | 29.0
+S1-793715787 | Red Foundation Private Limited | A 1903, Majaswadi Sarvoday Nagar Chs Ltd, Majas Village, Sarvodaya Nag | S3-46089653 | Synzeph | A 1902, MH, Chennai | 19.0 | 27.0
+S1-299665907 | Developers Psg Supply Ltd | Flat No.5D, Tc35/4381, Shakthan Manor Apartment Shaktham Thampuran Nag | S3-685343661 | Rizaxylonovi | Flat No.g-5d, Kochi Region, KL | 12.0 | 31.0
+
+### D. SINGLETON S1 that the dev model merged with high confidence (holdout false positives)
+S1-856941601 | PG Added Clinic | C/O. Biji Joy, Vallikunnel House Sreekrishnapuram, Palakkad, Kerala | S2-393427732 | PUG ADDED CLINIC | C/O. BIJI JOY, VALLIKUNNEL HOUSE SREEKRISHNAPURAM, PALAKKAD, Kerala | 0.989 | distractor
+S1-149161420 | Cascade Partners Inc. | 10008 Tanner Mill Drive, Mckinney, TX | S2-228247022 | Cascade Partners Inc | 10012 TANNER MILL DRIVE, TX, MCKNINEY | 0.982 | distractor
+S1-88478462 | Corporate Mortgage Laboratories | NC, Spring Hope, 3213 Old Franklin Road | S2-248945524 | Corp Corporate Mortgage Laboratories | 321 OLD FRANKLIN RD, SPRING HOPE, NC | 0.976 | distractor
+S1-613432342 | Chandriya Researchinstitute | No.129/2, Amman Koil Street, Kondithope, Chennai, Tamil Nadu | S2-362329085 | Chandriyi Researchinstitute | H.NO 129/2 , AMMAN KOIL STREET, KONDITHOPE, CHENNAI, Tamil Nadu | 0.957 | distractor
+S1-335230370 | Beacon Digital Innovations Inc. | 21 Deer Pond Drive, Leicester, MA | S3-86828362 | Beacon Digital Innovations Inc | 24 Deer Pond Dr, Leicester, Massachusetts | 0.967 | distractor
+S1-298361335 | Supreme Marketing Private Limited | Annapurna Mansion, #13, 3-D Main Road I Phase, J.P.Nagar, Bangalore, K | S3-605716273 | M/s Supreme LLP Marketing | No 7 Annapurna Mansion, #13, 3-D Main Road I Phase, J.p.nagar, Bangalo | 0.978 | distractor
+
+### E. highest-confidence false positives whose pool record belongs to ANOTHER S1
+S1-856631358 | Wood's Family Practice | Albuquerque, NM, 6903 4th Street | S2-266280893 | Wood's Family Practice |  | S1-169565384 | Wood's Family Practice P.C. | 11 Tivoli Lake Court, Silver Spring, MD | 0.968
+S1-691474330 | Smart Federal | 1036 Pine Mountain Way, Indianapolis, IN | S2-729082550 | Smart Federal |  | S1-472767262 | Smart Federal Next LLC | 9117 Lewis Avenue, Kansas City, MO | 0.969
+S1-12295319 | Pune Water Pvt. Ltd. | Off No Â A/108, S. No. 230/A/3/1/1, Town Square Shopping Centre, Nag | S3-677625883 | pune business private limited | Off No Â A/108, S. No. 230/A/3/1/1, Town Square Shopping Centre, Nag | S1-793405485 | Pune Business Private Limited | Off No Â A/108, S. No. 230/A/3/1/1, Town Square Shopping Centre, Nag | 0.972
+S1-811564269 | Star Media Private Limited | Q-14, Ff, Rajouri Garden Janakpuri, Delhi, West Delhi, Delhi | S3-837902586 | Star Média LLP | A-14, Delhi, North West Delhi, DL | S1-827149964 | Star Media LLP | A-14, Khno 351, 1St Floor, Mahendru Enclave, Delhi, North West Delhi,  | 0.984
+S1-853697250 | A Cure 9 You | 3 Main Street, Southborough, MA | S3-72361873 | A Cure Yóu 9 | 03 Main St, Acshnet, Massachusetts | S1-205559913 | A Cure 9 You | 3 Main Street, Unit 3, Acushnet, MA | 0.977
+
+### F. blocking misses where name AND address look strong (why not retrieved?)
+S1-750648817 | East Management Private Limited | B-18, Swati Manor Building, N. C. Kelkar Road, Near Plaza Cinema, Dada | S2-722148340 | >> East Management Piate Limited | MUMBAI, DADAR (WEST), B-18, महाराष्ट्र | 100.0 | 100.0
+S1-473193331 | American Program | 6138 5, Ashland, KY | S2-227907077 | American (Phrotfgram) | ASHLAND, KY, 6136 5 | 91.0 | 95.0
+S1-552783578 | International International Pvt Ltd | J-001, Shriram Adithya Apartments, Chikalsandra Banashankari 3Rd Stage | S2-33151888 | lnternational International Pvt | J-2-001, BANGALORE, Karnataka | 100.0 | 96.0
+S1-97009106 | Business Trading Private Limited | Plot No. B 93, Roop Nagar, Industrial Area Loni, Ghaziabad, Uttar Prad | S3-649507850 | Business Trading Pliate-Limited | Plot No. B 93, Ghaziabad, UP | 100.0 | 91.0
+S1-287536079 | Global & Co Private Limited | Nalini Sett Road 1St Floor, Room No-205, Kolkata, West Bengal, Howrah, | S3-94387290 | Global  + Co Prsimiivite Limited | 47B, <NULL>, Kolkata, Howrah, WB | 100.0 | 93.0
+
+### G. devanagari shop-word pool records (0% matched in train; distractor signature)
+S2-803586074 | सूर्य कंसल्टेंट्स स्टोर्स प्राइवेट लिमिटेड | 6-51, NORTH AVENUE, SUKHLIYA, INDORE, Madhya Pradesh
+S2-266306666 | लक्ष्मी कंसल्टेंसी स्टोर्स प्राइवेट लिमिटेड | H.NO 7/770 VASTU KHAND, GOMTI NAGAR LUCKNOW, LUCKNOW, Uttar Pradesh
+S2-269090609 | सिटी राम ट्रेडिंग स्टोर्स प्राइवेट लिमिटेड | NAGPUR, PLOT NO.65, 2ND FLOOR, SAMVAD APARTMENT, NALODE LAYOUT, DINDAY
+S2-420412870 | हरि फूड स्टोर्स प्राइवेट लिमिटेड | NO. 60 HOLSE NO-656, KHASRA NO-21 GALI NO-26, JAFRABAD, DELHI, DELHI, 
+
+### H. France (test only): S1 vs S2 samples to eyeball format
+S1-605167031 | Dolus Hilaire Construction SARL | 30 bis Rue René Delissen, Dunkerque, Hauts-de-France
+S1-907915622 | Roues & Fils SARL | 7 Rue Balzac, Tourcoing, Hauts-de-France
+S1-490704084 | Deleves Amis SAS | Pays de la Loire, 13 Avenue du Printemps, Nantes
+S1-521658054 | Chasse Centre SARL | 20 Allée de la Traine, Lège-Cap-Ferret, Nouvelle-Aquitaine
+S2-52395060 | Unite Culture (France) SAS | 6 BOULEVARD DES BATISSEURS, ROUBAIX
+S2-811959365 | Lbm Amicale SAS | NO 19 R CHARLES JOSSE, ST.-HERBLAIN
+S2-574092423 | Mérignac Collectif Sàrl | Gironde, (4) R. LOUIS BERON, MÉRIGNAC
+S2-715003546 | CAISSE SCI HOLDING INSTITUT | 188 COURS DE L'YSER, BORDEAUX, Gironde

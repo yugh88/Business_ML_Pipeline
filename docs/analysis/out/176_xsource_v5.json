@@ -1,0 +1,209 @@
+{
+ "label": "v5",
+ "xs_features": [
+  "xs_both_strong",
+  "xs_name_strong",
+  "xs_both_strong_numeq",
+  "xs_both_any",
+  "xs_partner_p2",
+  "xs_partner_owned_else",
+  "xs_n90",
+  "xs_n90_weak",
+  "ws_both_strong",
+  "ws_name_strong",
+  "ws_both_strong_numeq",
+  "ws_both_any",
+  "ws_partner_p2",
+  "ws_partner_owned_else",
+  "ws_n90",
+  "ws_n90_weak"
+ ],
+ "valid": {
+  "s3": 0.9920297050718414,
+  "s3+xs": 0.9921034476335587
+ },
+ "holdout": {
+  "0": {
+   "s3": {
+    "all": [
+     0.99204,
+     185927
+    ],
+    "chain": [
+     0.98772,
+     55166
+    ],
+    "orphan_exposed": [
+     0.96838,
+     8449
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98221,
+     11128
+    ]
+   },
+   "s3+xs": {
+    "all": [
+     0.9921,
+     185927
+    ],
+    "chain": [
+     0.98799,
+     55166
+    ],
+    "orphan_exposed": [
+     0.96858,
+     8449
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98275,
+     11128
+    ]
+   }
+  },
+  "8": {
+   "s3": {
+    "all": [
+     0.99196,
+     184743
+    ],
+    "chain": [
+     0.98789,
+     54749
+    ],
+    "orphan_exposed": [
+     0.971,
+     8489
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98248,
+     11242
+    ]
+   },
+   "s3+xs": {
+    "all": [
+     0.99198,
+     184743
+    ],
+    "chain": [
+     0.98797,
+     54749
+    ],
+    "orphan_exposed": [
+     0.96993,
+     8489
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98265,
+     11242
+    ]
+   }
+  },
+  "9": {
+   "s3": {
+    "all": [
+     0.9921,
+     185884
+    ],
+    "chain": [
+     0.98839,
+     55477
+    ],
+    "orphan_exposed": [
+     0.97017,
+     8332
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98329,
+     11134
+    ]
+   },
+   "s3+xs": {
+    "all": [
+     0.99207,
+     185884
+    ],
+    "chain": [
+     0.98826,
+     55477
+    ],
+    "orphan_exposed": [
+     0.96949,
+     8332
+    ],
+    "twin_sib_exposed(synthetic)": [
+     null,
+     0
+    ],
+    "singletons": [
+     0.98311,
+     11134
+    ]
+   }
+  }
+ },
+ "test": {
+  "US": {
+   "s3": {
+    "pred_per_s1": 3.406,
+    "plus_k": 32.32,
+    "minus_k": 19.63,
+    "promoted": 68.67
+   },
+   "s3+xs": {
+    "pred_per_s1": 3.4109,
+    "plus_k": 34.15,
+    "minus_k": 19.66,
+    "promoted": 73.64
+   }
+  },
+  "India": {
+   "s3": {
+    "pred_per_s1": 3.3749,
+    "plus_k": 48.18,
+    "minus_k": 40.28,
+    "promoted": 113.15
+   },
+   "s3+xs": {
+    "pred_per_s1": 3.3815,
+    "plus_k": 49.2,
+    "minus_k": 40.36,
+    "promoted": 119.25
+   }
+  },
+  "France": {
+   "s3": {
+    "pred_per_s1": 3.3985,
+    "plus_k": 14.43,
+    "minus_k": 6.66,
+    "promoted": 135.3
+   },
+   "s3+xs": {
+    "pred_per_s1": 3.41,
+    "plus_k": 15.93,
+    "minus_k": 6.65,
+    "promoted": 142.91
+   }
+  }
+ }
+}

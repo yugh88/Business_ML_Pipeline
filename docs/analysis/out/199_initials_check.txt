@@ -1,0 +1,24 @@
+HOLDOUT same-address candidates by class (initials / identical) per country:
+shape: (12, 6)
+┌─────────┬──────────────────┬───────┬────────┬───────┬────────┐
+│ country ┆ cls              ┆ y     ┆ n      ┆ acc   ┆ shared │
+│ ---     ┆ ---              ┆ ---   ┆ ---    ┆ ---   ┆ ---    │
+│ str     ┆ str              ┆ bool  ┆ u32    ┆ f64   ┆ f64    │
+╞═════════╪══════════════════╪═══════╪════════╪═══════╪════════╡
+│ India   ┆ alias/no_overlap ┆ false ┆ 4078   ┆ 0.107 ┆ 0.078  │
+│ India   ┆ alias/no_overlap ┆ true  ┆ 37530  ┆ 0.98  ┆ 0.184  │
+│ India   ┆ identical        ┆ false ┆ 5731   ┆ 0.052 ┆ 0.001  │
+│ India   ┆ identical        ┆ true  ┆ 335045 ┆ 0.998 ┆ 0.204  │
+│ India   ┆ initials         ┆ false ┆ 9      ┆ 0.111 ┆ 0.0    │
+│ India   ┆ initials         ┆ true  ┆ 2030   ┆ 0.989 ┆ 0.003  │
+│ US      ┆ alias/no_overlap ┆ false ┆ 6151   ┆ 0.076 ┆ 0.173  │
+│ US      ┆ alias/no_overlap ┆ true  ┆ 76066  ┆ 0.987 ┆ 0.255  │
+│ US      ┆ identical        ┆ false ┆ 2502   ┆ 0.069 ┆ 0.004  │
+│ US      ┆ identical        ┆ true  ┆ 541140 ┆ 0.998 ┆ 0.258  │
+│ US      ┆ initials         ┆ false ┆ 2      ┆ 0.0   ┆ 0.0    │
+│ US      ┆ initials         ┆ true  ┆ 1852   ┆ 0.994 ┆ 0.182  │
+└─────────┴──────────────────┴───────┴────────┴───────┴────────┘
+{'India': {False: 0.04, True: 9.56}, 'US': {True: 5.83, False: 0.01}} <- initials cands per 1k holdout S1 by truth
+TEST US: initials cands 6.17/1k S1, acc 0.982, shared(acc) 0.176, identical shared(acc) 0.259
+TEST India: initials cands 10.96/1k S1, acc 0.964, shared(acc) 0.008, identical shared(acc) 0.204
+TEST France: initials cands 63.88/1k S1, acc 0.694, shared(acc) 0.224, identical shared(acc) 0.222

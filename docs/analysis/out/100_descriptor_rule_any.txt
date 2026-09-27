@@ -1,0 +1,4 @@
+descriptor words (any-extra, n>=100, rate<5%): 192 e.g. ['uptown', 'hospital', 'infratech', 'furniture', 'seafood', 'infotech', 'education', 'agencies', 'brown', 'realty', 'silver', 'hospitality', 'steel', 'towing', 'valley', 'cleaning', 'hotels', 'pharmaceuticals', 'therapy', 'wellness', 'new', 'grill', 'travels', 'electric', 'energy', 'group', 'harbor', 'works', 'brothers', 'it', 'gold', 'advisors', 'graphics', 'greater', 'capital', 'east', 'vision', 'pharma', 'consultants', 'deli']
+fold 0: V5 0.99057 -> any-descriptor rule 0.99120 (removed 413, true among them 40) P 0.9966->0.9972 R 0.9815->0.9815
+fold 8: V5 0.99053 -> any-descriptor rule 0.99123 (removed 453, true among them 43) P 0.9966->0.9972 R 0.9816->0.9815
+fold 9: V5 0.99057 -> any-descriptor rule 0.99118 (removed 442, true among them 40) P 0.9965->0.9971 R 0.9818->0.9818

@@ -1,0 +1,6 @@
+train S1 with >=1 copy: 2083574
+  S1 whose copies reach p>=0.01 on another S1: 0.1080  (224959)
+  S1 whose copies reach p>=0.05 on another S1: 0.0766  (159669)
+  S1 whose copies reach p>=0.1 on another S1: 0.0615  (128085)
+  S1 whose copies reach p>=0.3 on another S1: 0.0304  (63288)
+  S1 whose copies reach p>=0.5 on another S1: 0.0105  (21972)

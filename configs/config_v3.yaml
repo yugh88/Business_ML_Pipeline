@@ -1,5 +1,5 @@
 # Entity-resolution production pipeline configuration (see ../analysis/11, 13, 14)
-s3_prefix: "s3://CHANGE-ME-BUCKET/entity-resolution"   # set by launch.sh (ER_S3)
+s3_prefix: "s3://CHANGE-ME-BUCKET/entity-resolution"   # set by launch.sh
 workdir: "/data/er"                                        # local EBS working dir on the instance
 input_files:            # raw parquet produced by scripts/00_to_parquet.py (uploaded to s3 input/)
   - train_s1.parquet

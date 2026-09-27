@@ -1,0 +1,6 @@
+HOLDOUT US     self-expected F (candidates only) 0.99331  S1 317918
+HOLDOUT India  self-expected F (candidates only) 0.99146  S1 212390
+TEST    US     self-expected F (candidates only) 0.99238  S1 632556
+TEST    India  self-expected F (candidates only) 0.98967  S1 776595
+TEST    France self-expected F (candidates only) 0.98163  S1 251848
+TEST weighted self-expected F: 0.9895   (LB 0.977; holdout actual clean 0.9915)

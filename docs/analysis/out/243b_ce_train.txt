@@ -1,0 +1,55 @@
+=== attempt 1 17:11:23
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8511.53it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Key               | Status  | 
+------------------+---------+-
+classifier.bias   | MISSING | 
+classifier.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  epoch 0 step 1000/64310 loss(ema) 0.5503 131 pairs/s mps 1.19 GB, sys avail 5.6 GB
+  epoch 0 step 2000/64310 loss(ema) 0.4737 130 pairs/s mps 1.19 GB, sys avail 5.9 GB
+  epoch 0 step 3000/64310 loss(ema) 0.4574 130 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 0 step 4000/64310 loss(ema) 0.4442 130 pairs/s mps 1.19 GB, sys avail 5.6 GB
+  epoch 0 step 5000/64310 loss(ema) 0.4040 130 pairs/s mps 1.19 GB, sys avail 5.2 GB
+  epoch 0 step 6000/64310 loss(ema) 0.3774 130 pairs/s mps 1.19 GB, sys avail 5.4 GB
+  epoch 0 step 7000/64310 loss(ema) 0.3739 130 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 8000/64310 loss(ema) 0.3843 130 pairs/s mps 1.19 GB, sys avail 5.4 GB
+  epoch 0 step 9000/64310 loss(ema) 0.3744 129 pairs/s mps 1.19 GB, sys avail 5.4 GB
+  epoch 0 step 10000/64310 loss(ema) 0.3726 129 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 11000/64310 loss(ema) 0.3273 129 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 12000/64310 loss(ema) 0.2989 129 pairs/s mps 1.19 GB, sys avail 5.8 GB
+  epoch 0 step 13000/64310 loss(ema) 0.3475 129 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 14000/64310 loss(ema) 0.2939 129 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 15000/64310 loss(ema) 0.2952 129 pairs/s mps 1.19 GB, sys avail 5.4 GB
+  epoch 0 step 16000/64310 loss(ema) 0.2994 129 pairs/s mps 1.19 GB, sys avail 5.3 GB
+  epoch 0 step 17000/64310 loss(ema) 0.2933 130 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 0 step 18000/64310 loss(ema) 0.2830 130 pairs/s mps 1.19 GB, sys avail 5.7 GB
+  epoch 0 step 19000/64310 loss(ema) 0.3028 130 pairs/s mps 1.19 GB, sys avail 5.4 GB
+  epoch 0 step 20000/64310 loss(ema) 0.3047 130 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 0 step 21000/64310 loss(ema) 0.2982 130 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 0 step 22000/64310 loss(ema) 0.3020 129 pairs/s mps 1.19 GB, sys avail 6.0 GB
+  epoch 0 step 23000/64310 loss(ema) 0.2639 129 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 0 step 24000/64310 loss(ema) 0.2793 129 pairs/s mps 1.19 GB, sys avail 6.4 GB
+  epoch 0 step 25000/64310 loss(ema) 0.2737 129 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 0 step 26000/64310 loss(ema) 0.3104 129 pairs/s mps 1.19 GB, sys avail 5.8 GB
+  epoch 0 step 27000/64310 loss(ema) 0.2706 128 pairs/s mps 1.19 GB, sys avail 6.3 GB
+  epoch 0 step 28000/64310 loss(ema) 0.2730 128 pairs/s mps 1.19 GB, sys avail 6.0 GB
+  epoch 0 step 29000/64310 loss(ema) 0.2556 128 pairs/s mps 1.19 GB, sys avail 6.0 GB
+  epoch 0 step 30000/64310 loss(ema) 0.2792 128 pairs/s mps 1.19 GB, sys avail 7.2 GB
+  epoch 0 step 31000/64310 loss(ema) 0.2531 128 pairs/s mps 1.19 GB, sys avail 7.0 GB
+  epoch 0 step 32000/64310 loss(ema) 0.2713 128 pairs/s mps 1.19 GB, sys avail 7.0 GB
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  5.33it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  5.32it/s]
+epoch 0 done, step 32155, 4009s
+  epoch 1 step 33000/64310 loss(ema) 0.2216 128 pairs/s mps 1.19 GB, sys avail 6.7 GB
+  epoch 1 step 34000/64310 loss(ema) 0.2498 128 pairs/s mps 1.19 GB, sys avail 7.0 GB
+  epoch 1 step 35000/64310 loss(ema) 0.2408 128 pairs/s mps 1.19 GB, sys avail 7.3 GB
+  epoch 1 step 36000/64310 loss(ema) 0.2488 128 pairs/s mps 1.19 GB, sys avail 6.3 GB
+  epoch 1 step 37000/64310 loss(ema) 0.2350 128 pairs/s mps 1.19 GB, sys avail 6.4 GB
+  epoch 1 step 38000/64310 loss(ema) 0.2262 128 pairs/s mps 1.19 GB, sys avail 6.1 GB
+  epoch 1 step 39000/64310 loss(ema) 0.2811 129 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 1 step 40000/64310 loss(ema) 0.2213 114 pairs/s mps 1.19 GB, sys avail 6.2 GB
+  epoch 1 step 41000/64310 loss(ema) 0.2054 46 pairs/s mps 1.19 GB, sys avail 6.6 GB
+  epoch 1 step 42000/64310 loss(ema) 0.2183 46 pairs/s mps 1.19 GB, sys avail 6.6 GB

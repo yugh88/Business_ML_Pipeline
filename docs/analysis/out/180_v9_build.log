@@ -1,0 +1,5 @@
+p2 train      320 test      256
+decision: {'tau': 0.05, 'variant': 'p2x2', 'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.05, 'cap': 1, 'why': 'V8 fold-7 selection (scripts/155): valid 0.98959'}
+{'decision': {'tau': 0.05, 'variant': 'p2x2', 'policy': 'G_expected_f', 'a': 1.0, 'lam': 0.05, 'cap': 1, 'why': 'V8 fold-7 selection (scripts/155): valid 0.98959'}, 's1': 1732544, 'cand_pairs': 6599387, 'cands_per_s1': 3.8090732472018027, 'cand_quantiles': [4.0, 6.0, 9.0, 4634], 'matches': 5817888, 'matches_per_s1': 3.3580030290717002, 's1_empty': 98209, 'max_matches': 11, 's2_share': 0.4853890277709024}
+PASS — no blocking issues found. Safe to submit.
+V9 BUILD DONE

@@ -1,0 +1,31 @@
+{'train': (1602075, 90212), 'valid': (535790, 30232), 'hold': (535002, 30029)}
+
+E1 feature-group ablation (LightGBM, valid split, argmax policy, best threshold)
+  name_only            AP=0.7438 macroF0.5=0.6303 thr=0.38 {'P_micro': 0.7361522858480262, 'R_micro': 0.6173776498298874, 'singleton_acc': 0.5483234714003945, 'f_nonsingle': 0.6352795869745906, 'f_US': 0.6570837670254593, 'f_India': 0.5907648575284937} (25s)
+  addr_only            AP=0.8318 macroF0.5=0.8230 thr=0.48 {'P_micro': 0.7881353214686548, 'R_micro': 0.8040434441245747, 'singleton_acc': 0.73767258382643, 'f_nonsingle': 0.8281701867656507, 'f_US': 0.8332556023820139, 'f_India': 0.8078521880082977} (24s)
+  name+addr            AP=0.9925 macroF0.5=0.9586 thr=0.66 {'P_micro': 0.9824555284269271, 'R_micro': 0.9214538079036901, 'singleton_acc': 0.9270216962524654, 'f_nonsingle': 0.9604602992572354, 'f_US': 0.964567517917261, 'f_India': 0.9496612816488251} (31s)
+  all(+competition)    AP=0.9943 macroF0.5=0.9638 thr=0.72 {'P_micro': 0.9879459138394885, 'R_micro': 0.9250196283695368, 'singleton_acc': 0.9487179487179487, 'f_nonsingle': 0.9646627326595802, 'f_US': 0.9690072486845693, 'f_India': 0.9559885688921583} (33s)
+  top gain: [('r_margin_best', np.float64(1.0)), ('rrank', np.float64(0.362)), ('num_conflict', np.float64(0.064)), ('num_first_eq', np.float64(0.027)), ('s1_rank_sum', np.float64(0.023)), ('ns_jw', np.float64(0.022)), ('n_len_ratio', np.float64(0.021)), ('n_eq', np.float64(0.016)), ('m_gap12', np.float64(0.014)), ('a_tsr', np.float64(0.014)), ('num_n2', np.float64(0.009)), ('state_agree', np.float64(0.009)), ('num_shared', np.float64(0.008)), ('a_max_idf_missing', np.float64(0.008)), ('num_n1', np.float64(0.006)), ('name_freq_s1', np.float64(0.006)), ('s1_rank_rscore', np.float64(0.006)), ('n_jac', np.float64(0.006)), ('n_max_idf_shared', np.float64(0.005)), ('a_jac', np.float64(0.005))]
+
+E2 model families (all features)
+  logreg       AP=0.9814 AUC=0.99859 macroF0.5=0.9291 thr=0.70 P=0.9678 R=0.8794 single=0.8619 (3s)
+  lightgbm     AP=0.9943 AUC=0.99959 macroF0.5=0.9638 thr=0.72 P=0.9879 R=0.9250 single=0.9487 (0s)
+  xgboost      AP=0.9944 AUC=0.99960 macroF0.5=0.9636 thr=0.74 P=0.9891 R=0.9228 single=0.9527 (7708s)
+  mlp(128,64)  AP=0.9918 AUC=0.99941 macroF0.5=0.9531 thr=0.78 P=0.9786 R=0.9173 single=0.9034 (39s)
+
+E3 decision policy (LightGBM all features)
+  threshold_only   macroF0.5=0.9638 thr=0.72 {'P_micro': 0.9879459138394885, 'R_micro': 0.9250196283695368, 'singleton_acc': 0.9487179487179487, 'f_nonsingle': 0.9646627326595802, 'f_US': 0.9690072486845693, 'f_India': 0.9559885688921583}
+  argmax           macroF0.5=0.9638 thr=0.72 {'P_micro': 0.9879459138394885, 'R_micro': 0.9250196283695368, 'singleton_acc': 0.9487179487179487, 'f_nonsingle': 0.9646627326595802, 'f_US': 0.9690072486845693, 'f_India': 0.9559885688921583}
+  argmax+margin 0.05: macroF0.5=0.9638 P=0.9879 R=0.9250
+  argmax+margin 0.1: macroF0.5=0.9638 P=0.9879 R=0.9250
+  argmax+margin 0.2: macroF0.5=0.9638 P=0.9879 R=0.9250
+  argmax+margin 0.3: macroF0.5=0.9638 P=0.9879 R=0.9250
+  thr curve: [(0.1, 0.8915), (0.15, 0.9136), (0.2, 0.9285), (0.25, 0.9389), (0.3, 0.9457), (0.35, 0.9516), (0.4, 0.9552), (0.45, 0.9571), (0.5, 0.959), (0.55, 0.9604), (0.6, 0.9625), (0.65, 0.9632), (0.7, 0.9633), (0.75, 0.9636), (0.8, 0.963), (0.85, 0.9607), (0.9, 0.9563), (0.95, 0.9457)]
+
+E4 per-segment thresholds (tuned on valid, reported on holdout)
+  global thr 0.72 holdout macroF0.5=0.9625 {'P_micro': 0.9887949260042284, 'R_micro': 0.9244910061276932, 'singleton_acc': 0.9546436285097192, 'f_nonsingle': 0.96298927133791, 'f_US': 0.9697220466218421, 'f_India': 0.9512761221226433}
+  segment thresholds {'India_S2': 0.6400000000000003, 'India_S3': 0.7400000000000004, 'US_S2': 0.6800000000000004, 'US_S3': 0.7600000000000005} holdout macroF0.5=0.9619 {'P_micro': 0.9875610527425419, 'R_micro': 0.9259076233774791, 'singleton_acc': 0.9503239740820735, 'f_nonsingle': 0.9625359849621123, 'f_US': 0.969002083585506, 'f_India': 0.950713400745187}
+
+E5 robustness: state feature forced unknown at inference (France has no state)
+  normal=0.9625 state-blanked=0.9622 | trained w/ 25% state dropout: blanked=0.9618 normal=0.9615 | no-state model=0.9619
+memguard: peak_proc_rss=5.21GB min_sys_available=7.32GB

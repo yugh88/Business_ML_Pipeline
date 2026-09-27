@@ -1,0 +1,70 @@
+TRAIN: share of candidates whose raw address equals another strong same-source candidate's (non-empty addresses)
+shape: (16, 6)
+┌───────┬───────┬───────┬────────┬─────────────┬──────────┐
+│ kind  ┆ cls   ┆ y     ┆ len    ┆ addr_shared ┆ same_num │
+│ ---   ┆ ---   ┆ ---   ┆ ---    ┆ ---         ┆ ---      │
+│ str   ┆ str   ┆ bool  ┆ u32    ┆ f64         ┆ f64      │
+╞═══════╪═══════╪═══════╪════════╪═════════════╪══════════╡
+│ EXTRA ┆ NOISE ┆ false ┆ 5252   ┆ 0.001       ┆ 0.17     │
+│ EXTRA ┆ NOISE ┆ true  ┆ 80401  ┆ 0.221       ┆ 0.71     │
+│ EXTRA ┆ SIB   ┆ false ┆ 32735  ┆ 0.001       ┆ 0.23     │
+│ EXTRA ┆ SIB   ┆ true  ┆ 1      ┆ 0.0         ┆ 1.0      │
+│ EXTRA ┆ mixed ┆ false ┆ 30     ┆ 0.0         ┆ 0.333    │
+│ EXTRA ┆ mixed ┆ true  ┆ 453    ┆ 0.223       ┆ 0.764    │
+│ EXTRA ┆ rare  ┆ false ┆ 1133   ┆ 0.009       ┆ 0.336    │
+│ EXTRA ┆ rare  ┆ true  ┆ 55255  ┆ 0.08        ┆ 0.847    │
+│ SWAP  ┆ NOISE ┆ false ┆ 6577   ┆ 0.008       ┆ 0.215    │
+│ SWAP  ┆ NOISE ┆ true  ┆ 114361 ┆ 0.226       ┆ 0.74     │
+│ SWAP  ┆ SIB   ┆ false ┆ 14187  ┆ 0.005       ┆ 0.264    │
+│ SWAP  ┆ SIB   ┆ true  ┆ 123    ┆ 0.171       ┆ 0.699    │
+│ SWAP  ┆ mixed ┆ false ┆ 895    ┆ 0.01        ┆ 0.344    │
+│ SWAP  ┆ mixed ┆ true  ┆ 1022   ┆ 0.153       ┆ 0.714    │
+│ SWAP  ┆ rare  ┆ false ┆ 54625  ┆ 0.079       ┆ 0.444    │
+│ SWAP  ┆ rare  ┆ true  ┆ 302205 ┆ 0.222       ┆ 0.754    │
+└───────┴───────┴───────┴────────┴─────────────┴──────────┘
+TRAIN same-number only:
+shape: (8, 4)
+┌───────┬───────┬────────┬─────────────┐
+│ cls   ┆ y     ┆ len    ┆ addr_shared │
+│ ---   ┆ ---   ┆ ---    ┆ ---         │
+│ str   ┆ bool  ┆ u32    ┆ f64         │
+╞═══════╪═══════╪════════╪═════════════╡
+│ NOISE ┆ false ┆ 2307   ┆ 0.018       │
+│ NOISE ┆ true  ┆ 141700 ┆ 0.241       │
+│ SIB   ┆ false ┆ 11287  ┆ 0.008       │
+│ SIB   ┆ true  ┆ 87     ┆ 0.172       │
+│ mixed ┆ false ┆ 318    ┆ 0.022       │
+│ mixed ┆ true  ┆ 1076   ┆ 0.181       │
+│ rare  ┆ false ┆ 24616  ┆ 0.149       │
+│ rare  ┆ true  ┆ 274666 ┆ 0.211       │
+└───────┴───────┴────────┴─────────────┘
+FRANCE: same statistic by word class
+shape: (9, 6)
+┌───────┬─────────────┬────────┬─────────────┬──────────┬──────┐
+│ kind  ┆ cls         ┆ len    ┆ addr_shared ┆ same_num ┆ acc  │
+│ ---   ┆ ---         ┆ ---    ┆ ---         ┆ ---      ┆ ---  │
+│ str   ┆ str         ┆ u32    ┆ f64         ┆ f64      ┆ f64  │
+╞═══════╪═════════════╪════════╪═════════════╪══════════╪══════╡
+│ EXTRA ┆ ASSOC_other ┆ 279    ┆ 0.129       ┆ 0.806    ┆ 0.51 │
+│ EXTRA ┆ FR_NOISE?   ┆ 16252  ┆ 0.14        ┆ 0.637    ┆ 0.65 │
+│ EXTRA ┆ FR_SIB?     ┆ 10506  ┆ 0.009       ┆ 0.105    ┆ 0.13 │
+│ EXTRA ┆ other       ┆ 47550  ┆ 0.146       ┆ 0.865    ┆ 0.9  │
+│ SWAP  ┆ ASSOC_SWAP  ┆ 66301  ┆ 0.12        ┆ 0.57     ┆ 0.52 │
+│ SWAP  ┆ ASSOC_other ┆ 7077   ┆ 0.121       ┆ 0.583    ┆ 0.49 │
+│ SWAP  ┆ FR_NOISE?   ┆ 49525  ┆ 0.183       ┆ 0.826    ┆ 0.8  │
+│ SWAP  ┆ FR_SIB?     ┆ 962    ┆ 0.011       ┆ 0.086    ┆ 0.26 │
+│ SWAP  ┆ other       ┆ 166608 ┆ 0.145       ┆ 0.823    ┆ 0.73 │
+└───────┴─────────────┴────────┴─────────────┴──────────┴──────┘
+FRANCE same-number only:
+shape: (5, 3)
+┌─────────────┬────────┬─────────────┐
+│ cls         ┆ len    ┆ addr_shared │
+│ ---         ┆ ---    ┆ ---         │
+│ str         ┆ u32    ┆ f64         │
+╞═════════════╪════════╪═════════════╡
+│ ASSOC_SWAP  ┆ 37762  ┆ 0.2         │
+│ ASSOC_other ┆ 4352   ┆ 0.197       │
+│ FR_NOISE?   ┆ 51266  ┆ 0.203       │
+│ FR_SIB?     ┆ 1191   ┆ 0.013       │
+│ other       ┆ 178311 ┆ 0.161       │
+└─────────────┴────────┴─────────────┘

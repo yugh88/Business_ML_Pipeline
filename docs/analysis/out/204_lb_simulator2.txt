@@ -1,0 +1,22 @@
+cached v2
+cached V3
+cached V5
+cached V5s3r
+cached V9
+predicted E[F] - 0.003 - LB   (alpha = weight of V9 p3 vs calibrated pairwise p1; w = odds shift)
+  alpha=1.0  w=1.0  v2 -0.0032  V3 +0.0016  V5 +0.0050  V5s3r +0.0069  V9 +0.0086   | spread 0.0118  mean|err| 0.0050
+  alpha=1.0  w=0.7  v2 -0.0052  V3 +0.0000  V5 +0.0035  V5s3r +0.0053  V9 +0.0077   | spread 0.0129  mean|err| 0.0044
+  alpha=1.0  w=0.5  v2 -0.0076  V3 -0.0019  V5 +0.0017  V5s3r +0.0033  V9 +0.0061   | spread 0.0137  mean|err| 0.0041
+  alpha=0.75 w=1.0  v2 -0.0054  V3 -0.0016  V5 +0.0021  V5s3r +0.0035  V9 +0.0046   | spread 0.0101  mean|err| 0.0034
+  alpha=0.75 w=0.7  v2 -0.0077  V3 -0.0032  V5 +0.0005  V5s3r +0.0019  V9 +0.0036   | spread 0.0113  mean|err| 0.0034
+  alpha=0.75 w=0.5  v2 -0.0104  V3 -0.0054  V5 -0.0016  V5s3r -0.0004  V9 +0.0017   | spread 0.0121  mean|err| 0.0039
+  alpha=0.5  w=1.0  v2 -0.0076  V3 -0.0046  V5 -0.0008  V5s3r +0.0003  V9 +0.0007   | spread 0.0083  mean|err| 0.0028
+  alpha=0.5  w=0.7  v2 -0.0099  V3 -0.0062  V5 -0.0022  V5s3r -0.0012  V9 -0.0003   | spread 0.0095  mean|err| 0.0040
+  alpha=0.5  w=0.5  v2 -0.0126  V3 -0.0084  V5 -0.0044  V5s3r -0.0035  V9 -0.0022   | spread 0.0104  mean|err| 0.0062
+  alpha=0.25 w=1.0  v2 -0.0098  V3 -0.0076  V5 -0.0036  V5s3r -0.0029  V9 -0.0032   | spread 0.0069  mean|err| 0.0054
+  alpha=0.25 w=0.7  v2 -0.0118  V3 -0.0089  V5 -0.0048  V5s3r -0.0043  V9 -0.0041   | spread 0.0077  mean|err| 0.0068
+  alpha=0.25 w=0.5  v2 -0.0144  V3 -0.0110  V5 -0.0069  V5s3r -0.0064  V9 -0.0058   | spread 0.0086  mean|err| 0.0089
+  alpha=0.0  w=1.0  v2 -0.0119  V3 -0.0105  V5 -0.0063  V5s3r -0.0060  V9 -0.0070   | spread 0.0059  mean|err| 0.0084
+  alpha=0.0  w=0.7  v2 -0.0136  V3 -0.0115  V5 -0.0073  V5s3r -0.0071  V9 -0.0078   | spread 0.0064  mean|err| 0.0095
+  alpha=0.0  w=0.5  v2 -0.0157  V3 -0.0132  V5 -0.0090  V5s3r -0.0090  V9 -0.0093   | spread 0.0068  mean|err| 0.0112
+python scripts/204_lb_simulator2.py  792.28s user 267.97s system 106% cpu 16:36.56 total

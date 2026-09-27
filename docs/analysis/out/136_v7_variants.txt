@@ -1,0 +1,7 @@
+fold 0: V5 0.99057  V7 0.99097  V7b 0.98949  (V7b removes TP 4517 FP 529)
+fold 8: V5 0.99053  V7 0.99097  V7b 0.98949  (V7b removes TP 4538 FP 562)
+fold 9: V5 0.99057  V7 0.99089  V7b 0.98941  (V7b removes TP 4527 FP 546)
+TEST US: V5 pairs 2270043 (3.423/S1)  V7 removes 31.1/1k  V7b removes 61.6/1k
+TEST India: V5 pairs 2767761 (3.417/S1)  V7 removes 58.7/1k  V7b removes 101.2/1k
+TEST France: V5 pairs 878450 (3.386/S1)  V7 removes 18.8/1k  V7b removes 27.5/1k
+V7b pairs: 5786326 3.3398

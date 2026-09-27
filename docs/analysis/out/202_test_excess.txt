@@ -1,0 +1,59 @@
+per 1k S1: holdout candidates n_h, test candidates n_t, holdout accepted TP/FP, test accepted acc_t, extra_acc = acc_t - holdout accepted (TP+FP)
+┌─────────┬──────────────────────────┬────────────┬────────┬───┬─────────┬────────┬───────────┬─────────┐
+│ country ┆ cls                      ┆ bucket     ┆ n_h    ┆ … ┆ FPacc_h ┆ acc_t  ┆ extra_acc ┆ p3acc_t │
+│ ---     ┆ ---                      ┆ ---        ┆ ---    ┆   ┆ ---     ┆ ---    ┆ ---       ┆ ---     │
+│ str     ┆ str                      ┆ str        ┆ f64    ┆   ┆ f64     ┆ f64    ┆ f64       ┆ f32     │
+╞═════════╪══════════════════════════╪════════════╪════════╪═══╪═════════╪════════╪═══════════╪═════════╡
+│ India   ┆ identical@same           ┆ plain      ┆ 423.4  ┆ … ┆ 0.8     ┆ 410.5  ┆ 5.0       ┆ 0.997   │
+│ India   ┆ other                    ┆ noisy      ┆ 255.2  ┆ … ┆ 2.0     ┆ 200.6  ┆ 3.7       ┆ 0.984   │
+│ India   ┆ other                    ┆ plain      ┆ 156.2  ┆ … ┆ 1.3     ┆ 119.5  ┆ 2.5       ┆ 0.981   │
+│ India   ┆ identical@num_changed    ┆ plain      ┆ 137.3  ┆ … ┆ 0.7     ┆ 117.1  ┆ 2.4       ┆ 0.987   │
+│ India   ┆ light_edit@same          ┆ noisy      ┆ 189.3  ┆ … ┆ 0.9     ┆ 181.3  ┆ 1.8       ┆ 0.994   │
+│ India   ┆ light_edit@same          ┆ plain      ┆ 90.1   ┆ … ┆ 0.3     ┆ 88.0   ┆ 1.4       ┆ 0.995   │
+│ India   ┆ swap_extra@same          ┆ noisy      ┆ 201.3  ┆ … ┆ 0.5     ┆ 190.4  ┆ 1.1       ┆ 0.993   │
+│ India   ┆ identical@other          ┆ plain      ┆ 58.4   ┆ … ┆ 0.4     ┆ 54.7   ┆ 1.1       ┆ 0.989   │
+│ India   ┆ identical@other          ┆ noisy      ┆ 150.4  ┆ … ┆ 0.8     ┆ 141.8  ┆ 0.8       ┆ 0.992   │
+│ India   ┆ identical@num_changed    ┆ name_clone ┆ 17.9   ┆ … ┆ 0.0     ┆ 17.6   ┆ 0.4       ┆ 0.996   │
+│ India   ┆ light_edit@same          ┆ addr_clone ┆ 11.6   ┆ … ┆ 0.0     ┆ 12.1   ┆ 0.4       ┆ 0.999   │
+│ India   ┆ identical@empty          ┆ plain      ┆ 20.9   ┆ … ┆ 0.2     ┆ 19.3   ┆ 0.3       ┆ 0.97    │
+│ India   ┆ first_word_replaced@same ┆ noisy      ┆ 9.1    ┆ … ┆ 0.1     ┆ 7.1    ┆ 0.1       ┆ 0.98    │
+│ India   ┆ identical@empty          ┆ name_clone ┆ 3.2    ┆ … ┆ 0.0     ┆ 3.1    ┆ 0.1       ┆ 0.98    │
+│ India   ┆ identical@other          ┆ name_clone ┆ 7.4    ┆ … ┆ 0.0     ┆ 7.2    ┆ 0.1       ┆ 0.995   │
+│ India   ┆ no_overlap@same          ┆ addr_clone ┆ 21.6   ┆ … ┆ 0.3     ┆ 19.5   ┆ -0.2      ┆ 0.972   │
+│ India   ┆ swap_extra@same          ┆ plain      ┆ 175.6  ┆ … ┆ 0.4     ┆ 163.0  ┆ -0.2      ┆ 0.993   │
+│ India   ┆ identical@same           ┆ addr_clone ┆ 4.8    ┆ … ┆ 0.0     ┆ 4.6    ┆ -0.2      ┆ 1.0     │
+│ India   ┆ swap_extra@same          ┆ addr_clone ┆ 36.1   ┆ … ┆ 0.0     ┆ 35.5   ┆ -0.6      ┆ 1.0     │
+│ India   ┆ no_overlap@same          ┆ noisy      ┆ 144.0  ┆ … ┆ 0.8     ┆ 132.0  ┆ -0.6      ┆ 0.991   │
+│ India   ┆ identical@num_changed    ┆ noisy      ┆ 314.9  ┆ … ┆ 0.8     ┆ 290.8  ┆ -0.6      ┆ 0.994   │
+│ India   ┆ identical@empty          ┆ noisy      ┆ 28.3   ┆ … ┆ 0.3     ┆ 24.7   ┆ -0.7      ┆ 0.976   │
+│ India   ┆ identical@same           ┆ name_clone ┆ 63.4   ┆ … ┆ 0.0     ┆ 62.7   ┆ -0.7      ┆ 1.0     │
+│ India   ┆ no_overlap@same          ┆ plain      ┆ 30.6   ┆ … ┆ 0.8     ┆ 23.0   ┆ -0.9      ┆ 0.967   │
+│ India   ┆ identical@same           ┆ noisy      ┆ 1041.7 ┆ … ┆ 0.5     ┆ 1022.0 ┆ -10.5     ┆ 0.999   │
+│ US      ┆ other                    ┆ noisy      ┆ 182.4  ┆ … ┆ 1.2     ┆ 144.7  ┆ 6.4       ┆ 0.983   │
+│ US      ┆ identical@num_changed    ┆ noisy      ┆ 177.0  ┆ … ┆ 0.7     ┆ 157.0  ┆ 5.1       ┆ 0.987   │
+│ US      ┆ identical@empty          ┆ noisy      ┆ 43.1   ┆ … ┆ 0.5     ┆ 44.9   ┆ 4.9       ┆ 0.971   │
+│ US      ┆ other                    ┆ plain      ┆ 101.6  ┆ … ┆ 0.7     ┆ 80.7   ┆ 3.6       ┆ 0.982   │
+│ US      ┆ identical@num_changed    ┆ plain      ┆ 64.9   ┆ … ┆ 0.6     ┆ 50.2   ┆ 2.4       ┆ 0.978   │
+│ US      ┆ no_overlap@same          ┆ noisy      ┆ 214.0  ┆ … ┆ 0.9     ┆ 201.9  ┆ 2.1       ┆ 0.995   │
+│ US      ┆ identical@empty          ┆ plain      ┆ 15.1   ┆ … ┆ 0.2     ┆ 15.8   ┆ 1.8       ┆ 0.968   │
+│ US      ┆ first_word_replaced@same ┆ noisy      ┆ 13.1   ┆ … ┆ 0.3     ┆ 5.3    ┆ 1.4       ┆ 0.946   │
+│ US      ┆ no_overlap@same          ┆ plain      ┆ 30.7   ┆ … ┆ 0.4     ┆ 26.5   ┆ 1.0       ┆ 0.981   │
+│ US      ┆ identical@other          ┆ noisy      ┆ 62.8   ┆ … ┆ 0.2     ┆ 61.5   ┆ 0.9       ┆ 0.995   │
+│ US      ┆ light_edit@same          ┆ noisy      ┆ 331.7  ┆ … ┆ 0.7     ┆ 325.0  ┆ 0.9       ┆ 0.996   │
+│ US      ┆ identical@empty          ┆ name_clone ┆ 5.7    ┆ … ┆ 0.2     ┆ 6.0    ┆ 0.8       ┆ 0.973   │
+│ US      ┆ first_word_replaced@same ┆ plain      ┆ 7.9    ┆ … ┆ 0.2     ┆ 3.9    ┆ 0.6       ┆ 0.964   │
+│ US      ┆ light_edit@same          ┆ plain      ┆ 125.2  ┆ … ┆ 0.2     ┆ 124.2  ┆ 0.3       ┆ 0.998   │
+│ US      ┆ identical@num_changed    ┆ name_clone ┆ 23.4   ┆ … ┆ 0.1     ┆ 22.9   ┆ 0.3       ┆ 0.992   │
+│ US      ┆ swap_extra@same          ┆ noisy      ┆ 199.8  ┆ … ┆ 0.2     ┆ 196.3  ┆ 0.1       ┆ 0.996   │
+│ US      ┆ identical@other          ┆ name_clone ┆ 9.4    ┆ … ┆ 0.0     ┆ 9.3    ┆ 0.1       ┆ 0.997   │
+│ US      ┆ identical@other          ┆ plain      ┆ 21.6   ┆ … ┆ 0.1     ┆ 20.7   ┆ 0.1       ┆ 0.992   │
+│ US      ┆ light_edit@same          ┆ addr_clone ┆ 13.2   ┆ … ┆ 0.0     ┆ 13.3   ┆ 0.1       ┆ 0.999   │
+│ US      ┆ no_overlap@same          ┆ addr_clone ┆ 4.5    ┆ … ┆ 0.1     ┆ 3.7    ┆ -0.1      ┆ 0.981   │
+│ US      ┆ swap_extra@same          ┆ addr_clone ┆ 60.8   ┆ … ┆ 0.0     ┆ 60.5   ┆ -0.3      ┆ 1.0     │
+│ US      ┆ identical@same           ┆ noisy      ┆ 1125.6 ┆ … ┆ 0.3     ┆ 1118.9 ┆ -0.9      ┆ 0.999   │
+│ US      ┆ swap_extra@same          ┆ plain      ┆ 193.7  ┆ … ┆ 0.1     ┆ 190.3  ┆ -1.0      ┆ 0.997   │
+│ US      ┆ identical@same           ┆ name_clone ┆ 164.7  ┆ … ┆ 0.0     ┆ 163.2  ┆ -1.4      ┆ 0.999   │
+│ US      ┆ identical@same           ┆ plain      ┆ 335.3  ┆ … ┆ 0.2     ┆ 328.8  ┆ -2.9      ┆ 0.998   │
+└─────────┴──────────────────────────┴────────────┴────────┴───┴─────────┴────────┴───────────┴─────────┘
+US: candidates/1k holdout 3528 test 3632; accepted/1k holdout 3351 test 3377; positive extra_acc sum 33.0/1k, negative -6.6/1k; plain-bucket extra_acc 6.0, noisy 20.8
+India: candidates/1k holdout 3594 test 3691; accepted/1k holdout 3343 test 3349; positive extra_acc sum 21.5/1k, negative -15.3/1k; plain-bucket extra_acc 11.8, noisy -4.9

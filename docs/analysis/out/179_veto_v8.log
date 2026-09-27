@@ -1,0 +1,4 @@
+fold 0: base 0.9897  stage3 0.99027  veto(base AND stage3) 0.9901
+fold 8: base 0.98964  stage3 0.99032  veto(base AND stage3) 0.99005
+fold 9: base 0.98951  stage3 0.99015  veto(base AND stage3) 0.98989
+test pairs: base 5817888  stage3 5827607  veto 5798718  -> output_v9veto

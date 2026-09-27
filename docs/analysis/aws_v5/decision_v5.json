@@ -1,0 +1,2 @@
+{"tau": 0.05, "variant": "p2x2", "policy": "G_expected_f", "a": 1.0, "lam": 0.15, "cap": 1,
+ "why": "V5 (hard look-alike orphan simulation) fold-7 selection: largest tau within 0.0001 of best valid; holdout f0/f8/f9 0.99057/0.99053/0.99057 on V5 population (optimistic vs V3 population); 3.62 cand/S1 train"}

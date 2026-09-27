@@ -1,0 +1,38 @@
+TRAIN (all pool records, same address): true-copy rate by rewrite kind x new-word type
+shape: (9, 5)
+┌─────────────────────┬─────────────────┬────────┬───────────┬────────────┐
+│ kind                ┆ wtype           ┆ len    ┆ true_rate ┆ distractor │
+│ ---                 ┆ ---             ┆ ---    ┆ ---       ┆ ---        │
+│ str                 ┆ str             ┆ u32    ┆ f64       ┆ f64        │
+╞═════════════════════╪═════════════════╪════════╪═══════════╪════════════╡
+│ first_word_replaced ┆ real_word       ┆ 40472  ┆ 0.362     ┆ 0.499      │
+│ first_word_replaced ┆ synthetic_brand ┆ 3318   ┆ 0.001     ┆ 0.999      │
+│ first_word_replaced ┆ mixed_brand     ┆ 414    ┆ 0.0       ┆ 0.785      │
+│ no_overlap          ┆ real_word       ┆ 265514 ┆ 0.303     ┆ 0.188      │
+│ no_overlap          ┆ domain          ┆ 235951 ┆ 0.941     ┆ 0.007      │
+│ no_overlap          ┆ synthetic_brand ┆ 77365  ┆ 0.809     ┆ 0.007      │
+│ no_overlap          ┆ typo            ┆ 12858  ┆ 0.907     ┆ 0.072      │
+│ no_overlap          ┆ mixed_brand     ┆ 12672  ┆ 0.342     ┆ 0.139      │
+│ no_overlap          ┆ initials        ┆ 9533   ┆ 0.998     ┆ 0.0        │
+└─────────────────────┴─────────────────┴────────┴───────────┴────────────┘
+
+V9 HOLDOUT (cascade candidates, same address, rewritten names): acceptance, precision, recall by type
+shape: (9, 7)
+┌─────────────────────┬─────────────────┬───────┬───────────┬──────────┬─────┬─────┐
+│ kind                ┆ wtype           ┆ cands ┆ true_rate ┆ acc_rate ┆ FP  ┆ FN  │
+│ ---                 ┆ ---             ┆ ---   ┆ ---       ┆ ---      ┆ --- ┆ --- │
+│ str                 ┆ str             ┆ u32   ┆ f64       ┆ f64      ┆ u32 ┆ u32 │
+╞═════════════════════╪═════════════════╪═══════╪═══════════╪══════════╪═════╪═════╡
+│ first_word_replaced ┆ real_word       ┆ 8898  ┆ 0.49      ┆ 0.485    ┆ 206 ┆ 243 │
+│ first_word_replaced ┆ synthetic_brand ┆ 554   ┆ 0.002     ┆ 0.005    ┆ 3   ┆ 1   │
+│ first_word_replaced ┆ mixed_brand     ┆ 65    ┆ 0.0       ┆ 0.015    ┆ 1   ┆ 0   │
+│ no_overlap          ┆ domain          ┆ 68352 ┆ 0.971     ┆ 0.968    ┆ 78  ┆ 272 │
+│ no_overlap          ┆ real_word       ┆ 26861 ┆ 0.892     ┆ 0.881    ┆ 163 ┆ 464 │
+│ no_overlap          ┆ synthetic_brand ┆ 23271 ┆ 0.804     ┆ 0.792    ┆ 598 ┆ 886 │
+│ no_overlap          ┆ typo            ┆ 3779  ┆ 0.921     ┆ 0.905    ┆ 14  ┆ 75  │
+│ no_overlap          ┆ initials        ┆ 2895  ┆ 0.998     ┆ 0.987    ┆ 1   ┆ 32  │
+│ no_overlap          ┆ mixed_brand     ┆ 1788  ┆ 0.707     ┆ 0.687    ┆ 49  ┆ 86  │
+└─────────────────────┴─────────────────┴───────┴───────────┴──────────┴─────┴─────┘
+TEST US: [('first_word_replaced', 'real_word', 29.9, 0.319), ('first_word_replaced', 'synthetic_brand', 3.8, 0.009), ('first_word_replaced', 'mixed_brand', 0.5, 0.003), ('no_overlap', 'domain', 143.4, 0.986), ('no_overlap', 'real_word', 47.7, 0.929), ('no_overlap', 'synthetic_brand', 42.2, 0.817), ('no_overlap', 'typo', 8.7, 0.95), ('no_overlap', 'initials', 2.8, 0.971), ('no_overlap', 'mixed_brand', 2.1, 0.409)]
+TEST India: [('first_word_replaced', 'real_word', 10.8, 0.77), ('first_word_replaced', 'mixed_brand', 0.0, 0.0), ('first_word_replaced', 'synthetic_brand', 0.0, 0.0), ('no_overlap', 'domain', 88.7, 0.972), ('no_overlap', 'real_word', 44.8, 0.903), ('no_overlap', 'synthetic_brand', 40.3, 0.783), ('no_overlap', 'initials', 9.1, 0.964), ('no_overlap', 'mixed_brand', 4.9, 0.825), ('no_overlap', 'typo', 4.3, 0.787)]
+TEST France: [('first_word_replaced', 'real_word', 25.4, 0.56), ('first_word_replaced', 'mixed_brand', 0.0, 0.0), ('no_overlap', 'domain', 188.9, 0.899), ('no_overlap', 'synthetic_brand', 61.0, 0.47), ('no_overlap', 'initials', 60.2, 0.696), ('no_overlap', 'real_word', 56.5, 0.654), ('no_overlap', 'typo', 11.5, 0.516), ('no_overlap', 'mixed_brand', 1.9, 0.594)]

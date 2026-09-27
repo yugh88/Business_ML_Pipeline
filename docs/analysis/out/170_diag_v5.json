@@ -1,0 +1,93 @@
+{
+ "label": "v5",
+ "decision": {
+  "tau": 0.05,
+  "variant": "p2x2",
+  "policy": "G_expected_f",
+  "a": 1.0,
+  "lam": 0.15,
+  "t": null,
+  "cap": 1
+ },
+ "A": {
+  "folds": {
+   "0": {
+    "aug": {
+     "F": 0.99057,
+     "FP_loss": 0.00343,
+     "FN_loss": 0.00602,
+     "singleton_FP_loss": 0.00124,
+     "S1_with_FP": 0.0105,
+     "S1_with_FN": 0.0584
+    },
+    "clean": {
+     "F": 0.99057,
+     "FP_loss": 0.00343,
+     "FN_loss": 0.00602,
+     "singleton_FP_loss": 0.00124,
+     "S1_with_FP": 0.0105,
+     "S1_with_FN": 0.0584
+    }
+   },
+   "8": {
+    "aug": {
+     "F": 0.99053,
+     "FP_loss": 0.00355,
+     "FN_loss": 0.00592,
+     "singleton_FP_loss": 0.00133,
+     "S1_with_FP": 0.0108,
+     "S1_with_FN": 0.0582
+    },
+    "clean": {
+     "F": 0.99053,
+     "FP_loss": 0.00355,
+     "FN_loss": 0.00592,
+     "singleton_FP_loss": 0.00133,
+     "S1_with_FP": 0.0108,
+     "S1_with_FN": 0.0582
+    }
+   },
+   "9": {
+    "aug": {
+     "F": 0.99057,
+     "FP_loss": 0.00364,
+     "FN_loss": 0.00581,
+     "singleton_FP_loss": 0.0013,
+     "S1_with_FP": 0.011,
+     "S1_with_FN": 0.0576
+    },
+    "clean": {
+     "F": 0.99057,
+     "FP_loss": 0.00364,
+     "FN_loss": 0.00581,
+     "singleton_FP_loss": 0.0013,
+     "S1_with_FP": 0.011,
+     "S1_with_FN": 0.0576
+    }
+   }
+  }
+ },
+ "B": {
+  "US": {
+   "pred_per_s1": 3.4233,
+   "plus_k": 43.84,
+   "minus_k": 18.64,
+   "promoted_k": 79.95,
+   "excess_total_k": 79.18
+  },
+  "India": {
+   "pred_per_s1": 3.417,
+   "plus_k": 57.57,
+   "minus_k": 38.88,
+   "promoted_k": 135.32,
+   "excess_total_k": 96.42
+  },
+  "France": {
+   "pred_per_s1": 3.3858,
+   "plus_k": 21.68,
+   "minus_k": 5.93,
+   "promoted_k": 111.34,
+   "excess_total_k": 41.62
+  }
+ }
+}

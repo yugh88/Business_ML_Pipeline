@@ -1,0 +1,25 @@
+{'orph_fp': 2122, 'other_fp': 255, 'fn': 1533, 'S1': 25270, 'loss': 806.5, 'loss_fp_only': 654.3}  mean F 0.96808  FP share of loss 0.811
+S1 Economic Development Coalition | 329 Walnut Street, Long Beach, NY
+   accepted orphan copy Development Economic Center | NY, SHORE RD, LONG BEACH
+   (true owner, dropped S1: Economic Development Ministries | 711 Shore Road, NY, Long Beach, Unit Apartment 5L)
+S1 Laskowski Trust | 2317 Division Street, City Of Stevens Point, WI
+   accepted orphan copy Nylásyn | DIVISION STREET, CITY OF STEVENS POINT, WI
+   (true owner, dropped S1: Dental Medicine LLC | 200 Division Street, WI, City Of Stevens Point, Unit H200)
+S1 Milli Lee, MD | 8456 Arrowhead Lake Road, Hesperia, CA
+   accepted orphan copy BELOVEO | 8456 1/2 ARROWHEAD LAKE ROAD, HESPERIA, CA
+   (true owner, dropped S1: Teclaror Group | 8456 Arrowhead Lake Road, Hesperia, CA)
+S1 Environmental Association | 115 Varick Street, New York, NY
+   accepted orphan copy Environmental Association | Edward Lane, Yorktown, New York
+   (true owner, dropped S1: Environmental Association | 2265 Edward Lane, Yorktown, NY)
+S1 Environmental Association | 115 Varick Street, New York, NY
+   accepted orphan copy ENVIRONMENTAL ASSOCIATION | New York, Yorktown Heights, Edward Ln
+   (true owner, dropped S1: Environmental Association | 2265 Edward Lane, Yorktown, NY)
+S1 Products Namakkal Financial Ltd | 1/1705 Challenger Tower-1, Thakur Complex, Western Express Highway, Kandivali (East, ), Mumbai, Maharashtra
+   accepted orphan copy Products Namakkal Financial Center | 
+   (true owner, dropped S1: Products Namakkal Financial Associates | P-1, Alungoor Grove, 379/4, 23Rd Main 16Th Cross, 5Th Phase, J.P.Nagar, Bangalore, Karnataka)
+S1 Bhopal Software Private Limited | Plot No. 45, Sahkar Nagar Trilanga, Bhopal, Madhya Pradesh
+   accepted orphan copy Bhopal Business-Private Limited | H NO- 44 E-08 GROUND FLOOR SAHKAR NAGAR TRILANGA, BHOPAL, Madhya Pradesh
+   (true owner, dropped S1: Bhopal Business Private Limited | H No- 44 E-08 Ground Floor Sahkar Nagar Trilanga, Bhopal, Madhya Pradesh)
+S1 Bhopal Software Private Limited | Plot No. 45, Sahkar Nagar Trilanga, Bhopal, Madhya Pradesh
+   accepted orphan copy Bhopal  Private Limited Service | H NO- 44 E-08 GROUND FLOOR SAHKAR NAGAR TRILANGA, BHOPAL, Madhya Pradesh
+   (true owner, dropped S1: Bhopal Business Private Limited | H No- 44 E-08 Ground Floor Sahkar Nagar Trilanga, Bhopal, Madhya Pradesh)

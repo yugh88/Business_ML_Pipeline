@@ -1,0 +1,6 @@
+pmin 0.0 fold 0: rescued 2179 precision 0.1239 by how [('addr', 1556, 0.1266), ('name', 623, 0.1172)] | F 0.99057 -> 0.98876
+pmin 0.0 fold 8: rescued 2182 precision 0.1237 by how [('addr', 1560, 0.1263), ('name', 622, 0.1174)] | F 0.99053 -> 0.98873
+pmin 0.05 fold 0: rescued 848 precision 0.3149 by how [('addr', 590, 0.3305), ('name', 258, 0.2791)] | F 0.99057 -> 0.99008
+pmin 0.05 fold 8: rescued 909 precision 0.2904 by how [('name', 268, 0.2649), ('addr', 641, 0.3011)] | F 0.99053 -> 0.98997
+pmin 0.2 fold 0: rescued 559 precision 0.4365 by how [('name', 168, 0.375), ('addr', 391, 0.4629)] | F 0.99057 -> 0.99034
+pmin 0.2 fold 8: rescued 571 precision 0.4203 by how [('name', 162, 0.4012), ('addr', 409, 0.4279)] | F 0.99053 -> 0.99028

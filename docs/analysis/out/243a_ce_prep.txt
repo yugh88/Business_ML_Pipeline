@@ -1,0 +1,2 @@
+train texts 514473 positive 0.763
+score texts {'US': 187399, 'train': 187910, 'India': 301961, 'France': 159405}

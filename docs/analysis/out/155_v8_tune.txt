@@ -1,0 +1,10 @@
+tau=0.0001 cands/S1=8.39 cascade_recall=0.99377 best valid=0.98965 (p2x2/G_expected_f {'a': 0.8, 'lam': 0.15}) 53s
+tau=0.02 cands/S1=3.73 cascade_recall=0.99109 best valid=0.98963 (p2x2/G_expected_f {'a': 0.8, 'lam': 0.15}) 104s
+tau=0.05 cands/S1=3.59 cascade_recall=0.99012 best valid=0.98959 (p2x2/G_expected_f {'a': 1.0, 'lam': 0.05}) 157s
+chosen tau=0.05 p2x2 G_expected_f {'a': 1.0, 'lam': 0.05} cap 1 holdout F0.5 (test-like): [0.9897, 0.98964, 0.98951]
+   ordinary view (orphans removed): [0.99079, 0.99071, 0.99055]
+tau_1e-4_best tau=0.0001 p2x2 G_expected_f {'a': 0.8, 'lam': 0.15} cap 1 holdout F0.5 (test-like): [0.98959, 0.98963, 0.98957]
+   ordinary view (orphans removed): [0.99066, 0.99065, 0.99055]
+tau_1e-4_nocap tau=0.0001 p2x2 G_expected_f {'a': 0.8, 'lam': 0.15} cap 0 holdout F0.5 (test-like): [0.98959, 0.98962, 0.98957]
+   ordinary view (orphans removed): [0.99065, 0.99065, 0.99055]
+pick: {'tau': 0.05, 'variant': 'p2x2', 'policy': 'G_expected_f', 'cands_per_s1': 3.5942736974309812, 'f05': 0.9895941933642548} {'a': 1.0, 'lam': 0.05} cap 1

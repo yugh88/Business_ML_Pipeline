@@ -1,0 +1,63 @@
+per 1k S1 — n_h: train-as-trained candidates (incl. V8 synthetic S_h), T_h: true copies, n_t/acc_t: test candidates / V9 accepted;
+excess_cands = test - train-as-trained (what V10 must still add); excess_vs_real = test - real train (total look-alike excess)
+┌─────────┬──────────────────────────┬─────────┬─────────┬───┬─────────┬─────────┬──────────────┬────────────────┐
+│ country ┆ cls                      ┆ off     ┆ n_h     ┆ … ┆ n_t     ┆ acc_t   ┆ excess_cands ┆ excess_vs_real │
+│ ---     ┆ ---                      ┆ ---     ┆ ---     ┆   ┆ ---     ┆ ---     ┆ ---          ┆ ---            │
+│ str     ┆ str                      ┆ str     ┆ f64     ┆   ┆ f64     ┆ f64     ┆ f64          ┆ f64            │
+╞═════════╪══════════════════════════╪═════════╪═════════╪═══╪═════════╪═════════╪══════════════╪════════════════╡
+│ India   ┆ identical@same           ┆ no_num  ┆ 282.69  ┆ … ┆ 293.22  ┆ 270.66  ┆ 10.53        ┆ 10.91          │
+│ India   ┆ swap_extra@same          ┆ no_num  ┆ 75.58   ┆ … ┆ 86.08   ┆ 67.42   ┆ 10.49        ┆ 11.03          │
+│ India   ┆ swap_extra@same          ┆ same    ┆ 358.18  ┆ … ┆ 366.0   ┆ 338.21  ┆ 7.81         ┆ 8.86           │
+│ India   ┆ other                    ┆ far     ┆ 133.13  ┆ … ┆ 140.24  ┆ 110.41  ┆ 7.12         ┆ 7.88           │
+│ India   ┆ identical@num_changed    ┆ +10..99 ┆ 46.88   ┆ … ┆ 52.76   ┆ 39.36   ┆ 5.88         ┆ 5.97           │
+│ India   ┆ light_edit@same          ┆ same    ┆ 251.58  ┆ … ┆ 256.78  ┆ 244.44  ┆ 5.2          ┆ 5.29           │
+│ India   ┆ other                    ┆ +10..99 ┆ 28.66   ┆ … ┆ 33.73   ┆ 19.98   ┆ 5.07         ┆ 5.27           │
+│ India   ┆ identical@num_changed    ┆ far     ┆ 234.77  ┆ … ┆ 239.03  ┆ 218.59  ┆ 4.27         ┆ 4.69           │
+│ India   ┆ identical@num_changed    ┆ trunc   ┆ 107.11  ┆ … ┆ 110.4   ┆ 98.74   ┆ 3.3          ┆ 4.26           │
+│ India   ┆ other                    ┆ same    ┆ 85.43   ┆ … ┆ 88.3    ┆ 72.81   ┆ 2.87         ┆ 3.42           │
+│ India   ┆ identical@other          ┆ same    ┆ 175.17  ┆ … ┆ 178.01  ┆ 167.87  ┆ 2.84         ┆ 2.94           │
+│ India   ┆ other                    ┆ trunc   ┆ 59.7    ┆ … ┆ 62.49   ┆ 49.32   ┆ 2.79         ┆ 3.95           │
+│ India   ┆ light_edit@same          ┆ no_num  ┆ 53.24   ┆ … ┆ 55.64   ┆ 48.96   ┆ 2.4          ┆ 2.56           │
+│ India   ┆ other                    ┆ -10..99 ┆ 21.59   ┆ … ┆ 23.01   ┆ 15.88   ┆ 1.42         ┆ 1.78           │
+│ India   ┆ identical@other          ┆ no_num  ┆ 51.71   ┆ … ┆ 52.71   ┆ 44.67   ┆ 1.0          ┆ 1.63           │
+│ India   ┆ identical@num_changed    ┆ -10..99 ┆ 35.42   ┆ … ┆ 36.16   ┆ 30.4    ┆ 0.74         ┆ 1.11           │
+│ India   ┆ identical@num_changed    ┆ -1..9   ┆ 30.45   ┆ … ┆ 31.15   ┆ 27.2    ┆ 0.7          ┆ 0.92           │
+│ India   ┆ identical@empty          ┆ no_num  ┆ 55.93   ┆ … ┆ 56.41   ┆ 49.12   ┆ 0.48         ┆ 1.63           │
+│ India   ┆ first_word_replaced@same ┆ same    ┆ 8.87    ┆ … ┆ 9.1     ┆ 7.15    ┆ 0.23         ┆ 0.29           │
+│ India   ┆ other                    ┆ -1..9   ┆ 17.96   ┆ … ┆ 18.13   ┆ 13.58   ┆ 0.18         ┆ 0.44           │
+│ India   ┆ first_word_replaced@same ┆ no_num  ┆ 2.48    ┆ … ┆ 2.18    ┆ 1.53    ┆ -0.29        ┆ -0.26          │
+│ India   ┆ identical@same           ┆ same    ┆ 1322.53 ┆ … ┆ 1321.44 ┆ 1293.64 ┆ -1.09        ┆ -0.71          │
+│ India   ┆ no_overlap@same          ┆ no_num  ┆ 34.82   ┆ … ┆ 33.51   ┆ 30.45   ┆ -1.31        ┆ -1.16          │
+│ India   ┆ other                    ┆ no_num  ┆ 66.0    ┆ … ┆ 63.1    ┆ 37.12   ┆ -2.9         ┆ -0.93          │
+│ India   ┆ no_overlap@same          ┆ same    ┆ 171.08  ┆ … ┆ 166.91  ┆ 151.57  ┆ -4.16        ┆ -3.82          │
+│ India   ┆ other                    ┆ +1..9   ┆ 34.84   ┆ … ┆ 28.24   ┆ 14.69   ┆ -6.61        ┆ 4.93           │
+│ India   ┆ identical@num_changed    ┆ +1..9   ┆ 57.1    ┆ … ┆ 44.88   ┆ 29.47   ┆ -12.22       ┆ 5.58           │
+│ US      ┆ other                    ┆ far     ┆ 82.48   ┆ … ┆ 119.38  ┆ 62.88   ┆ 36.9         ┆ 38.44          │
+│ US      ┆ first_word_replaced@same ┆ same    ┆ 20.85   ┆ … ┆ 33.46   ┆ 9.23    ┆ 12.61        ┆ 12.64          │
+│ US      ┆ identical@num_changed    ┆ far     ┆ 110.47  ┆ … ┆ 118.47  ┆ 97.04   ┆ 8.0          ┆ 9.08           │
+│ US      ┆ identical@empty          ┆ no_num  ┆ 68.54   ┆ … ┆ 73.62   ┆ 69.93   ┆ 5.08         ┆ 6.48           │
+│ US      ┆ other                    ┆ trunc   ┆ 68.64   ┆ … ┆ 72.44   ┆ 62.68   ┆ 3.8          ┆ 4.81           │
+│ US      ┆ identical@num_changed    ┆ +10..99 ┆ 12.09   ┆ … ┆ 14.84   ┆ 9.47    ┆ 2.74         ┆ 2.77           │
+│ US      ┆ identical@num_changed    ┆ trunc   ┆ 102.86  ┆ … ┆ 105.53  ┆ 98.63   ┆ 2.67         ┆ 3.36           │
+│ US      ┆ other                    ┆ +10..99 ┆ 9.06    ┆ … ┆ 11.0    ┆ 5.65    ┆ 1.94         ┆ 2.03           │
+│ US      ┆ other                    ┆ no_num  ┆ 64.06   ┆ … ┆ 65.36   ┆ 37.9    ┆ 1.3          ┆ 3.74           │
+│ US      ┆ identical@num_changed    ┆ +1..9   ┆ 46.65   ┆ … ┆ 47.79   ┆ 13.35   ┆ 1.15         ┆ 15.95          │
+│ US      ┆ first_word_replaced@same ┆ no_num  ┆ 1.76    ┆ … ┆ 2.42    ┆ 0.8     ┆ 0.66         ┆ 0.82           │
+│ US      ┆ identical@num_changed    ┆ -1..9   ┆ 13.11   ┆ … ┆ 13.7    ┆ 13.37   ┆ 0.59         ┆ 0.65           │
+│ US      ┆ identical@num_changed    ┆ -10..99 ┆ 10.52   ┆ … ┆ 11.02   ┆ 9.42    ┆ 0.5          ┆ 0.6            │
+│ US      ┆ other                    ┆ same    ┆ 49.77   ┆ … ┆ 50.22   ┆ 45.41   ┆ 0.45         ┆ 0.68           │
+│ US      ┆ other                    ┆ -10..99 ┆ 7.81    ┆ … ┆ 8.01    ┆ 6.03    ┆ 0.21         ┆ 0.35           │
+│ US      ┆ identical@other          ┆ same    ┆ 71.43   ┆ … ┆ 71.63   ┆ 71.08   ┆ 0.2          ┆ 0.22           │
+│ US      ┆ other                    ┆ -1..9   ┆ 8.98    ┆ … ┆ 9.15    ┆ 8.3     ┆ 0.17         ┆ 0.29           │
+│ US      ┆ swap_extra@same          ┆ no_num  ┆ 44.82   ┆ … ┆ 44.83   ┆ 40.29   ┆ 0.01         ┆ 1.5            │
+│ US      ┆ identical@other          ┆ no_num  ┆ 27.73   ┆ … ┆ 27.65   ┆ 24.86   ┆ -0.09        ┆ 0.45           │
+│ US      ┆ identical@same           ┆ no_num  ┆ 190.26  ┆ … ┆ 190.01  ┆ 179.61  ┆ -0.24        ┆ 3.62           │
+│ US      ┆ light_edit@same          ┆ same    ┆ 443.87  ┆ … ┆ 443.33  ┆ 436.77  ┆ -0.54        ┆ -0.5           │
+│ US      ┆ no_overlap@same          ┆ no_num  ┆ 28.23   ┆ … ┆ 27.33   ┆ 22.93   ┆ -0.9         ┆ 0.04           │
+│ US      ┆ light_edit@same          ┆ no_num  ┆ 52.95   ┆ … ┆ 50.5    ┆ 48.06   ┆ -2.44        ┆ 0.07           │
+│ US      ┆ no_overlap@same          ┆ same    ┆ 235.17  ┆ … ┆ 231.55  ┆ 220.41  ┆ -3.62        ┆ -3.23          │
+│ US      ┆ swap_extra@same          ┆ same    ┆ 435.57  ┆ … ┆ 431.63  ┆ 428.4   ┆ -3.94        ┆ -2.66          │
+│ US      ┆ other                    ┆ +1..9   ┆ 25.57   ┆ … ┆ 18.52   ┆ 7.46    ┆ -7.05        ┆ 5.11           │
+│ US      ┆ identical@same           ┆ same    ┆ 1523.76 ┆ … ┆ 1514.19 ┆ 1510.14 ┆ -9.57        ┆ -9.46          │
+└─────────┴──────────────────────────┴─────────┴─────────┴───┴─────────┴─────────┴──────────────┴────────────────┘
+python scripts/213_excess_profile.py  91.52s user 6.61s system 156% cpu 1:02.75 total

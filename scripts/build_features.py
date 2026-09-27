@@ -18,6 +18,8 @@ FEATURES = [
     "is_s3",
     # v3 additions (featx.py): number-change type, injected/missing name tokens
     "num_kind", "num_logdiff", "tok_extra", "tok_missing", "extra_generic", "missing_generic", "tok_repeat",
+    # v8 additions (featx.py): signed house-number difference and twin-offset flag
+    "num_sdiff", "num_plusk", "extra_desc", "extra_noise",
 ]
 KEEP = ["s1", "m", "y", "fold", "country", "pc2", "pa", "pns", "pnum1", "pstreet"] + FEATURES
 

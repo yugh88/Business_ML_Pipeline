@@ -1,0 +1,29 @@
+{
+ "base": "output_v5",
+ "removed": {
+  "India": {
+   "R1_twin_same_src": 12559,
+   "R2_twin_2src": 2829,
+   "R3_fr_sib_extra": 0,
+   "R4_desc_usin": 37946,
+   "drop": 47539
+  },
+  "US": {
+   "R1_twin_same_src": 13712,
+   "R2_twin_2src": 4077,
+   "R3_fr_sib_extra": 0,
+   "R4_desc_usin": 6811,
+   "drop": 20619
+  },
+  "France": {
+   "R1_twin_same_src": 3947,
+   "R2_twin_2src": 1039,
+   "R3_fr_sib_extra": 881,
+   "R4_desc_usin": 0,
+   "drop": 4867
+  }
+ },
+ "n_pairs_v5": 5916254,
+ "n_pairs_v7": 5843229,
+ "rules": "Signed house-number offset d = h2 - h1 (pool vs S1) \u2014 twin generator signature test (train truth, test predictions)."
+}

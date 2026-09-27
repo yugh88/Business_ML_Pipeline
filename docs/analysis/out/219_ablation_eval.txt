@@ -1,0 +1,103 @@
+ARM A: variant p2blend {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1} fold7 0.99273 | holdout clean US 0.99368 India 0.99120
+ARM B: variant p2x {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.15, 'cap': 1} fold7 0.99205 | holdout clean US 0.99321 India 0.99074
+
+PER CATEGORY (per 1k S1): holdout TP/FP accepted, test accepted; excess = test acc - holdout TP (lower = fewer look-alike false merges)
+┌─────────┬──────────────────────────┬─────────┬─────────┬───┬─────────┬──────────┬──────────┬──────────┐
+│ country ┆ cls                      ┆ off     ┆ TP_a    ┆ … ┆ acc_t_b ┆ excess_a ┆ excess_b ┆ d_excess │
+│ ---     ┆ ---                      ┆ ---     ┆ ---     ┆   ┆ ---     ┆ ---      ┆ ---      ┆ ---      │
+│ str     ┆ str                      ┆ str     ┆ f64     ┆   ┆ f64     ┆ f64      ┆ f64      ┆ f64      │
+╞═════════╪══════════════════════════╪═════════╪═════════╪═══╪═════════╪══════════╪══════════╪══════════╡
+│ India   ┆ other                    ┆ no_num  ┆ 34.79   ┆ … ┆ 32.98   ┆ -2.22    ┆ -2.24    ┆ -0.02    │
+│ India   ┆ identical@empty          ┆ no_num  ┆ 47.23   ┆ … ┆ 43.2    ┆ -3.88    ┆ -3.89    ┆ -0.02    │
+│ India   ┆ first_word_replaced@same ┆ same    ┆ 6.85    ┆ … ┆ 6.68    ┆ 0.07     ┆ 0.08     ┆ 0.01     │
+│ India   ┆ other                    ┆ same    ┆ 71.13   ┆ … ┆ 69.21   ┆ -1.32    ┆ -1.29    ┆ 0.03     │
+│ India   ┆ identical@other          ┆ no_num  ┆ 41.89   ┆ … ┆ 42.81   ┆ 0.62     ┆ 0.68     ┆ 0.06     │
+│ India   ┆ other                    ┆ -10..99 ┆ 14.29   ┆ … ┆ 15.62   ┆ 1.35     ┆ 1.4      ┆ 0.06     │
+│ India   ┆ other                    ┆ trunc   ┆ 45.58   ┆ … ┆ 47.02   ┆ 2.17     ┆ 2.25     ┆ 0.08     │
+│ India   ┆ no_overlap@same          ┆ no_num  ┆ 28.66   ┆ … ┆ 29.12   ┆ 0.45     ┆ 0.55     ┆ 0.09     │
+│ India   ┆ identical@num_changed    ┆ trunc   ┆ 95.53   ┆ … ┆ 95.2    ┆ 0.18     ┆ 0.27     ┆ 0.09     │
+│ India   ┆ other                    ┆ -1..9   ┆ 12.22   ┆ … ┆ 13.17   ┆ 1.01     ┆ 1.12     ┆ 0.11     │
+│ India   ┆ light_edit@same          ┆ no_num  ┆ 45.19   ┆ … ┆ 47.53   ┆ 2.08     ┆ 2.21     ┆ 0.14     │
+│ India   ┆ identical@num_changed    ┆ -1..9   ┆ 25.46   ┆ … ┆ 26.46   ┆ 0.93     ┆ 1.08     ┆ 0.16     │
+│ India   ┆ identical@other          ┆ same    ┆ 161.28  ┆ … ┆ 161.69  ┆ 0.24     ┆ 0.4      ┆ 0.16     │
+│ India   ┆ other                    ┆ +10..99 ┆ 18.31   ┆ … ┆ 19.94   ┆ 1.77     ┆ 1.99     ┆ 0.21     │
+│ India   ┆ light_edit@same          ┆ same    ┆ 229.98  ┆ … ┆ 236.75  ┆ 6.92     ┆ 7.14     ┆ 0.22     │
+│ India   ┆ identical@num_changed    ┆ -10..99 ┆ 28.79   ┆ … ┆ 30.17   ┆ 1.15     ┆ 1.45     ┆ 0.3      │
+│ India   ┆ no_overlap@same          ┆ same    ┆ 145.28  ┆ … ┆ 145.13  ┆ -0.47    ┆ -0.01    ┆ 0.46     │
+│ India   ┆ other                    ┆ +1..9   ┆ 14.86   ┆ … ┆ 15.28   ┆ -0.14    ┆ 0.4      ┆ 0.54     │
+│ India   ┆ other                    ┆ far     ┆ 104.72  ┆ … ┆ 105.86  ┆ 2.23     ┆ 2.94     ┆ 0.7      │
+│ India   ┆ identical@num_changed    ┆ +10..99 ┆ 36.95   ┆ … ┆ 39.52   ┆ 2.06     ┆ 3.15     ┆ 1.09     │
+│ India   ┆ identical@num_changed    ┆ +1..9   ┆ 28.52   ┆ … ┆ 30.72   ┆ 0.78     ┆ 1.97     ┆ 1.18     │
+│ India   ┆ swap_extra@same          ┆ no_num  ┆ 61.08   ┆ … ┆ 66.41   ┆ 5.18     ┆ 6.38     ┆ 1.2      │
+│ India   ┆ identical@num_changed    ┆ far     ┆ 211.4   ┆ … ┆ 212.68  ┆ 0.06     ┆ 1.67     ┆ 1.6      │
+│ India   ┆ swap_extra@same          ┆ same    ┆ 329.18  ┆ … ┆ 326.16  ┆ -1.37    ┆ 0.55     ┆ 1.91     │
+│ India   ┆ identical@same           ┆ no_num  ┆ 256.45  ┆ … ┆ 264.89  ┆ 6.13     ┆ 8.32     ┆ 2.19     │
+│ India   ┆ identical@same           ┆ same    ┆ 1247.86 ┆ … ┆ 1249.36 ┆ -1.01    ┆ 1.34     ┆ 2.35     │
+│ US      ┆ first_word_replaced@same ┆ same    ┆ 5.98    ┆ … ┆ 8.24    ┆ 4.44     ┆ 2.57     ┆ -1.87    │
+│ US      ┆ other                    ┆ trunc   ┆ 58.55   ┆ … ┆ 59.46   ┆ 2.21     ┆ 1.46     ┆ -0.75    │
+│ US      ┆ identical@empty          ┆ no_num  ┆ 59.34   ┆ … ┆ 61.68   ┆ 4.75     ┆ 4.18     ┆ -0.56    │
+│ US      ┆ identical@num_changed    ┆ trunc   ┆ 92.5    ┆ … ┆ 95.03   ┆ 3.16     ┆ 2.74     ┆ -0.42    │
+│ US      ┆ other                    ┆ far     ┆ 57.09   ┆ … ┆ 58.75   ┆ 3.04     ┆ 2.85     ┆ -0.19    │
+│ US      ┆ no_overlap@same          ┆ no_num  ┆ 21.34   ┆ … ┆ 22.06   ┆ 0.5      ┆ 0.47     ┆ -0.03    │
+│ US      ┆ other                    ┆ -10..99 ┆ 5.44    ┆ … ┆ 5.61    ┆ 0.26     ┆ 0.26     ┆ -0.0     │
+│ US      ┆ other                    ┆ same    ┆ 43.41   ┆ … ┆ 43.16   ┆ -0.05    ┆ -0.05    ┆ -0.0     │
+│ US      ┆ swap_extra@same          ┆ no_num  ┆ 38.03   ┆ … ┆ 38.98   ┆ 0.51     ┆ 0.54     ┆ 0.03     │
+│ US      ┆ other                    ┆ -1..9   ┆ 7.75    ┆ … ┆ 7.8     ┆ 0.14     ┆ 0.18     ┆ 0.04     │
+│ US      ┆ identical@num_changed    ┆ -1..9   ┆ 11.97   ┆ … ┆ 12.67   ┆ 0.8      ┆ 0.84     ┆ 0.05     │
+│ US      ┆ identical@other          ┆ same    ┆ 66.44   ┆ … ┆ 67.95   ┆ 1.44     ┆ 1.49     ┆ 0.05     │
+│ US      ┆ no_overlap@same          ┆ same    ┆ 209.02  ┆ … ┆ 210.69  ┆ 2.05     ┆ 2.11     ┆ 0.06     │
+│ US      ┆ light_edit@same          ┆ no_num  ┆ 46.42   ┆ … ┆ 46.79   ┆ -0.34    ┆ -0.26    ┆ 0.08     │
+│ US      ┆ light_edit@same          ┆ same    ┆ 416.53  ┆ … ┆ 416.89  ┆ 0.6      ┆ 0.73     ┆ 0.13     │
+│ US      ┆ identical@num_changed    ┆ -10..99 ┆ 8.45    ┆ … ┆ 9.01    ┆ 0.63     ┆ 0.89     ┆ 0.26     │
+│ US      ┆ identical@same           ┆ same    ┆ 1448.68 ┆ … ┆ 1441.52 ┆ -7.5     ┆ -7.2     ┆ 0.3      │
+│ US      ┆ other                    ┆ no_num  ┆ 33.87   ┆ … ┆ 33.47   ┆ -0.12    ┆ 0.19     ┆ 0.31     │
+│ US      ┆ other                    ┆ +10..99 ┆ 5.25    ┆ … ┆ 5.25    ┆ -0.02    ┆ 0.29     ┆ 0.31     │
+│ US      ┆ identical@other          ┆ no_num  ┆ 23.14   ┆ … ┆ 24.73   ┆ 1.12     ┆ 1.45     ┆ 0.33     │
+│ US      ┆ other                    ┆ +1..9   ┆ 6.28    ┆ … ┆ 8.51    ┆ 1.64     ┆ 2.17     ┆ 0.53     │
+│ US      ┆ identical@same           ┆ no_num  ┆ 170.63  ┆ … ┆ 175.59  ┆ 3.74     ┆ 4.27     ┆ 0.53     │
+│ US      ┆ swap_extra@same          ┆ same    ┆ 410.41  ┆ … ┆ 408.21  ┆ -1.12    ┆ -0.38    ┆ 0.74     │
+│ US      ┆ identical@num_changed    ┆ far     ┆ 89.1    ┆ … ┆ 93.49   ┆ 5.18     ┆ 6.29     ┆ 1.11     │
+│ US      ┆ identical@num_changed    ┆ +10..99 ┆ 8.16    ┆ … ┆ 11.67   ┆ 1.37     ┆ 4.04     ┆ 2.67     │
+│ US      ┆ identical@num_changed    ┆ +1..9   ┆ 10.45   ┆ … ┆ 19.09   ┆ 5.56     ┆ 8.31     ┆ 2.74     │
+└─────────┴──────────────────────────┴─────────┴─────────┴───┴─────────┴──────────┴──────────┴──────────┘
+ARM A: test +k minus -k accepted per 1k (twin excess) {'US': 3.26, 'India': 4.41}; promoted per 1k {'US': 39.2, 'India': 53.9}
+ARM B: test +k minus -k accepted per 1k (twin excess) {'US': 7.13, 'India': 6.36}; promoted per 1k {'US': 71.6, 'India': 80.0}
+
+US: B vs A test changes: removed 24.2/1k, added 22.2/1k -> holdout-referenced value -0.00205 (US F)
+┌──────────────────────────┬─────────┬───────┬───────┬───┬───────┬───────┬───────┬───────┐
+│ cls                      ┆ off     ┆ rem_t ┆ remTP ┆ … ┆ add_t ┆ addTP ┆ addFP ┆ value │
+│ ---                      ┆ ---     ┆ ---   ┆ ---   ┆   ┆ ---   ┆ ---   ┆ ---   ┆ ---   │
+│ str                      ┆ str     ┆ f64   ┆ f64   ┆   ┆ f64   ┆ f64   ┆ f64   ┆ f64   │
+╞══════════════════════════╪═════════╪═══════╪═══════╪═══╪═══════╪═══════╪═══════╪═══════╡
+│ first_word_replaced@same ┆ same    ┆ 2.55  ┆ 0.43  ┆ … ┆ 0.36  ┆ 0.11  ┆ 0.07  ┆ 0.36  │
+│ other                    ┆ trunc   ┆ 1.65  ┆ 0.77  ┆ … ┆ 0.35  ┆ 0.22  ┆ 0.03  ┆ 0.11  │
+│ identical@num_changed    ┆ trunc   ┆ 1.08  ┆ 0.27  ┆ … ┆ 0.45  ┆ 0.06  ┆ 0.08  ┆ 0.07  │
+│ light_edit@same          ┆ no_num  ┆ 0.13  ┆ 0.12  ┆ … ┆ 0.84  ┆ 0.75  ┆ 0.07  ┆ 0.04  │
+│ swap_extra@same          ┆ no_num  ┆ 0.34  ┆ 0.35  ┆ … ┆ 0.79  ┆ 0.77  ┆ 0.08  ┆ 0.02  │
+│ no_overlap@same          ┆ no_num  ┆ 0.21  ┆ 0.2   ┆ … ┆ 0.42  ┆ 0.45  ┆ 0.08  ┆ 0.01  │
+│ first_word_replaced@same ┆ no_num  ┆ 0.13  ┆ 0.07  ┆ … ┆ 0.03  ┆ 0.01  ┆ 0.0   ┆ 0.0   │
+│ other                    ┆ -10..99 ┆ 0.21  ┆ 0.09  ┆ … ┆ 0.12  ┆ 0.0   ┆ 0.0   ┆ -0.01 │
+│ identical@other          ┆ same    ┆ 0.03  ┆ 0.01  ┆ … ┆ 0.09  ┆ 0.02  ┆ 0.0   ┆ -0.01 │
+│ other                    ┆ same    ┆ 0.38  ┆ 0.31  ┆ … ┆ 0.18  ┆ 0.11  ┆ 0.01  ┆ -0.02 │
+└──────────────────────────┴─────────┴───────┴───────┴───┴───────┴───────┴───────┴───────┘
+
+India: B vs A test changes: removed 28.0/1k, added 33.0/1k -> holdout-referenced value -0.00403 (India F)
+┌──────────────────────────┬─────────┬───────┬───────┬───┬───────┬───────┬───────┬───────┐
+│ cls                      ┆ off     ┆ rem_t ┆ remTP ┆ … ┆ add_t ┆ addTP ┆ addFP ┆ value │
+│ ---                      ┆ ---     ┆ ---   ┆ ---   ┆   ┆ ---   ┆ ---   ┆ ---   ┆ ---   │
+│ str                      ┆ str     ┆ f64   ┆ f64   ┆   ┆ f64   ┆ f64   ┆ f64   ┆ f64   │
+╞══════════════════════════╪═════════╪═══════╪═══════╪═══╪═══════╪═══════╪═══════╪═══════╡
+│ other                    ┆ no_num  ┆ 1.09  ┆ 0.58  ┆ … ┆ 1.5   ┆ 1.02  ┆ 0.16  ┆ 0.04  │
+│ identical@other          ┆ no_num  ┆ 0.37  ┆ 0.18  ┆ … ┆ 0.68  ┆ 0.42  ┆ 0.07  ┆ 0.01  │
+│ identical@num_changed    ┆ same    ┆ 0.0   ┆ 0.0   ┆ … ┆ 0.0   ┆ 0.0   ┆ 0.0   ┆ 0.0   │
+│ identical@empty          ┆ no_num  ┆ 0.84  ┆ 0.28  ┆ … ┆ 0.69  ┆ 0.15  ┆ 0.04  ┆ -0.01 │
+│ first_word_replaced@same ┆ no_num  ┆ 0.12  ┆ 0.1   ┆ … ┆ 0.05  ┆ 0.01  ┆ 0.0   ┆ -0.01 │
+│ light_edit@same          ┆ no_num  ┆ 0.54  ┆ 0.21  ┆ … ┆ 0.81  ┆ 0.34  ┆ 0.03  ┆ -0.02 │
+│ other                    ┆ -10..99 ┆ 0.41  ┆ 0.15  ┆ … ┆ 0.39  ┆ 0.07  ┆ 0.06  ┆ -0.02 │
+│ first_word_replaced@same ┆ same    ┆ 0.45  ┆ 0.27  ┆ … ┆ 0.2   ┆ 0.01  ┆ 0.0   ┆ -0.02 │
+│ no_overlap@same          ┆ no_num  ┆ 0.28  ┆ 0.21  ┆ … ┆ 0.28  ┆ 0.12  ┆ 0.07  ┆ -0.03 │
+│ identical@other          ┆ same    ┆ 0.7   ┆ 0.15  ┆ … ┆ 0.87  ┆ 0.16  ┆ 0.06  ┆ -0.03 │
+└──────────────────────────┴─────────┴───────┴───────┴───┴───────┴───────┴───────┴───────┘
+
+B vs A estimated LB value (US+India share of all test S1): -0.00267; holdout clean delta US -0.00047 India -0.00046
+python scripts/219_ablation_eval.py  304.30s user 28.76s system 242% cpu 2:17.27 total

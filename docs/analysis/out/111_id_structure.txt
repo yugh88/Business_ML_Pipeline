@@ -1,0 +1,5 @@
+TRAIN truth: corr(id)=0.00014 mean|diff|/1e9=0.3334 same_last3=0.00100 same_first3=0.00111 n=7638365
+TEST V5 predicted: corr(id)=-0.00021 mean|diff|/1e9=0.3334 same_last3=0.00101 same_first3=0.00112 n=5916254
+expected by chance: same_last3 = 0.001
+TEST row-order corr (S1 row vs matched S2 row): 0.00048 over 2869828 pairs
+TEST: row span of an S1's matched S2 records: median=1977383.0, share within 5 rows=0.0000

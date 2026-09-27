@@ -1,0 +1,10 @@
+p1 best on fold7: (0.9821084376707663, {'policy': 'G_expected_f', 'a': 1.25, 'lam': 0.0, 'cap': 1})
+fold 0: p2x2 0.99057  p1 0.98217
+fold 8: p2x2 0.99053  p1 0.98211
+fold 9: p2x2 0.99057  p1 0.98200
+TEST US p2x2: pred/S1 3.423  +1..9 43.8/1k  -1..9 18.6/1k  empty 411.5  same 2602
+TEST US p1: pred/S1 3.360  +1..9 19.0/1k  -1..9 15.5/1k  empty 407.3  same 2593
+TEST India p2x2: pred/S1 3.417  +1..9 57.6/1k  -1..9 38.9/1k  empty 545.8  same 2194
+TEST India p1: pred/S1 3.314  +1..9 39.5/1k  -1..9 32.6/1k  empty 516.3  same 2182
+TEST France p2x2: pred/S1 3.386  +1..9 21.7/1k  -1..9 5.9/1k  empty 344.4  same 2980
+TEST France p1: pred/S1 3.329  +1..9 9.0/1k  -1..9 5.7/1k  empty 337.0  same 2946

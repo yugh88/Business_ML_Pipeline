@@ -1,0 +1,4 @@
+descriptor words: 279 + French analogs 14
+removed pairs: 83613 of 5916254
+[('France', 38826), ('US', 6822), ('India', 37965)]
+V6 matches: 5832641 (3.367/S1) empty S1: 99309

@@ -1,0 +1,36 @@
+{
+ "variant": "p2x",
+ "policy": "A_threshold",
+ "params": {
+  "t": 0.7
+ },
+ "valid": {
+  "f05": 0.9841418164214513,
+  "P": 0.9960678299336446,
+  "R": 0.9647432755989302,
+  "singleton_acc": 0.9884376214535562,
+  "multi_f05": 0.9838892115205198,
+  "false_merges": 2448,
+  "false_negatives": 22662,
+  "matches_per_s1": 3.359398439439234,
+  "n_s1": 185318,
+  "policy": "A_threshold",
+  "t": 0.7,
+  "variant": "p2x"
+ },
+ "best_valid": {
+  "f05": 0.9844347571716751,
+  "P": 0.9958461718788887,
+  "R": 0.9649035192938076,
+  "singleton_acc": 0.9760979401476875,
+  "multi_f05": 0.9849249844568261,
+  "false_merges": 2587,
+  "false_negatives": 22559,
+  "matches_per_s1": 3.360704302873979,
+  "n_s1": 185318,
+  "policy": "G_expected_f",
+  "a": 1.25,
+  "lam": 0.0,
+  "variant": "p2x"
+ }
+}

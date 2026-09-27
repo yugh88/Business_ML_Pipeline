@@ -1,0 +1,62 @@
+========================= TEST: T4 additions by type (per 1k S1 of the country)
+┌─────────┬──────────────────────────┬──────┬──────────┬───┬────────────┬──────────────┬─────────────┬───────┐
+│ country ┆ type                     ┆ n    ┆ on_empty ┆ … ┆ mean_V9_p3 ┆ generic_name ┆ fingerprint ┆ per1k │
+│ ---     ┆ ---                      ┆ ---  ┆ ---      ┆   ┆ ---        ┆ ---          ┆ ---         ┆ ---   │
+│ str     ┆ str                      ┆ u32  ┆ u32      ┆   ┆ f32        ┆ f64          ┆ f64         ┆ f64   │
+╞═════════╪══════════════════════════╪══════╪══════════╪═══╪════════════╪══════════════╪═════════════╪═══════╡
+│ France  ┆ identical@other          ┆ 1384 ┆ 325      ┆ … ┆ 0.163      ┆ 0.959        ┆ 0.0         ┆ 5.33  │
+│ France  ┆ identical@same           ┆ 849  ┆ 210      ┆ … ┆ 0.22       ┆ 0.939        ┆ 0.0         ┆ 3.27  │
+│ France  ┆ other                    ┆ 824  ┆ 136      ┆ … ┆ 0.171      ┆ 0.846        ┆ 0.0         ┆ 3.18  │
+│ France  ┆ num_changed/other        ┆ 348  ┆ 53       ┆ … ┆ 0.301      ┆ 0.698        ┆ 0.0         ┆ 1.34  │
+│ France  ┆ swap_extra@same          ┆ 325  ┆ 98       ┆ … ┆ 0.323      ┆ 0.865        ┆ 0.0         ┆ 1.25  │
+│ France  ┆ light_edit@same          ┆ 56   ┆ 15       ┆ … ┆ 0.192      ┆ 0.464        ┆ 0.0         ┆ 0.22  │
+│ France  ┆ desc@same                ┆ 17   ┆ 4        ┆ … ┆ 0.438      ┆ 0.824        ┆ 0.0         ┆ 0.07  │
+│ France  ┆ first_word_replaced@same ┆ 7    ┆ 3        ┆ … ┆ null       ┆ 0.857        ┆ null        ┆ 0.03  │
+│ India   ┆ identical@other          ┆ 2507 ┆ 396      ┆ … ┆ 0.268      ┆ 0.887        ┆ null        ┆ 3.1   │
+│ India   ┆ identical@same           ┆ 2301 ┆ 985      ┆ … ┆ 0.175      ┆ 0.251        ┆ null        ┆ 2.84  │
+│ India   ┆ num_changed/other        ┆ 1863 ┆ 532      ┆ … ┆ 0.244      ┆ 0.55         ┆ null        ┆ 2.3   │
+│ India   ┆ desc@same                ┆ 1152 ┆ 485      ┆ … ┆ 0.008      ┆ 0.237        ┆ null        ┆ 1.42  │
+│ India   ┆ other                    ┆ 683  ┆ 143      ┆ … ┆ 0.083      ┆ 0.761        ┆ null        ┆ 0.84  │
+│ India   ┆ swap_extra@same          ┆ 162  ┆ 81       ┆ … ┆ 0.123      ┆ 0.247        ┆ null        ┆ 0.2   │
+│ India   ┆ light_edit@same          ┆ 9    ┆ 0        ┆ … ┆ 0.561      ┆ 0.222        ┆ null        ┆ 0.01  │
+│ US      ┆ identical@same           ┆ 243  ┆ 93       ┆ … ┆ 0.189      ┆ 0.292        ┆ null        ┆ 0.37  │
+│ US      ┆ identical@other          ┆ 163  ┆ 7        ┆ … ┆ 0.32       ┆ 0.877        ┆ null        ┆ 0.25  │
+│ US      ┆ other                    ┆ 14   ┆ 0        ┆ … ┆ 0.015      ┆ 0.714        ┆ null        ┆ 0.02  │
+│ US      ┆ light_edit@same          ┆ 8    ┆ 3        ┆ … ┆ 0.176      ┆ 0.25         ┆ null        ┆ 0.01  │
+│ US      ┆ num_changed/other        ┆ 2    ┆ 0        ┆ … ┆ 0.441      ┆ 0.5          ┆ null        ┆ 0.0   │
+└─────────┴──────────────────────────┴──────┴──────────┴───┴────────────┴──────────────┴─────────────┴───────┘
+   French copy fingerprint baseline 0.222 (identical name, same address, accepted); look-alike siblings ~0.01
+========================= HOLDOUT replay: V9-rejected candidates of the same types (records not accepted elsewhere)
+  V9 holdout: {'US': 'F 0.99266 P 0.9975 R 0.9842', 'India': 'F 0.98980 P 0.9964 R 0.9801'}
+  +identical@other    (all S1)          : adds   10.8/1k precision 0.042 -> US dF -0.00068 (P 0.9966 R 0.9842)  India dF -0.00448 (P 0.9901 R 0.9804)
+  +identical@other    (non-empty S1 only): adds   10.1/1k precision 0.044 -> US dF -0.00054 (P 0.9967 R 0.9842)  India dF -0.00349 (P 0.9905 R 0.9804)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 1156, 0.012), ('(0.1, 0.3]', 233, 0.172), ('(0.3, 0.5]', 169, 0.408), ('(0.5, 0.7]', 143, 0.615), ('(0.7, inf]', 14, 0.857)]
+  +identical@same     (all S1)          : adds   12.3/1k precision 0.069 -> US dF -0.00055 (P 0.9969 R 0.9843)  India dF -0.00685 (P 0.9889 R 0.9805)
+  +identical@same     (non-empty S1 only): adds   11.2/1k precision 0.074 -> US dF -0.00037 (P 0.9970 R 0.9843)  India dF -0.00465 (P 0.9896 R 0.9805)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 2976, 0.036), ('(0.1, 0.3]', 477, 0.172), ('(0.3, 0.5]', 303, 0.373), ('(0.5, 0.7]', 223, 0.65), ('(0.7, inf]', 30, 0.7)]
+  +other              (all S1)          : adds  161.9/1k precision 0.007 -> US dF -0.03005 (P 0.9569 R 0.9843)  India dF -0.03833 (P 0.9433 R 0.9806)
+  +other              (non-empty S1 only): adds  152.8/1k precision 0.007 -> US dF -0.02387 (P 0.9591 R 0.9843)  India dF -0.03050 (P 0.9461 R 0.9806)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 3231, 0.009), ('(0.1, 0.3]', 503, 0.145), ('(0.3, 0.5]', 283, 0.364), ('(0.5, 0.7]', 316, 0.674), ('(0.7, inf]', 34, 0.676)]
+  +desc@same          (all S1)          : adds   38.2/1k precision 0.002 -> US dF -0.00128 (P 0.9961 R 0.9842)  India dF -0.02356 (P 0.9708 R 0.9801)
+  +desc@same          (non-empty S1 only): adds   34.3/1k precision 0.002 -> US dF -0.00091 (P 0.9962 R 0.9842)  India dF -0.01625 (P 0.9734 R 0.9801)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 6, 0.167), ('(0.1, 0.3]', 2, 0.0), ('(0.3, 0.5]', 3, 0.667), ('(0.5, 0.7]', 3, 0.333)]
+  +swap_extra@same    (all S1)          : adds   19.3/1k precision 0.084 -> US dF -0.00064 (P 0.9966 R 0.9846)  India dF -0.01017 (P 0.9848 R 0.9807)
+  +swap_extra@same    (non-empty S1 only): adds   17.7/1k precision 0.090 -> US dF -0.00048 (P 0.9967 R 0.9845)  India dF -0.00698 (P 0.9858 R 0.9807)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 2751, 0.02), ('(0.1, 0.3]', 481, 0.254), ('(0.3, 0.5]', 325, 0.631), ('(0.5, 0.7]', 488, 0.844), ('(0.7, inf]', 82, 0.902)]
+  +num_changed/other  (all S1)          : adds 2092.0/1k precision 0.011 -> US dF -0.29883 (P 0.6308 R 0.9910)  India dF -0.30738 (P 0.5991 R 0.9867)
+  +num_changed/other  (non-empty S1 only): adds 1970.1/1k precision 0.011 -> US dF -0.24724 (P 0.6453 R 0.9908)  India dF -0.25966 (P 0.6126 R 0.9865)
+     precision by V9 p3 bin: [('(-inf, 0.1]', 59712, 0.015), ('(0.1, 0.3]', 8762, 0.197), ('(0.3, 0.5]', 5540, 0.453), ('(0.5, 0.7]', 6410, 0.728), ('(0.7, inf]', 526, 0.829)]
+========================= SIMULATOR: expected LB change vs V9 (only changed S1)
+  T4 vs V9: alpha 1.0: -0.00339 (US -0.00024 IN -0.00514 FR -0.00598) | alpha 0.5: -0.00299 (US -0.00019 IN -0.00463 FR -0.00500) | alpha 0.0: -0.00262 (US -0.00015 IN -0.00414 FR -0.00419)
+  T4 vs V9, TEAMMATE-FAVOURABLE (every addition >= 0.5 true): alpha 1.0: -0.00047 (US -0.00004 IN -0.00070 FR -0.00088) | alpha 0.5: -0.00032 (US -0.00003 IN -0.00052 FR -0.00044) | alpha 0.0: -0.00018 (US -0.00001 IN -0.00034 FR -0.00009)
+  T4 vs V9, EXTREME (every addition >= 0.9 true): alpha 1.0: +0.00206 (US +0.00016 IN +0.00314 FR +0.00355) | alpha 0.5: +0.00207 (US +0.00016 IN +0.00315 FR +0.00355) | alpha 0.0: +0.00207 (US +0.00016 IN +0.00316 FR +0.00353)
+HARD BOUNDS vs V9 (assuming V9's own pairs on these S1 are right): all additions true +0.00267; all additions false -0.00383
+========================= HYBRIDS on top of V10 (simulator, alpha 1 / 0.5 / 0)
+  V10 + all T4 additions: 12772 pairs
+  V10 + all T4 additions: alpha 1.0: -0.00338 (US -0.00024 IN -0.00511 FR -0.00598) | alpha 0.5: -0.00300 (US -0.00020 IN -0.00465 FR -0.00500) | alpha 0.0: -0.00265 (US -0.00015 IN -0.00420 FR -0.00419)
+  V10 + T4 additions on non-empty S1 only: 9251 pairs
+  V10 + T4 additions on non-empty S1 only: alpha 1.0: -0.00153 (US -0.00012 IN -0.00215 FR -0.00321) | alpha 0.5: -0.00147 (US -0.00011 IN -0.00211 FR -0.00296) | alpha 0.0: -0.00142 (US -0.00011 IN -0.00207 FR -0.00273)
+  V10 + T4 additions with V9 p3 >= 0.5: 495 pairs
+  V10 + T4 additions with V9 p3 >= 0.5: alpha 1.0: -0.00002 (US -0.00000 IN -0.00002 FR -0.00004) | alpha 0.5: -0.00001 (US -0.00000 IN -0.00002 FR -0.00001) | alpha 0.0: -0.00001 (US -0.00000 IN -0.00003 FR +0.00002)
+  V10 + T4 identical-name same-address additions with copy-like fingerprint: 0 pairs
+python scripts/227_audit_t4.py  75.53s user 15.30s system 272% cpu 33.284 total

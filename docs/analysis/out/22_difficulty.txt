@@ -1,0 +1,52 @@
+
+## per country/src
+country src       n     n_eq  core_eq     a_eq  a2_empty  state_eq   indic2     dom2   brand2  core_zero_overlap  any_num_shared  med_ntsr   med_atsr
+  India  S2 1480545 0.393108 0.665675 0.184262  0.038253  0.944943 0.232649 0.035658 0.010327           0.063308        0.813151     100.0 100.000000
+  India  S3 1579298 0.325390 0.585122 0.081958  0.040177  0.916431 0.130939 0.037557 0.051345           0.084778        0.792799     100.0  96.385544
+     US  S2 2213074 0.313675 0.560756 0.294414  0.049049  0.949984 0.000000 0.051696 0.013956           0.083149        0.780840     100.0 100.000000
+     US  S3 2365448 0.313547 0.524886 0.044259  0.045819  0.896973 0.000000 0.048692 0.060537           0.081142        0.809870     100.0  93.877548
+
+## name-band x addr-band (all true pairs)
+          nb         ab       n   pct
+  core_exact   addr>=90 3442328 45.07
+  core_exact addr_50-70   64681  0.85
+  core_exact addr_70-90  679978  8.90
+  core_exact   addr_<50    2864  0.04
+  core_exact addr_empty  202379  2.65
+  name_50-70   addr>=90  300573  3.94
+  name_50-70 addr_50-70    5837  0.08
+  name_50-70 addr_70-90   60343  0.79
+  name_50-70   addr_<50     280  0.00
+  name_50-70 addr_empty    8764  0.11
+  name_70-90   addr>=90  550818  7.21
+  name_70-90 addr_50-70   11050  0.14
+  name_70-90 addr_70-90  117379  1.54
+  name_70-90   addr_<50     448  0.01
+  name_70-90 addr_empty   33026  0.43
+    name_<50   addr>=90  181614  2.38
+    name_<50 addr_50-70    2998  0.04
+    name_<50 addr_70-90   31901  0.42
+    name_<50   addr_<50     106  0.00
+    name_<50 addr_empty     833  0.01
+name_tsr>=90   addr>=90 1538157 20.14
+name_tsr>=90 addr_50-70   26638  0.35
+name_tsr>=90 addr_70-90  282304  3.70
+name_tsr>=90   addr_<50    1050  0.01
+name_tsr>=90 addr_empty   92016  1.20
+
+## hardest cases
+country  both_weak  weakname_noaddr  no_token_overlap_any  no_name_tok
+     US   0.000069         0.000064              0.000062     0.082112
+  India   0.000203         0.000176              0.000179     0.074389
+
+## by name-noise kind
+  kind       n  zero_name_tok    med_tsr   med_jw  med_pr  addr_ok
+ plain 6384909       0.023792 100.000000 1.000000   100.0 0.931748
+ indic  551240       0.000499 100.000000 1.000000   100.0 0.985861
+domain  341693       0.979142  65.454544 1.000000   100.0 0.982300
+ brand  270460       0.425327 100.000000 0.592222   100.0 0.993526
+  junk   90063       0.019819 100.000000 1.000000   100.0 0.982290
+
+## zero-name-token-overlap pairs not explained by indic/domain
+ zero_overlap_plain  of_which_brandflag
+             268731              115034

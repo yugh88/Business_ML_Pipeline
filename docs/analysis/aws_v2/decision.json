@@ -1,0 +1,38 @@
+{
+ "variant": "p2",
+ "policy": "G_expected_f",
+ "params": {
+  "a": 0.8,
+  "lam": 0.0
+ },
+ "valid": {
+  "f05": 0.9787003679208773,
+  "P": 0.9948552221608612,
+  "R": 0.953440840542589,
+  "singleton_acc": 0.9558020060344125,
+  "multi_f05": 0.9800483649628658,
+  "false_merges": 3773,
+  "false_negatives": 35628,
+  "matches_per_s1": 3.3248025605919103,
+  "n_s1": 220574,
+  "policy": "G_expected_f",
+  "a": 0.8,
+  "lam": 0.0,
+  "variant": "p2"
+ },
+ "best_valid": {
+  "f05": 0.9788492844583832,
+  "P": 0.9942460770560794,
+  "R": 0.9558545254959359,
+  "singleton_acc": 0.9589823044931909,
+  "multi_f05": 0.9800188279549491,
+  "false_merges": 4233,
+  "false_negatives": 33781,
+  "matches_per_s1": 3.335261635550881,
+  "n_s1": 220574,
+  "policy": "G_expected_f",
+  "a": 1.0,
+  "lam": 0.0,
+  "variant": "p2"
+ }
+}

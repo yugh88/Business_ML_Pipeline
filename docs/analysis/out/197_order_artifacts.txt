@@ -1,0 +1,9 @@
+S1 rows 2206821 | pool rows by source [('S3', 5285603), ('S2', 5034616)] | id ranges S1 217 999998822 pool 10 999999866
+TRUE pairs                                 S2: n= 3693619  |rel. row gap| median 0.2928 p05 0.0252  corr(row) +0.0010  |id gap| median 2.93e+08 p05 2.53e+07  corr(id) +0.0001
+TRUE pairs                                 S3: n= 3944746  |rel. row gap| median 0.2930 p05 0.0255  corr(row) -0.0007  |id gap| median 2.93e+08 p05 2.54e+07  corr(id) +0.0002
+HARD negatives (V9 holdout false cands)    S2: n=   48655  |rel. row gap| median 0.2919 p05 0.0262  corr(row) -0.0009  |id gap| median 2.91e+08 p05 2.59e+07  corr(id) +0.0047
+HARD negatives (V9 holdout false cands)    S3: n=   57559  |rel. row gap| median 0.2908 p05 0.0250  corr(row) -0.0009  |id gap| median 2.93e+08 p05 2.57e+07  corr(id) -0.0040
+RANDOM pairs                               S2: n=  243681  |rel. row gap| median 0.2929 p05 0.0256  corr(row) -0.0000  |id gap| median 2.94e+08 p05 2.54e+07  corr(id) -0.0034
+RANDOM pairs                               S3: n=  256319  |rel. row gap| median 0.2928 p05 0.0251  corr(row) -0.0006  |id gap| median 2.93e+08 p05 2.53e+07  corr(id) +0.0027
+copies of the same S1 in the same source: min row gap median 821574.5 share adjacent (gap 1) 0.0 of 2354096
+python scripts/197_order_artifacts.py  18.42s user 2.10s system 319% cpu 6.430 total

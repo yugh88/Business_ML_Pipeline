@@ -1,0 +1,12 @@
+train rows 3990037 {'US': 2378645, 'India': 1611392}
+trained US 2378645
+trained India 1611392
+fold7 global: best 0.99146 {'policy': 'G_expected_f', 'a': 1.5, 'lam': 0.0, 'cap': 1}
+fold7 country: best 0.99156 {'policy': 'G_expected_f', 'a': 1.5, 'lam': 0.15, 'cap': 1}
+fold7 ensemble: best 0.99156 {'policy': 'G_expected_f', 'a': 1.5, 'lam': 0.0, 'cap': 1}
+
+HOLDOUT clean F by country (folds 0/8/9 mean) — global = V9-like stage-3
+  global    US 0.99276 (+0.00000)  India 0.98984 (+0.00000)   per fold US [0.99293, 0.99258, 0.99275] India [0.98958, 0.99025, 0.98968]
+  country   US 0.99282 (+0.00006)  India 0.98992 (+0.00009)   per fold US [0.99299, 0.99262, 0.99284] India [0.98961, 0.99031, 0.98985]
+  ensemble  US 0.99281 (+0.00006)  India 0.98994 (+0.00011)   per fold US [0.99299, 0.99264, 0.99281] India [0.98969, 0.9903, 0.98984]
+python scripts/215_country_models.py  876.24s user 85.85s system 653% cpu 2:27.16 total

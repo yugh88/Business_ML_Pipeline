@@ -1,0 +1,24 @@
+## Pool groups with identical normalized (ncore, a), size>1
+country  n_groups     recs  grp_mixed  unmatched_twins_of_positive  grp_multi_s1  recs_multi_s1  grp_all_unmatched  recs_all_unmatched
+     US    313174 675738.0      137.0                        137.0           4.0           11.0              958.0              1916.0
+  India    208926 452395.0       49.0                         49.0          17.0           36.0               74.0               148.0
+
+## examples: identical (ncore,a) linked to >1 distinct S1
+('India', 'guntur center', 'fl , guntur , ap', 2, 2, 2)
+('India', 'shaikpet center', '4 fl , shaikpet , hyderabad , tg', 2, 2, 2)
+('India', 'surat services', 'a 1033 1034 hari om marketring rd , surat , gujarat', 2, 2, 2)
+('India', 'hyderabad services', '40 , hyderabad , andhra pradesh', 2, 2, 2)
+('India', 'creative infotech', '20 , bangalore , karnataka', 2, 2, 2)
+('India', 'new delhi india', 'a 621 t 20 khanna marketwest patel nagar , new delhi , delhi', 2, 2, 2)
+('US', 'lloyd poore', '498 olde mill dr , westerville , oh', 2, 2, 2)
+('India', 'mumbai developers', '2 , mumbai , mumbai city , mh', 2, 2, 2)
+
+## examples: positive + unmatched identical twin
+('India', 'prabhat brothers', 'gala no 8 , bldg no 1 , j p colaco ind est , nr dhuri ind est , vasai , thane , maharashtra', 2, 1)
+('US', 'lenet partners el paso county', '481 borrego rd , san elizario , texas', 2, 1)
+('US', 'advanced defense concepts', '19 dickinson st , springfield , ma', 2, 1)
+('US', 'perkins bell', '5255 700 , winamac , in', 2, 1)
+('US', 'gallegos rising', '121 charles st , el dorado , ar', 2, 1)
+('US', 'cardiology specialists supply', '2661 ocean view ave , supply , n carolina', 4, 3)
+('US', 'vision clinic halethorpe associates', '929 imperial ct , hallethorpe city , md', 2, 1)
+('US', 'temple fellowship', '16566 branch rd , marston , nc', 2, 1)

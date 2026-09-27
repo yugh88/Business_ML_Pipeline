@@ -1,0 +1,9 @@
+TEST pool records: exact key (country+core name+first number) found in ... 
+                grp       n  in_TEST_S1  in_TRAIN_S1
+  predicted_matched 5916254    0.467162     0.050389
+predicted_unmatched 4053335    0.041228     0.026786
+
+TRAIN pool records (truth): exact key found in ...
+                  grp       n  in_TRAIN_S1  in_TEST_S1
+              matched 7638365     0.440315    0.044426
+unmatched(distractor) 2681854     0.030435    0.018049

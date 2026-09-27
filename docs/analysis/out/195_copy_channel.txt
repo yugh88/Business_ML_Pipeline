@@ -1,0 +1,159 @@
+HOLDOUT candidates 1978317  (true 1872103)
+
+== per-op rate among TRUE vs FALSE candidates (same-address classes only), and V9 FP/FN share with the op
+┌────────────────┬───────────┬────────────┬────────────┬────────────┐
+│ op             ┆ rate_true ┆ rate_false ┆ rate_in_FP ┆ rate_in_FN │
+│ ---            ┆ ---       ┆ ---        ┆ ---        ┆ ---        │
+│ str            ┆ f64       ┆ f64        ┆ f64        ┆ f64        │
+╞════════════════╪═══════════╪════════════╪════════════╪════════════╡
+│ ocr            ┆ 0.0247    ┆ 0.0134     ┆ 0.0153     ┆ 0.0615     │
+│ accent         ┆ 0.132     ┆ 0.0636     ┆ 0.0618     ┆ 0.0453     │
+│ punct          ┆ 0.2395    ┆ 0.1586     ┆ 0.1502     ┆ 0.2014     │
+│ placeholder    ┆ 0.0331    ┆ 0.0312     ┆ 0.0323     ┆ 0.0303     │
+│ zeropad        ┆ 0.0408    ┆ 0.0355     ┆ 0.0339     ┆ 0.0237     │
+│ typo           ┆ 0.1537    ┆ 0.1619     ┆ 0.1741     ┆ 0.2272     │
+│ dupword        ┆ 0.0241    ┆ 0.0183     ┆ 0.0275     ┆ 0.0266     │
+│ case           ┆ 0.3911    ┆ 0.369      ┆ 0.3231     ┆ 0.3753     │
+│ addr_reordered ┆ 0.0376    ┆ 0.0189     ┆ 0.0303     ┆ 0.0171     │
+└────────────────┴───────────┴────────────┴────────────┴────────────┘
+
+== class x bucket: true rate vs V9 mean p3 (calibration), acceptance, errors
+┌──────────────────────────┬────────────┬────────┬───────────┬─────────┬──────────┬─────┬──────┐
+│ cls                      ┆ bucket     ┆ n      ┆ true_rate ┆ mean_p3 ┆ acc_rate ┆ FP  ┆ FN   │
+│ ---                      ┆ ---        ┆ ---    ┆ ---       ┆ ---     ┆ ---      ┆ --- ┆ ---  │
+│ str                      ┆ str        ┆ u32    ┆ f64       ┆ f32     ┆ f64      ┆ u32 ┆ u32  │
+╞══════════════════════════╪════════════╪════════╪═══════════╪═════════╪══════════╪═════╪══════╡
+│ first_word_replaced@same ┆ noisy      ┆ 6393   ┆ 0.455     ┆ 0.486   ┆ 0.448    ┆ 124 ┆ 172  │
+│ first_word_replaced@same ┆ plain      ┆ 3010   ┆ 0.443     ┆ 0.481   ┆ 0.449    ┆ 86  ┆ 67   │
+│ identical@empty          ┆ name_clone ┆ 2613   ┆ 0.915     ┆ 0.917   ┆ 0.929    ┆ 66  ┆ 31   │
+│ identical@empty          ┆ noisy      ┆ 20676  ┆ 0.921     ┆ 0.906   ┆ 0.92     ┆ 223 ┆ 235  │
+│ identical@empty          ┆ plain      ┆ 9692   ┆ 0.92      ┆ 0.9     ┆ 0.916    ┆ 114 ┆ 152  │
+│ identical@num_changed    ┆ name_clone ┆ 11810  ┆ 0.97      ┆ 0.965   ┆ 0.965    ┆ 23  ┆ 80   │
+│ identical@num_changed    ┆ noisy      ┆ 129135 ┆ 0.903     ┆ 0.898   ┆ 0.895    ┆ 420 ┆ 1458 │
+│ identical@num_changed    ┆ plain      ┆ 52205  ┆ 0.805     ┆ 0.803   ┆ 0.794    ┆ 375 ┆ 971  │
+│ identical@other          ┆ name_clone ┆ 4788   ┆ 0.969     ┆ 0.97    ┆ 0.971    ┆ 16  ┆ 10   │
+│ identical@other          ┆ noisy      ┆ 54411  ┆ 0.952     ┆ 0.949   ┆ 0.949    ┆ 221 ┆ 380  │
+│ identical@other          ┆ plain      ┆ 20184  ┆ 0.936     ┆ 0.933   ┆ 0.932    ┆ 114 ┆ 195  │
+│ identical@same           ┆ addr_clone ┆ 1314   ┆ 1.0       ┆ 1.0     ┆ 1.0      ┆ 0   ┆ 0    │
+│ identical@same           ┆ name_clone ┆ 69160  ┆ 1.0       ┆ 0.999   ┆ 0.999    ┆ 9   ┆ 43   │
+│ identical@same           ┆ noisy      ┆ 607798 ┆ 0.994     ┆ 0.993   ┆ 0.993    ┆ 207 ┆ 742  │
+│ identical@same           ┆ plain      ┆ 206182 ┆ 0.977     ┆ 0.976   ┆ 0.975    ┆ 256 ┆ 619  │
+│ light_edit@same          ┆ addr_clone ┆ 7009   ┆ 0.999     ┆ 0.999   ┆ 0.999    ┆ 5   ┆ 5    │
+│ light_edit@same          ┆ noisy      ┆ 152957 ┆ 0.974     ┆ 0.971   ┆ 0.969    ┆ 423 ┆ 1107 │
+│ light_edit@same          ┆ plain      ┆ 61867  ┆ 0.981     ┆ 0.981   ┆ 0.98     ┆ 156 ┆ 228  │
+│ no_overlap@same          ┆ addr_clone ┆ 6316   ┆ 0.899     ┆ 0.896   ┆ 0.898    ┆ 101 ┆ 110  │
+│ no_overlap@same          ┆ noisy      ┆ 103555 ┆ 0.936     ┆ 0.934   ┆ 0.93     ┆ 470 ┆ 1162 │
+│ no_overlap@same          ┆ plain      ┆ 17075  ┆ 0.823     ┆ 0.825   ┆ 0.811    ┆ 332 ┆ 543  │
+│ other                    ┆ noisy      ┆ 117690 ┆ 0.782     ┆ 0.775   ┆ 0.765    ┆ 863 ┆ 2907 │
+│ other                    ┆ plain      ┆ 68691  ┆ 0.772     ┆ 0.766   ┆ 0.754    ┆ 536 ┆ 1783 │
+│ swap_extra@same          ┆ addr_clone ┆ 28360  ┆ 1.0       ┆ 0.999   ┆ 0.999    ┆ 1   ┆ 15   │
+│ swap_extra@same          ┆ noisy      ┆ 111528 ┆ 0.971     ┆ 0.966   ┆ 0.966    ┆ 183 ┆ 831  │
+│ swap_extra@same          ┆ plain      ┆ 103758 ┆ 0.971     ┆ 0.967   ┆ 0.966    ┆ 122 ┆ 593  │
+└──────────────────────────┴────────────┴────────┴───────────┴─────────┴──────────┴─────┴──────┘
+
+== TEST US: per 1k S1 with candidates — candidates / accepted by class x bucket
+┌──────────────────────────┬────────────┬────────────┬───────────┬──────────┬─────────┐
+│ cls                      ┆ bucket     ┆ cand_per1k ┆ acc_per1k ┆ acc_rate ┆ mean_p3 │
+│ ---                      ┆ ---        ┆ ---        ┆ ---       ┆ ---      ┆ ---     │
+│ str                      ┆ str        ┆ f64        ┆ f64       ┆ f64      ┆ f32     │
+╞══════════════════════════╪════════════╪════════════╪═══════════╪══════════╪═════════╡
+│ first_word_replaced@same ┆ noisy      ┆ 22.7       ┆ 5.5       ┆ 0.245    ┆ 0.32    │
+│ first_word_replaced@same ┆ plain      ┆ 12.9       ┆ 4.1       ┆ 0.322    ┆ 0.385   │
+│ identical@empty          ┆ name_clone ┆ 6.6        ┆ 6.3       ┆ 0.957    ┆ 0.943   │
+│ identical@empty          ┆ noisy      ┆ 49.4       ┆ 47.0      ┆ 0.952    ┆ 0.936   │
+│ identical@empty          ┆ plain      ┆ 17.6       ┆ 16.6      ┆ 0.941    ┆ 0.927   │
+│ identical@num_changed    ┆ name_clone ┆ 24.9       ┆ 24.0      ┆ 0.967    ┆ 0.967   │
+│ identical@num_changed    ┆ noisy      ┆ 205.4      ┆ 164.6     ┆ 0.801    ┆ 0.818   │
+│ identical@num_changed    ┆ plain      ┆ 81.1       ┆ 52.6      ┆ 0.649    ┆ 0.682   │
+│ identical@other          ┆ name_clone ┆ 9.8        ┆ 9.8       ┆ 0.991    ┆ 0.99    │
+│ identical@other          ┆ noisy      ┆ 66.6       ┆ 64.5      ┆ 0.968    ┆ 0.97    │
+│ identical@other          ┆ plain      ┆ 22.9       ┆ 21.7      ┆ 0.95     ┆ 0.953   │
+│ identical@same           ┆ addr_clone ┆ 0.9        ┆ 0.9       ┆ 1.0      ┆ 1.0     │
+│ identical@same           ┆ name_clone ┆ 171.2      ┆ 171.1     ┆ 1.0      ┆ 0.999   │
+│ identical@same           ┆ noisy      ┆ 1182.0     ┆ 1173.0    ┆ 0.992    ┆ 0.992   │
+│ identical@same           ┆ plain      ┆ 350.0      ┆ 344.7     ┆ 0.985    ┆ 0.985   │
+│ light_edit@same          ┆ addr_clone ┆ 14.0       ┆ 14.0      ┆ 0.999    ┆ 0.999   │
+│ light_edit@same          ┆ noisy      ┆ 348.1      ┆ 340.7     ┆ 0.979    ┆ 0.981   │
+│ light_edit@same          ┆ plain      ┆ 131.7      ┆ 130.2     ┆ 0.988    ┆ 0.989   │
+│ no_overlap@same          ┆ addr_clone ┆ 4.2        ┆ 3.9       ┆ 0.92     ┆ 0.916   │
+│ no_overlap@same          ┆ noisy      ┆ 222.4      ┆ 211.7     ┆ 0.952    ┆ 0.955   │
+│ no_overlap@same          ┆ plain      ┆ 32.3       ┆ 27.8      ┆ 0.86     ┆ 0.87    │
+│ other                    ┆ noisy      ┆ 229.8      ┆ 151.7     ┆ 0.66     ┆ 0.674   │
+│ other                    ┆ plain      ┆ 124.3      ┆ 84.6      ┆ 0.681    ┆ 0.7     │
+│ swap_extra@same          ┆ addr_clone ┆ 63.4       ┆ 63.4      ┆ 0.999    ┆ 0.999   │
+│ swap_extra@same          ┆ noisy      ┆ 210.4      ┆ 205.8     ┆ 0.978    ┆ 0.978   │
+│ swap_extra@same          ┆ plain      ┆ 202.6      ┆ 199.5     ┆ 0.985    ┆ 0.985   │
+└──────────────────────────┴────────────┴────────────┴───────────┴──────────┴─────────┘
+
+== TEST India: per 1k S1 with candidates — candidates / accepted by class x bucket
+┌──────────────────────────┬────────────┬────────────┬───────────┬──────────┬─────────┐
+│ cls                      ┆ bucket     ┆ cand_per1k ┆ acc_per1k ┆ acc_rate ┆ mean_p3 │
+│ ---                      ┆ ---        ┆ ---        ┆ ---       ┆ ---      ┆ ---     │
+│ str                      ┆ str        ┆ f64        ┆ f64       ┆ f64      ┆ f32     │
+╞══════════════════════════╪════════════╪════════════╪═══════════╪══════════╪═════════╡
+│ first_word_replaced@same ┆ noisy      ┆ 9.3        ┆ 7.4       ┆ 0.795    ┆ 0.817   │
+│ first_word_replaced@same ┆ plain      ┆ 2.0        ┆ 1.3       ┆ 0.65     ┆ 0.697   │
+│ identical@empty          ┆ name_clone ┆ 3.7        ┆ 3.2       ┆ 0.873    ┆ 0.863   │
+│ identical@empty          ┆ noisy      ┆ 30.1       ┆ 25.8      ┆ 0.857    ┆ 0.847   │
+│ identical@empty          ┆ plain      ┆ 22.6       ┆ 20.1      ┆ 0.889    ┆ 0.875   │
+│ identical@num_changed    ┆ name_clone ┆ 19.1       ┆ 18.4      ┆ 0.962    ┆ 0.963   │
+│ identical@num_changed    ┆ noisy      ┆ 333.4      ┆ 303.3     ┆ 0.91     ┆ 0.913   │
+│ identical@num_changed    ┆ plain      ┆ 161.9      ┆ 122.1     ┆ 0.754    ┆ 0.774   │
+│ identical@other          ┆ name_clone ┆ 7.9        ┆ 7.5       ┆ 0.954    ┆ 0.956   │
+│ identical@other          ┆ noisy      ┆ 158.6      ┆ 147.9     ┆ 0.933    ┆ 0.934   │
+│ identical@other          ┆ plain      ┆ 64.2       ┆ 57.1      ┆ 0.889    ┆ 0.896   │
+│ identical@same           ┆ addr_clone ┆ 4.8        ┆ 4.8       ┆ 0.999    ┆ 0.999   │
+│ identical@same           ┆ name_clone ┆ 65.4       ┆ 65.4      ┆ 1.0      ┆ 1.0     │
+│ identical@same           ┆ noisy      ┆ 1083.0     ┆ 1066.0    ┆ 0.984    ┆ 0.985   │
+│ identical@same           ┆ plain      ┆ 461.4      ┆ 428.1     ┆ 0.928    ┆ 0.934   │
+│ light_edit@same          ┆ addr_clone ┆ 12.6       ┆ 12.6      ┆ 0.998    ┆ 0.997   │
+│ light_edit@same          ┆ noisy      ┆ 201.6      ┆ 189.1     ┆ 0.938    ┆ 0.944   │
+│ light_edit@same          ┆ plain      ┆ 98.2       ┆ 91.7      ┆ 0.934    ┆ 0.941   │
+│ no_overlap@same          ┆ addr_clone ┆ 23.0       ┆ 20.4      ┆ 0.885    ┆ 0.882   │
+│ no_overlap@same          ┆ noisy      ┆ 147.3      ┆ 137.7     ┆ 0.935    ┆ 0.938   │
+│ no_overlap@same          ┆ plain      ┆ 30.1       ┆ 24.0      ┆ 0.796    ┆ 0.809   │
+│ other                    ┆ noisy      ┆ 279.8      ┆ 209.2     ┆ 0.748    ┆ 0.76    │
+│ other                    ┆ plain      ┆ 177.4      ┆ 124.6     ┆ 0.702    ┆ 0.72    │
+│ swap_extra@same          ┆ addr_clone ┆ 37.1       ┆ 37.0      ┆ 0.999    ┆ 0.999   │
+│ swap_extra@same          ┆ noisy      ┆ 220.6      ┆ 198.6     ┆ 0.9      ┆ 0.907   │
+│ swap_extra@same          ┆ plain      ┆ 194.4      ┆ 170.0     ┆ 0.874    ┆ 0.884   │
+└──────────────────────────┴────────────┴────────────┴───────────┴──────────┴─────────┘
+
+== TEST France: per 1k S1 with candidates — candidates / accepted by class x bucket
+┌──────────────────────────┬────────────┬────────────┬───────────┬──────────┬─────────┐
+│ cls                      ┆ bucket     ┆ cand_per1k ┆ acc_per1k ┆ acc_rate ┆ mean_p3 │
+│ ---                      ┆ ---        ┆ ---        ┆ ---       ┆ ---      ┆ ---     │
+│ str                      ┆ str        ┆ f64        ┆ f64       ┆ f64      ┆ f32     │
+╞══════════════════════════╪════════════╪════════════╪═══════════╪══════════╪═════════╡
+│ desc@same                ┆ addr_clone ┆ 2.4        ┆ 2.3       ┆ 0.97     ┆ 0.968   │
+│ desc@same                ┆ noisy      ┆ 103.7      ┆ 83.8      ┆ 0.808    ┆ 0.83    │
+│ desc@same                ┆ plain      ┆ 84.2       ┆ 72.4      ┆ 0.86     ┆ 0.874   │
+│ first_word_replaced@same ┆ noisy      ┆ 14.7       ┆ 7.7       ┆ 0.523    ┆ 0.6     │
+│ first_word_replaced@same ┆ plain      ┆ 11.1       ┆ 6.7       ┆ 0.601    ┆ 0.663   │
+│ identical@empty          ┆ name_clone ┆ 17.6       ┆ 16.8      ┆ 0.955    ┆ 0.938   │
+│ identical@empty          ┆ noisy      ┆ 46.7       ┆ 42.6      ┆ 0.911    ┆ 0.899   │
+│ identical@empty          ┆ plain      ┆ 9.2        ┆ 7.9       ┆ 0.864    ┆ 0.854   │
+│ identical@num_changed    ┆ name_clone ┆ 10.5       ┆ 6.9       ┆ 0.656    ┆ 0.673   │
+│ identical@num_changed    ┆ noisy      ┆ 54.3       ┆ 19.7      ┆ 0.363    ┆ 0.397   │
+│ identical@num_changed    ┆ plain      ┆ 19.0       ┆ 4.2       ┆ 0.222    ┆ 0.259   │
+│ identical@other          ┆ name_clone ┆ 18.5       ┆ 15.1      ┆ 0.816    ┆ 0.823   │
+│ identical@other          ┆ noisy      ┆ 55.7       ┆ 42.1      ┆ 0.756    ┆ 0.765   │
+│ identical@other          ┆ plain      ┆ 11.8       ┆ 8.8       ┆ 0.744    ┆ 0.753   │
+│ identical@same           ┆ addr_clone ┆ 25.6       ┆ 25.5      ┆ 0.999    ┆ 1.0     │
+│ identical@same           ┆ clone      ┆ 6.7        ┆ 6.7       ┆ 0.998    ┆ 0.999   │
+│ identical@same           ┆ name_clone ┆ 482.9      ┆ 477.8     ┆ 0.989    ┆ 0.987   │
+│ identical@same           ┆ noisy      ┆ 1381.8     ┆ 1352.7    ┆ 0.979    ┆ 0.977   │
+│ identical@same           ┆ plain      ┆ 267.1      ┆ 258.6     ┆ 0.968    ┆ 0.967   │
+│ light_edit@same          ┆ addr_clone ┆ 17.2       ┆ 16.9      ┆ 0.983    ┆ 0.984   │
+│ light_edit@same          ┆ noisy      ┆ 158.2      ┆ 147.0     ┆ 0.93     ┆ 0.935   │
+│ light_edit@same          ┆ plain      ┆ 27.7       ┆ 23.1      ┆ 0.833    ┆ 0.856   │
+│ no_overlap@same          ┆ addr_clone ┆ 29.8       ┆ 20.6      ┆ 0.69     ┆ 0.721   │
+│ no_overlap@same          ┆ noisy      ┆ 351.2      ┆ 266.7     ┆ 0.759    ┆ 0.782   │
+│ no_overlap@same          ┆ plain      ┆ 10.5       ┆ 5.8       ┆ 0.552    ┆ 0.606   │
+│ other                    ┆ noisy      ┆ 712.3      ┆ 36.1      ┆ 0.051    ┆ 0.059   │
+│ other                    ┆ plain      ┆ 281.0      ┆ 15.4      ┆ 0.055    ┆ 0.071   │
+│ swap_extra@same          ┆ addr_clone ┆ 47.0       ┆ 46.5      ┆ 0.99     ┆ 0.99    │
+│ swap_extra@same          ┆ noisy      ┆ 311.9      ┆ 269.1     ┆ 0.863    ┆ 0.872   │
+│ swap_extra@same          ┆ plain      ┆ 198.6      ┆ 170.3     ┆ 0.857    ┆ 0.868   │
+└──────────────────────────┴────────────┴────────────┴───────────┴──────────┴─────────┘
+python scripts/195_copy_channel.py  288.97s user 14.96s system 130% cpu 3:52.08 total

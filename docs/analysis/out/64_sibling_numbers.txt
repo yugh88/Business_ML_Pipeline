@@ -1,0 +1,11 @@
+ambiguous zone (name>=90, addr>=80, first-number conflicts with S1, S1 has other true copies):
+shape: (2, 3)
+┌───────┬───────┬─────────────────────────────────┐
+│ y     ┆ len   ┆ number_agrees_with_another_tru… │
+│ ---   ┆ ---   ┆ ---                             │
+│ bool  ┆ u32   ┆ f64                             │
+╞═══════╪═══════╪═════════════════════════════════╡
+│ false ┆ 17697 ┆ 0.002712                        │
+│ true  ┆ 5285  ┆ 0.689688                        │
+└───────┴───────┴─────────────────────────────────┘
+S1 with >=3 true copies: 31220  S1 number == copies' majority number: 0.8196028187059577

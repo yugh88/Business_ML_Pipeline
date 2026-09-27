@@ -7,3 +7,8 @@ output*/
 *.tsv
 *.parquet
 .bucket_name
+*.pt
+*.safetensors
+*.bin
+.DS_Store
+mini*/

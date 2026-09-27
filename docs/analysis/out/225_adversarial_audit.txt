@@ -1,0 +1,61 @@
+============================== (0) what the teammates changed vs V9 (per 1k S1)
+T1 added 35782 (identical-name 34548; on V9-empty S1 17442) by offset:
+┌─────────┬───────┬───────┬─────────┬───┬───────┬──────┬──────┬────────┐
+│ country ┆ +1..9 ┆ -1..9 ┆ +10..99 ┆ … ┆ trunc ┆ far  ┆ same ┆ no_num │
+│ ---     ┆ ---   ┆ ---   ┆ ---     ┆   ┆ ---   ┆ ---  ┆ ---  ┆ ---    │
+│ str     ┆ f64   ┆ f64   ┆ f64     ┆   ┆ f64   ┆ f64  ┆ f64  ┆ f64    │
+╞═════════╪═══════╪═══════╪═════════╪═══╪═══════╪══════╪══════╪════════╡
+│ US      ┆ 11.73 ┆ 0.01  ┆ 5.1     ┆ … ┆ 0.28  ┆ 1.66 ┆ 0.56 ┆ 0.31   │
+│ India   ┆ 3.84  ┆ 1.05  ┆ 2.98    ┆ … ┆ 1.59  ┆ 4.44 ┆ 5.58 ┆ 0.62   │
+│ France  ┆ 6.77  ┆ 0.12  ┆ 3.32    ┆ … ┆ 0.23  ┆ 0.27 ┆ 8.28 ┆ 1.28   │
+└─────────┴───────┴───────┴─────────┴───┴───────┴──────┴──────┴────────┘
+T2 added 7469 (identical-name 6658; on V9-empty S1 0) by offset:
+┌─────────┬───────┬───────┬─────────┬───┬───────┬──────┬──────┬────────┐
+│ country ┆ +1..9 ┆ -1..9 ┆ +10..99 ┆ … ┆ trunc ┆ far  ┆ same ┆ no_num │
+│ ---     ┆ ---   ┆ ---   ┆ ---     ┆   ┆ ---   ┆ ---  ┆ ---  ┆ ---    │
+│ str     ┆ f64   ┆ f64   ┆ f64     ┆   ┆ f64   ┆ f64  ┆ f64  ┆ f64    │
+╞═════════╪═══════╪═══════╪═════════╪═══╪═══════╪══════╪══════╪════════╡
+│ France  ┆ 0.0   ┆ 0.0   ┆ 0.0     ┆ … ┆ 0.0   ┆ 0.0  ┆ 8.95 ┆ 1.09   │
+│ India   ┆ 0.14  ┆ 0.04  ┆ 0.07    ┆ … ┆ 0.03  ┆ 0.01 ┆ 5.31 ┆ 0.0    │
+│ US      ┆ 0.0   ┆ 0.0   ┆ 0.0     ┆ … ┆ 0.0   ┆ 0.0  ┆ 0.48 ┆ 0.0    │
+└─────────┴───────┴───────┴─────────┴───┴───────┴──────┴──────┴────────┘
+============================== (1) HOLDOUT replay: V9-rejected IDENTICAL-name candidates by offset (truth known)
+┌─────────┬─────────┬───────┬───────────┬────────────────────┬────────────┬────────┐
+│ country ┆ off     ┆ n     ┆ true_rate ┆ true_rate_on_empty ┆ n_on_empty ┆ per1k  │
+│ ---     ┆ ---     ┆ ---   ┆ ---       ┆ ---                ┆ ---        ┆ ---    │
+│ str     ┆ str     ┆ u32   ┆ f64       ┆ f64                ┆ u32        ┆ f64    │
+╞═════════╪═════════╪═══════╪═══════════╪════════════════════╪════════════╪════════╡
+│ India   ┆ +1..9   ┆ 18523 ┆ 0.023     ┆ 0.014              ┆ 1648       ┆ 83.34  │
+│ India   ┆ +10..99 ┆ 19816 ┆ 0.008     ┆ 0.003              ┆ 1558       ┆ 89.16  │
+│ India   ┆ -1..9   ┆ 9602  ┆ 0.009     ┆ 0.005              ┆ 652        ┆ 43.2   │
+│ India   ┆ -10..99 ┆ 15033 ┆ 0.007     ┆ 0.001              ┆ 1011       ┆ 67.64  │
+│ US      ┆ +1..9   ┆ 60405 ┆ 0.013     ┆ 0.005              ┆ 5837       ┆ 180.69 │
+│ US      ┆ +10..99 ┆ 28165 ┆ 0.007     ┆ 0.003              ┆ 2775       ┆ 84.25  │
+│ US      ┆ -1..9   ┆ 553   ┆ 0.058     ┆ 0.015              ┆ 66         ┆ 1.65   │
+│ US      ┆ -10..99 ┆ 2594  ┆ 0.025     ┆ 0.006              ┆ 158        ┆ 7.76   │
+└─────────┴─────────┴───────┴───────────┴────────────────────┴────────────┴────────┘
+  rule [add ALL rejected identical-name +k (1..99)]: adds 122817 (220.7/1k), precision 0.012 -> holdout F US -0.07078  India -0.03416
+  rule [... only on V9-empty S1]: adds 11804 (21.2/1k), precision 0.006 -> holdout F US -0.02251  India -0.00976
+  rule [... only on non-empty S1]: adds 111469 (200.3/1k), precision 0.013 -> holdout F US -0.04829  India -0.02483
+  rule [add rejected identical-name -k (control)]: adds 23728 (42.6/1k), precision 0.012 -> holdout F US -0.00186  India -0.01734
+============================== (2) TEST V9-rejected identical-name pool by offset (per 1k S1) and bound on genuine +k copies
+  US    : rejected +1..9 340.8 vs -1..9 0.7; +10..99 148.8 vs -10..99 3.8  | expected GENUINE +k in pool 0.98 + 0.28 per 1k vs T1 added +k 11.7 + 5.1 per 1k -> max precision of T1's +k additions 0.07
+  India : rejected +1..9 106.2 vs -1..9 18.4; +10..99 78.8 vs -10..99 35.6  | expected GENUINE +k in pool 0.80 + 0.37 per 1k vs T1 added +k 3.8 + 3.0 per 1k -> max precision of T1's +k additions 0.17
+  France: rejected +1..9 216.7 vs -1..9 109.1; +10..99 287.5 vs -10..99 178.2  | expected GENUINE +k in pool 148.26 + 12.85 per 1k vs T1 added +k 6.8 + 3.3 per 1k -> max precision of T1's +k additions 1.00
+============================== (3) T1 REMOVED pairs
+  France removed with fingerprint info 2962: fingerprint 0.389 vs kept identical@same copies 0.222
+  S1 with removals: V9 set size -> T1 set size (top): [(8, 7, 12510), (9, 7, 2604), (10, 7, 300), (11, 7, 15), (5, 4, 1), (3, 2, 1), (6, 4, 1), (6, 5, 1)]
+  rank of removed pair inside its V9 set (1 = most confident): [(1, 761), (2, 1422), (3, 2032), (4, 2524), (5, 2801), (6, 2893)]
+============================== (4a) truth model with holdout-calibrated q for identical-name +/-k pairs (corrects V9's +k recall 90% vs -k 99%)
+  +1..9: holdout pairs 18471, cascade-dropped true rate 0.006
+  -1..9: holdout pairs 10567, cascade-dropped true rate 0.002
+  +10..99: holdout pairs 13774, cascade-dropped true rate 0.002
+  -10..99: holdout pairs 10758, cascade-dropped true rate 0.001
+============================== (4b) historic simulator error (alpha 0.5, from 204) vs deviation from V9
+  v2    : changed S1 22.18%, sim error -0.0076
+  V3    : changed S1 10.82%, sim error -0.0046
+  V5    : changed S1 9.05%, sim error -0.0008
+  V5s3r : changed S1 5.85%, sim error +0.0003
+  T1    : changed S1 2.89%
+  T2    : changed S1 0.43%
+python scripts/225_adversarial_audit.py  175.76s user 17.96s system 166% cpu 1:56.53 total

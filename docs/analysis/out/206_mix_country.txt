@@ -1,0 +1,37 @@
+HOLDOUT clean F by country (mean of folds 0/8/9), delta vs alpha_d=1 (V9):
+  alpha_d=1.0   US 0.99266 (+0.00000)  India 0.98980 (+0.00000)
+  alpha_d=0.75  US 0.99260 (-0.00005)  India 0.98952 (-0.00028)
+  alpha_d=0.6   US 0.99214 (-0.00051)  India 0.98857 (-0.00123)
+  alpha_d=0.5   US 0.99162 (-0.00104)  India 0.98765 (-0.00215)
+  alpha_d=0.4   US 0.99110 (-0.00155)  India 0.98637 (-0.00343)
+  alpha_d=0.3   US 0.99040 (-0.00225)  India 0.98489 (-0.00491)
+TEST US     alpha_d=1.0  acc/1k  3377.0 | alpha_t=1.0: 0.9913 (+0.0000) | alpha_t=0.5: 0.9862 (+0.0000) | alpha_t=0.25: 0.9836 (+0.0000)
+TEST US     alpha_d=0.75 acc/1k  3373.6 | alpha_t=1.0: 0.9911 (-0.0002) | alpha_t=0.5: 0.9869 (+0.0007) | alpha_t=0.25: 0.9848 (+0.0012)
+TEST US     alpha_d=0.6  acc/1k  3366.2 | alpha_t=1.0: 0.9904 (-0.0009) | alpha_t=0.5: 0.9874 (+0.0012) | alpha_t=0.25: 0.9860 (+0.0024)
+TEST US     alpha_d=0.5  acc/1k  3363.2 | alpha_t=1.0: 0.9898 (-0.0015) | alpha_t=0.5: 0.9875 (+0.0014) | alpha_t=0.25: 0.9864 (+0.0028)
+   alpha_d=0.5 vs V9: removes 22.7/1k, adds 8.9/1k; removed by class: [('other', 9.71), ('identical@num_changed', 8.26), ('no_overlap@same', 1.58), ('first_word_replaced@same', 0.92), ('swap_extra@same', 0.69), ('light_edit@same', 0.68), ('identical@same', 0.47), ('identical@other', 0.21)]
+TEST US     alpha_d=0.4  acc/1k  3360.7 | alpha_t=1.0: 0.9891 (-0.0022) | alpha_t=0.5: 0.9875 (+0.0013) | alpha_t=0.25: 0.9867 (+0.0031)
+TEST US     alpha_d=0.3  acc/1k  3359.8 | alpha_t=1.0: 0.9882 (-0.0031) | alpha_t=0.5: 0.9873 (+0.0011) | alpha_t=0.25: 0.9869 (+0.0032)
+TEST India  alpha_d=1.0  acc/1k  3349.3 | alpha_t=1.0: 0.9891 (+0.0000) | alpha_t=0.5: 0.9804 (+0.0000) | alpha_t=0.25: 0.9761 (+0.0000)
+TEST India  alpha_d=0.75 acc/1k  3345.5 | alpha_t=1.0: 0.9888 (-0.0003) | alpha_t=0.5: 0.9814 (+0.0009) | alpha_t=0.25: 0.9777 (+0.0015)
+TEST India  alpha_d=0.6  acc/1k  3334.1 | alpha_t=1.0: 0.9877 (-0.0014) | alpha_t=0.5: 0.9822 (+0.0017) | alpha_t=0.25: 0.9794 (+0.0033)
+TEST India  alpha_d=0.5  acc/1k  3329.3 | alpha_t=1.0: 0.9867 (-0.0024) | alpha_t=0.5: 0.9823 (+0.0019) | alpha_t=0.25: 0.9802 (+0.0040)
+   alpha_d=0.5 vs V9: removes 33.7/1k, adds 13.7/1k; removed by class: [('other', 14.16), ('identical@num_changed', 7.41), ('no_overlap@same', 2.76), ('swap_extra@same', 2.73), ('identical@same', 2.2), ('light_edit@same', 1.81), ('identical@other', 1.75), ('first_word_replaced@same', 0.45)]
+TEST India  alpha_d=0.4  acc/1k  3325.8 | alpha_t=1.0: 0.9854 (-0.0037) | alpha_t=0.5: 0.9822 (+0.0018) | alpha_t=0.25: 0.9807 (+0.0045)
+TEST India  alpha_d=0.3  acc/1k  3325.3 | alpha_t=1.0: 0.9839 (-0.0052) | alpha_t=0.5: 0.9819 (+0.0015) | alpha_t=0.25: 0.9809 (+0.0048)
+TEST France alpha_d=1.0  acc/1k  3374.2 | alpha_t=1.0: 0.9803 (+0.0000) | alpha_t=0.5: 0.9673 (+0.0000) | alpha_t=0.25: 0.9614 (+0.0000)
+TEST France alpha_d=0.75 acc/1k  3372.7 | alpha_t=1.0: 0.9797 (-0.0006) | alpha_t=0.5: 0.9690 (+0.0017) | alpha_t=0.25: 0.9643 (+0.0029)
+TEST France alpha_d=0.6  acc/1k  3366.3 | alpha_t=1.0: 0.9782 (-0.0022) | alpha_t=0.5: 0.9700 (+0.0028) | alpha_t=0.25: 0.9666 (+0.0051)
+TEST France alpha_d=0.5  acc/1k  3366.7 | alpha_t=1.0: 0.9768 (-0.0035) | alpha_t=0.5: 0.9702 (+0.0029) | alpha_t=0.25: 0.9675 (+0.0060)
+   alpha_d=0.5 vs V9: removes 39.9/1k, adds 32.4/1k; removed by class: [('no_overlap@same', 20.51), ('other', 8.55), ('swap_extra@same', 3.24), ('desc@same', 2.41), ('identical@num_changed', 1.79), ('identical@other', 1.0), ('identical@same', 0.93), ('first_word_replaced@same', 0.64)]
+TEST France alpha_d=0.4  acc/1k  3368.3 | alpha_t=1.0: 0.9752 (-0.0051) | alpha_t=0.5: 0.9701 (+0.0028) | alpha_t=0.25: 0.9680 (+0.0066)
+TEST France alpha_d=0.3  acc/1k  3374.2 | alpha_t=1.0: 0.9732 (-0.0071) | alpha_t=0.5: 0.9696 (+0.0023) | alpha_t=0.25: 0.9683 (+0.0068)
+
+WEIGHTED over countries (delta vs V9):
+  alpha_d=1.0  alpha_t=1.0: +0.00000 | alpha_t=0.5: +0.00000 | alpha_t=0.25: +0.00000
+  alpha_d=0.75 alpha_t=1.0: -0.00031 | alpha_t=0.5: +0.00096 | alpha_t=0.25: +0.00159
+  alpha_d=0.6  alpha_t=1.0: -0.00135 | alpha_t=0.5: +0.00169 | alpha_t=0.25: +0.00320
+  alpha_d=0.5  alpha_t=1.0: -0.00224 | alpha_t=0.5: +0.00184 | alpha_t=0.25: +0.00386
+  alpha_d=0.4  alpha_t=1.0: -0.00334 | alpha_t=0.5: +0.00176 | alpha_t=0.25: +0.00430
+  alpha_d=0.3  alpha_t=1.0: -0.00466 | alpha_t=0.5: +0.00146 | alpha_t=0.25: +0.00450
+python scripts/206_mix_country.py  551.00s user 88.47s system 3% cpu 5:04:17.34 total

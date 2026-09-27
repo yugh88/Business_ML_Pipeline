@@ -1,0 +1,67 @@
+band pairs 187910, CE missing 0
+fit fold 7: 47184 pairs (true 0.699); eval folds 0/8/9: 140726 pairs
+  p3 alone: log-loss 0.27001 AUC 0.9446 errors 14104
+  stack lr pooled=False: log-loss 0.17502 AUC 0.9752 errors 9256
+  stack lr pooled=True: log-loss 0.17544 AUC 0.9751 errors 9287
+  stack gb pooled=False: log-loss 0.17125 AUC 0.9765 errors 9141
+  stack gb pooled=True: log-loss 0.17216 AUC 0.9763 errors 9174
+  US: p3 ll 0.26462 | lr 0.18422 | lrP 0.18459 | gb 0.17834 | gbP 0.17938
+  India: p3 ll 0.27659 | lr 0.16378 | lrP 0.16426 | gb 0.16260 | gbP 0.16334
+chosen: US/India ('gb', False), pooled ('gb', True)
+HOLDOUT clean F [v11] p3  : US 0.99248 (+0.00000)  India 0.98938 (+0.00000)  accepted 1859149 TP 1854226 FP 4923
+HOLDOUT clean F [v11] p3c : US 0.99385 (+0.00137)  India 0.99224 (+0.00286)  accepted 1866108 TP 1862090 FP 4018
+HOLDOUT clean F [v11] p3p : US 0.99390 (+0.00142)  India 0.99222 (+0.00284)  accepted 1866078 TP 1862083 FP 3995
+HOLDOUT clean F [a1] p3  : US 0.99258 (+0.00000)  India 0.98982 (+0.00000)  accepted 1860227 TP 1855355 FP 4872
+HOLDOUT clean F [a1] p3c : US 0.99406 (+0.00148)  India 0.99249 (+0.00267)  accepted 1868476 TP 1864253 FP 4223
+HOLDOUT clean F [a1] p3p : US 0.99406 (+0.00147)  India 0.99245 (+0.00263)  accepted 1868360 TP 1864140 FP 4220
+ADDED by class (per 1k holdout S1): TP / FP
+┌─────────┬──────────────────────────┬──────┬─────┬───────┬───────┐
+│ country ┆ cls                      ┆ TP   ┆ FP  ┆ TP/1k ┆ FP/1k │
+│ ---     ┆ ---                      ┆ ---  ┆ --- ┆ ---   ┆ ---   │
+│ str     ┆ str                      ┆ u32  ┆ u32 ┆ f64   ┆ f64   │
+╞═════════╪══════════════════════════╪══════╪═════╪═══════╪═══════╡
+│ India   ┆ other                    ┆ 1330 ┆ 97  ┆ 5.98  ┆ 0.44  │
+│ India   ┆ identical@num_changed    ┆ 860  ┆ 50  ┆ 3.87  ┆ 0.22  │
+│ India   ┆ swap_extra@same          ┆ 583  ┆ 33  ┆ 2.62  ┆ 0.15  │
+│ India   ┆ identical@same           ┆ 491  ┆ 36  ┆ 2.21  ┆ 0.16  │
+│ India   ┆ no_overlap@same          ┆ 312  ┆ 51  ┆ 1.4   ┆ 0.23  │
+│ India   ┆ light_edit@same          ┆ 295  ┆ 33  ┆ 1.33  ┆ 0.15  │
+│ India   ┆ identical@other          ┆ 245  ┆ 27  ┆ 1.1   ┆ 0.12  │
+│ India   ┆ identical@empty          ┆ 36   ┆ 3   ┆ 0.16  ┆ 0.01  │
+│ India   ┆ first_word_replaced@same ┆ 35   ┆ 6   ┆ 0.16  ┆ 0.03  │
+│ India   ┆ desc@same                ┆ 2    ┆ 0   ┆ 0.01  ┆ 0.0   │
+│ US      ┆ other                    ┆ 1244 ┆ 126 ┆ 3.72  ┆ 0.38  │
+│ US      ┆ identical@num_changed    ┆ 860  ┆ 90  ┆ 2.57  ┆ 0.27  │
+│ US      ┆ swap_extra@same          ┆ 751  ┆ 24  ┆ 2.25  ┆ 0.07  │
+│ US      ┆ identical@same           ┆ 634  ┆ 17  ┆ 1.9   ┆ 0.05  │
+│ US      ┆ light_edit@same          ┆ 534  ┆ 37  ┆ 1.6   ┆ 0.11  │
+│ US      ┆ no_overlap@same          ┆ 341  ┆ 38  ┆ 1.02  ┆ 0.11  │
+│ US      ┆ identical@other          ┆ 148  ┆ 23  ┆ 0.44  ┆ 0.07  │
+│ US      ┆ identical@empty          ┆ 98   ┆ 26  ┆ 0.29  ┆ 0.08  │
+│ US      ┆ first_word_replaced@same ┆ 67   ┆ 7   ┆ 0.2   ┆ 0.02  │
+└─────────┴──────────────────────────┴──────┴─────┴───────┴───────┘
+REMOVED by class (per 1k holdout S1): TP / FP
+┌─────────┬──────────────────────────┬─────┬─────┬───────┬───────┐
+│ country ┆ cls                      ┆ TP  ┆ FP  ┆ TP/1k ┆ FP/1k │
+│ ---     ┆ ---                      ┆ --- ┆ --- ┆ ---   ┆ ---   │
+│ str     ┆ str                      ┆ u32 ┆ u32 ┆ f64   ┆ f64   │
+╞═════════╪══════════════════════════╪═════╪═════╪═══════╪═══════╡
+│ India   ┆ other                    ┆ 132 ┆ 228 ┆ 0.59  ┆ 1.03  │
+│ India   ┆ no_overlap@same          ┆ 97  ┆ 45  ┆ 0.44  ┆ 0.2   │
+│ India   ┆ identical@num_changed    ┆ 70  ┆ 171 ┆ 0.31  ┆ 0.77  │
+│ India   ┆ light_edit@same          ┆ 55  ┆ 136 ┆ 0.25  ┆ 0.61  │
+│ India   ┆ swap_extra@same          ┆ 44  ┆ 103 ┆ 0.2   ┆ 0.46  │
+│ India   ┆ identical@other          ┆ 44  ┆ 89  ┆ 0.2   ┆ 0.4   │
+│ India   ┆ identical@same           ┆ 32  ┆ 186 ┆ 0.14  ┆ 0.84  │
+│ India   ┆ identical@empty          ┆ 18  ┆ 7   ┆ 0.08  ┆ 0.03  │
+│ India   ┆ first_word_replaced@same ┆ 9   ┆ 23  ┆ 0.04  ┆ 0.1   │
+│ US      ┆ identical@num_changed    ┆ 150 ┆ 191 ┆ 0.45  ┆ 0.57  │
+│ US      ┆ other                    ┆ 125 ┆ 105 ┆ 0.37  ┆ 0.31  │
+│ US      ┆ no_overlap@same          ┆ 83  ┆ 49  ┆ 0.25  ┆ 0.15  │
+│ US      ┆ light_edit@same          ┆ 46  ┆ 74  ┆ 0.14  ┆ 0.22  │
+│ US      ┆ identical@same           ┆ 34  ┆ 77  ┆ 0.1   ┆ 0.23  │
+│ US      ┆ first_word_replaced@same ┆ 24  ┆ 82  ┆ 0.07  ┆ 0.25  │
+│ US      ┆ swap_extra@same          ┆ 23  ┆ 21  ┆ 0.07  ┆ 0.06  │
+│ US      ┆ identical@other          ┆ 8   ┆ 37  ┆ 0.02  ┆ 0.11  │
+│ US      ┆ identical@empty          ┆ 8   ┆ 5   ┆ 0.02  ┆ 0.01  │
+└─────────┴──────────────────────────┴─────┴─────┴───────┴───────┘

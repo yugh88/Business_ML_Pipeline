@@ -1,0 +1,122 @@
+{
+ "official_rc": 0,
+ "official_out": "ML Challenge 2026 \u2014 submission validator\n  test dir: /data/er/test_tsv\n  required S1 entities: 1732544\n  valid S2/S3 match IDs: 9969589\n  matching_results.tsv: 1732544 rows (91856 empty, 1640688 non-empty).\n  candidate_pairs.tsv: 1732544 rows (69 empty, 1732475 non-empty).\n\nPASS \u2014 no blocking issues found. Safe to submit.\n",
+ "rows": 1732544,
+ "s1_expected": 1732544,
+ "s1_distinct": 1732544,
+ "s1_missing": 0,
+ "match_pairs": 6225992,
+ "dup_matches": 0,
+ "invalid_ids": 0,
+ "train_ids": 0,
+ "preds_not_in_cands": 0,
+ "pool_ids_in_multiple_s1": 0,
+ "zero_match_s1": 91856,
+ "match_count_dist": [
+  [
+   1,
+   90260
+  ],
+  [
+   2,
+   269326
+  ],
+  [
+   3,
+   393413
+  ],
+  [
+   4,
+   379693
+  ],
+  [
+   5,
+   272041
+  ],
+  [
+   6,
+   148188
+  ],
+  [
+   7,
+   61561
+  ],
+  [
+   8,
+   19778
+  ],
+  [
+   9,
+   5123
+  ],
+  [
+   10,
+   1076
+  ],
+  [
+   11,
+   187
+  ],
+  [
+   12,
+   21
+  ],
+  [
+   13,
+   4
+  ],
+  [
+   14,
+   4
+  ],
+  [
+   15,
+   2
+  ],
+  [
+   16,
+   1
+  ],
+  [
+   17,
+   2
+  ],
+  [
+   19,
+   3
+  ],
+  [
+   20,
+   1
+  ],
+  [
+   21,
+   1
+  ],
+  [
+   23,
+   1
+  ],
+  [
+   37,
+   1
+  ],
+  [
+   63,
+   1
+  ]
+ ],
+ "s2_share": 0.484351569998805,
+ "cand_pairs": 23005640,
+ "cand_count_quantiles": [
+  [
+   5.0,
+   10.0,
+   23.0,
+   68.0
+  ],
+  2781
+ ],
+ "matches_per_s1": 3.5935549111595435,
+ "cands_per_s1": 13.278531454323815
+}

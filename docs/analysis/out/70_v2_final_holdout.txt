@@ -1,0 +1,21 @@
+fold 7 (valid): F0.5=0.97881 P=0.9942 R=0.9558 single=0.9579 multi=0.9800 FM=4260 FN=33836 m/s1=3.335
+fold 0: F0.5=0.97878 P=0.9942 R=0.9557 single=0.9567 multi=0.9801 FM=4291 FN=33847 m/s1=3.323
+fold 8: F0.5=0.97881 P=0.9941 R=0.9557 single=0.9529 multi=0.9804 FM=4313 FN=33716 m/s1=3.325
+fold 9: F0.5=0.97904 P=0.9942 R=0.9557 single=0.9567 multi=0.9803 FM=4267 FN=33892 m/s1=3.329
+
+FN inside candidates / FP by segment (holdout 0,8,9):
+shape: (6, 5)
+┌─────────┬──────────────┬─────────────┬──────┬─────────┐
+│ country ┆ seg          ┆ FN_in_cands ┆ FP   ┆ pos     │
+│ ---     ┆ ---          ┆ ---         ┆ ---  ┆ ---     │
+│ str     ┆ str          ┆ u32         ┆ u32  ┆ u32     │
+╞═════════╪══════════════╪═════════════╪══════╪═════════╡
+│ US      ┆ addr_empty   ┆ 24702       ┆ 965  ┆ 57143   │
+│ US      ┆ normal       ┆ 17862       ┆ 4373 ┆ 1286693 │
+│ India   ┆ normal       ┆ 15698       ┆ 6073 ┆ 840938  │
+│ India   ┆ addr_empty   ┆ 13065       ┆ 575  ┆ 30763   │
+│ India   ┆ not_rev_top1 ┆ 5618        ┆ 695  ┆ 33199   │
+│ US      ┆ not_rev_top1 ┆ 3696        ┆ 152  ┆ 21623   │
+└─────────┴──────────────┴─────────────┴──────┴─────────┘
+holdout positives=2291241 in_candidates=2261918 (0.9872) predicted_TP=2189718 (0.9557); missed by blocking/pruning=29323, rejected by model=72200
+oracle holdout: base=0.97888 | +all in-cand FN fixed=0.98999 | all FP removed=0.98504

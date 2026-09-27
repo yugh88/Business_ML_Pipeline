@@ -1,0 +1,17 @@
+true copies: house number vs S1 (share): [('same', 0.7055), ('empty', 0.1444), ('diff', 0.1501)]
+
+(S1,source) groups with >=2 numbered copies: distribution of #distinct numbers
+[(1, 0.9152), (2, 0.0824), (3, 0.0024), (4, 0.0), (5, 0.0)]
+
+among groups with >=2 numbered copies AND >=1 changed number: #distinct changed numbers
+[(1, 0.9508), (2, 0.0483), (3, 0.0009), (4, 0.0)]
+
+changed-number copies: share that are the ONLY changed copy in their (S1,source) with >=2 numbered copies:
+  same changed number shared by >=2 copies of that source: 0.8273897790155159
+  changed numbers appearing in BOTH S2 and S3 (per s1,number): [(1, 77667), (2, 5534)]
+
+share of numbered copies with changed number, by source & country:
+[('India', 'S2', 0.2487), ('India', 'S3', 0.2485), ('US', 'S2', 0.124), ('US', 'S3', 0.1295)]
+
+TRUE copies: kind of house-number change:
+[('other', 0.399), ('prefix/extend', 0.1606), ('suffix/trunc_first', 0.1251), ('numeric_off<=100', 0.0999), ('empty', 0.061), ('1digit_first', 0.0433), ('1digit_last_off1', 0.0244), ('1digit_last_off<=5', 0.0238), ('1digit_first_off<=5', 0.0234), ('numeric_off<=10', 0.0231), ('1digit_first_off1', 0.0103), ('1digit_mid', 0.0032), ('1digit_last', 0.002), ('transpose', 0.0007)]

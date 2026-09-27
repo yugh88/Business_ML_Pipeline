@@ -1,0 +1,66 @@
+V10 synthetic records per 1k train S1, by kind -> relation class / offset (top 3 each):
+  India  light      24.7/1k  swap_extra@same/same 37% | light_edit@same/same 12% | other/far 9%
+  India  namenum    39.4/1k  other/+10..99 20% | other/far 18% | other/+1..9 12%
+  India  numx       31.7/1k  identical@num_changed/+10..99 26% | other/+10..99 19% | identical@num_changed/trunc 12%
+  India  sib        68.2/1k  other/+1..9 31% | desc@same/same 25% | desc@same/no_num 10%
+  India  swap       41.2/1k  desc@same/same 29% | swap_extra@same/same 24% | other/far 9%
+  India  twin       24.7/1k  identical@num_changed/+1..9 49% | other/+1..9 44% | identical@num_changed/trunc 2%
+  US     empty      17.0/1k  identical@empty/no_num 51% | other/no_num 49%
+  US     fwr        37.8/1k  first_word_replaced@same/same 50% | no_overlap@same/same 10% | desc@same/same 8%
+  US     namenum    44.0/1k  other/far 46% | other/+10..99 13% | other/trunc 11%
+  US     numx       36.7/1k  identical@num_changed/far 29% | other/far 28% | identical@num_changed/+10..99 11%
+  US     sib        68.4/1k  other/+1..9 36% | desc@same/same 32% | desc@same/no_num 7%
+  US     twin       61.4/1k  other/+1..9 54% | identical@num_changed/+1..9 41% | other/far 2%
+
+Test excess categories (candidates/1k beyond train-as-trained) vs V10 generated records/1k (only ~25-30% reach the cascade set):
+┌─────────┬──────────────────────────┬─────────┬──────────────┬───────────┐
+│ country ┆ cls                      ┆ off     ┆ excess_cands ┆ gen_per1k │
+│ ---     ┆ ---                      ┆ ---     ┆ ---          ┆ ---       │
+│ str     ┆ str                      ┆ str     ┆ f64          ┆ f64       │
+╞═════════╪══════════════════════════╪═════════╪══════════════╪═══════════╡
+│ India   ┆ identical@same           ┆ no_num  ┆ 10.5         ┆ 0.1       │
+│ India   ┆ swap_extra@same          ┆ no_num  ┆ 10.5         ┆ 5.8       │
+│ India   ┆ swap_extra@same          ┆ same    ┆ 7.8          ┆ 22.3      │
+│ India   ┆ other                    ┆ far     ┆ 7.1          ┆ 22.5      │
+│ India   ┆ identical@num_changed    ┆ +10..99 ┆ 5.9          ┆ 8.4       │
+│ India   ┆ light_edit@same          ┆ same    ┆ 5.2          ┆ 3.5       │
+│ India   ┆ other                    ┆ +10..99 ┆ 5.1          ┆ 16.3      │
+│ India   ┆ identical@num_changed    ┆ far     ┆ 4.3          ┆ 3.7       │
+│ India   ┆ identical@num_changed    ┆ trunc   ┆ 3.3          ┆ 4.2       │
+│ India   ┆ other                    ┆ same    ┆ 2.9          ┆ 7.8       │
+│ India   ┆ identical@other          ┆ same    ┆ 2.8          ┆ 0.0       │
+│ India   ┆ other                    ┆ trunc   ┆ 2.8          ┆ 12.5      │
+│ India   ┆ light_edit@same          ┆ no_num  ┆ 2.4          ┆ 0.7       │
+│ US      ┆ other                    ┆ far     ┆ 36.9         ┆ 37.0      │
+│ US      ┆ first_word_replaced@same ┆ same    ┆ 12.6         ┆ 19.4      │
+│ US      ┆ identical@num_changed    ┆ far     ┆ 8.0          ┆ 11.5      │
+│ US      ┆ identical@empty          ┆ no_num  ┆ 5.1          ┆ 8.7       │
+│ US      ┆ other                    ┆ trunc   ┆ 3.8          ┆ 12.7      │
+│ US      ┆ identical@num_changed    ┆ +10..99 ┆ 2.7          ┆ 4.0       │
+│ US      ┆ identical@num_changed    ┆ trunc   ┆ 2.7          ┆ 4.0       │
+└─────────┴──────────────────────────┴─────────┴──────────────┴───────────┘
+[fwr//] S1 'Forrest Nuveen' | '3115 Union Street, Chili, NY'
+      syn 'Veranlya t/a Fusion Nuveen' | '3115 Union Street, Chili, NY'
+[fwr//] S1 'Tri-State Guild PLLC' | '2505 Cassady Avenue, Columbus, OH'
+      syn 'Downtown Guild Inc' | '2505 CASSADY AVENUE, COLUMBUS, OH'
+[swap//] S1 'Aarohi Vardhan' | 'D.No:49-54/5/14, Balaji Hills, B S Lay Out, Setammadhara, Visakhapatnam, Vishakhapatnam, Andhra Pradesh'
+      syn 'M/s Aarohi Beverages Private Limited' | 'D.NO:49-54/5/14, BALAJI HILLS, B S LAY OUT, SETAMMADHARA, VISAKHAPATNAM, Andhra Pradesh'
+[swap//] S1 'Balaji Logistics Pvt Ltd' | '516, Fifth Floor, Alankar Plaza A-10, Central Apine, Vidhyadhar Nagar, Jaipur, Rajasthan'
+      syn 'Sri Baalji Trading Pvt [Ltd]' | ''
+[light//noise] S1 'Surendra Engineers (India) Private Limited' | 'Urja Sadan Nana Varachha Road, Kapodara Surat, Surat City, Surat, Gujarat'
+      syn 'Surendra éngineers (India) Lmpex' | 'Urja Sadan Nana Varachha Road, Surat, Surat City, GJ'
+[light//drop] S1 'International Vivid Hospitality Private Limited' | 'H.No.514 Sector 30 Behind Maharana Pratap School, Kurukshetra, Haryana'
+      syn 'International Viid Private Limited' | 'Kurukeshetra, Kurukshetra, Door No 514- Sector 30 Behind Maharana Pratap School, HR'
+[numx/+10..99/] S1 'Sams (India) Foods Private Limited' | 'Plot No. 6, Ground Floor, Khasra No 124/2 & 124/9/1, New Delhi, West Delhi, Delhi'
+      syn 'Shri SAMS (INDIA) FOODS LLP' | 'NO 82 , GROUND FLOOR, KHASRA NO 124/2 & 124/9/1, NEW DELHI, Delhi'
+[numx/far/] S1 'Grantham Holdings Group' | '200 Southern Avenue, Unit 64, Apache Junction, AZ'
+      syn 'Grantham Holdings  Group' | '484-D Southern Ave, PMB 792, Apache Junction, Arizona'
+[namenum/far/swap] S1 'Noida Polytechnic' | 'Corporate House No. 4, Parshwanath Business Park Opp. Auda Garden, Anandnagar Road, Prahl, Adnagar, Ahmedabad, Gujarat'
+      syn 'Noia Technology Córp' | 'CORPORATE HOUSE NO. 7, PARSHWANATH BUSINESS PARK OPP. AUDA GARDEN, ANANDNAGAR ROAD, PRAHL, ADNAGAR, AHMEDABAD, Gujarat'
+[namenum/far/fwr] S1 'Mauli Brothers Private Limited' | 'B-801 A, Bestech Business Tower, Plot No 1, Sector-66, S.A.S.Nagar (Mohali), Rupnagar, Punjab'
+      syn 'Matchless BROTHERS PRIVATE LIMITED' | 'PB, Bestech Business Tower, Plot No 7, Sector-66, N/A, B-801 A, S.a.s.nagar (Mohali)'
+[empty//] S1 'Surgical Associates L.L.C.' | '16677 New Mexico State Road 4, Jemez Springs, NM'
+      syn 'Surgical Ássociates LLC' | ''
+[empty//] S1 'Supreme Thayer' | '837 Woodland Drive, Henderson, TN'
+      syn 'SUPREME  THAYER INC' | ''
+python scripts/217_aug_sanity.py  24.42s user 1.12s system 129% cpu 19.706 total

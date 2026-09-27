@@ -1,0 +1,8 @@
+pool: 10320219 empty-address: 344883
+accepted pairs: 6206859
+proposed links (unmatched pool record -> single S1 via exact raw name): 151375
+[(False, 135877, 0.0094), (True, 15498, 0.0337)]
+by #anchors: [(1, 129721, 0.0118), (2, 15490, 0.0133), (3, 4668, 0.0126), (4, 1496, 0.008)]
+fold 0: V5 0.99057 -> +links 0.97804  (+15297 links, precision 0.0124)
+fold 8: V5 0.99053 -> +links 0.97795  (+15129 links, precision 0.0108)
+fold 9: V5 0.99057 -> +links 0.97815  (+15150 links, precision 0.0100)

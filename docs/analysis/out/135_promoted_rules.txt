@@ -1,0 +1,6 @@
+fold 0: none 0.99057 plusk 0.99028 num_change 0.98912 num_change+empty 0.98843 all_but_same 0.98809 all 0.98730
+fold 8: none 0.99053 plusk 0.99021 num_change 0.98908 num_change+empty 0.98837 all_but_same 0.98807 all 0.98738
+fold 9: none 0.99057 plusk 0.99023 num_change 0.98912 num_change+empty 0.98842 all_but_same 0.98811 all 0.98737
+TEST US: none -0.0/1k plusk -26.3/1k num_change -53.3/1k num_change+empty -63.3/1k all_but_same -66.7/1k all -80.0/1k
+TEST India: none -0.0/1k plusk -19.8/1k num_change -65.8/1k num_change+empty -102.0/1k all_but_same -108.7/1k all -135.3/1k
+TEST France: none -0.0/1k plusk -15.7/1k num_change -21.3/1k num_change+empty -39.0/1k all_but_same -39.8/1k all -111.3/1k
