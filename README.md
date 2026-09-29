@@ -1,7 +1,7 @@
 # Business Entity Resolution — ML Challenge 2026 (team pipeline)
 
-**Status (2026-09-27): best public LB = 0.980 (V14).**
-History: v2 0.936 → V3 0.966 → V5 0.967 → V5s3r 0.973 → V9 0.977 → **V14 0.980**.
+**Status (2026-09-27): best public LB = 0.9812 (V15).**
+History: v2 0.936 → V3 0.966 → V5 0.967 → V5s3r 0.973 → V9 0.977 → V14 0.980 → **V15 0.9812**.
 Clean labelled holdout (folds 0/8/9, US/India): US 0.9939, India 0.9922.
 `docs/analysis/STATE.md` is the single source of truth (every experiment, number and decision, including the ones
 that failed) — read it before changing anything.
